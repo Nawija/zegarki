@@ -1,0 +1,46 @@
+#descHtml span,
+#descHtml div,
+#descHtml p {
+    font-size: 17px !important;
+}
+#descHtml li {
+    margin-left: 30px;
+    list-style: disc;
+}
+#descHtml div,
+#descHtml p {
+    margin: 1.5rem 0;
+}
+#descHtml img {
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+#descHtml .btn {
+    margin: 22px;
+    font-size: 16px;
+    padding: 10px 20px;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border: 2px solid #ffd500;
+    border-radius: 8px;
+    transition-property: background-color;
+    transition-duration: .3s;
+}
+#descHtml .btn:hover {
+    background-color: rgba(255, 213, 0, 0.319);
+}
+#descHtml h2,
+#descHtml h2 strong {
+    margin: 4.3rem 0 1.4rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #0a1265;
+}
+
+#descHtml a {
+    @apply text-blue-700 underline font-medium;
+}
