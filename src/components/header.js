@@ -67,20 +67,20 @@ const Header = () => {
                 <button
                     aria-label="Menu"
                     onClick={handleMenu}
-                    className="lg:hidden bg-gray-100 p-2.5 transition-colors z-50 rounded-lg"
+                    className="lg:hidden p-2.5 transition-colors z-50 rounded-lg"
                 >
                     <div
-                        className={`w-5 h-1 transition burgerColor m-1 rounded-lg ${
+                        className={`w-5 h-1 transition bg-gray-100 m-1 rounded-lg ${
                             showMenu ? "translate-y-2 rotate-45" : ""
                         }`}
                     />
                     <div
-                        className={`w-3 h-1 transition burgerColor m-1 rounded-lg ${
+                        className={`w-3 h-1 transition bg-gray-100 m-1 rounded-lg ${
                             showMenu ? "opacity-0" : ""
                         }`}
                     />
                     <div
-                        className={`w-5 h-1 transition burgerColor m-1 rounded-lg ${
+                        className={`w-5 h-1 transition bg-gray-100 m-1 rounded-lg ${
                             showMenu ? "-translate-y-2 -rotate-45" : ""
                         }`}
                     />

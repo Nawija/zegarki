@@ -17,11 +17,11 @@ const HeroSecond = () => (
                 alt="tło"
                 placeholder="dominantColor"
             />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mt-4">
-                <p className="text-gray-100 text-4xl font-bold">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mt-4 text-center">
+                <p className="text-gray-100 text-2xl md:text-3xl lg:text-4xl font-bold w-max">
                     Profesionalne Usługi
                 </p>
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center pr-2">
                     <svg
                         width="30"
                         height="30"
@@ -51,7 +51,7 @@ const HeroSecond = () => (
                         </defs>
                     </svg>
 
-                    <p className="text-gray-200 text-xl font-base">
+                    <p className="text-gray-200 text-sm md:text-xl w-max">
                         Gwarancja Wysokiej Jakośći
                     </p>
                 </div>
