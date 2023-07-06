@@ -31,13 +31,13 @@ const Header = () => {
             <div
                 className={`h-full w-full mx-auto py-1 absolute top-0 -z-10 transition-colors duration-300 ${
                     navbar
-                        ? "bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
+                        ? "bg-black lg:bg-black/90 lg:backdrop-blur-xl shadow-lg"
                         : ""
                 }`}
             />
             <nav
                 className={`max-w-screen-2xl mx-auto px-4 py-2 flex items-center justify-between w-full navTextColor transition-colors duration-100 z-50 ${
-                    showMenu ? "bg-gray-900" : ""
+                    showMenu ? "bg-gray-950" : ""
                 }`}
             >
                 <Link
@@ -88,7 +88,7 @@ const Header = () => {
                 <ul
                     className={`absolute top-full left-0 w-full text-center ${
                         showMenu
-                            ? "text-lg bg-gray-900 space-y-5 lg:space-y-0 opacity-100 transition pt-2 pb-12 lg:pb-2 -translate-y-0 -z-10"
+                            ? "text-lg bg-gray-950 space-y-5 lg:space-y-0 opacity-100 transition pt-2 pb-12 lg:pb-2 -translate-y-0 -z-10"
                             : "py-2 lg:opacity-100 lg:static lg:flex lg:flex-row lg:items-center lg:justify-end lg:top-0 lg:translate-y-0 lg:py-0 opacity-0 -translate-y-full transition -z-10 lg:z-10 lg:ml-8"
                     }`}
                 >

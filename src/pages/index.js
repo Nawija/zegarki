@@ -1,12 +1,11 @@
 import React from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import { StaticImage } from "gatsby-plugin-image";
 
 const IndexPage = () => {
     return (
         <Layout>
-            <StaticImage src="../images/tło.jpg" quality={100} placeholder="none" />
+            <div className="bg-gray-950 h-screen w-full"></div>
         </Layout>
     );
 };
