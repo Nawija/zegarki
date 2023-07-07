@@ -31,7 +31,7 @@ const Header = () => {
             <div
                 className={`h-full w-full mx-auto py-1 absolute top-0 -z-10 transition-colors duration-300 ${
                     navbar
-                        ? "bg-black lg:bg-black/90 lg:backdrop-blur-xl shadow-lg"
+                        ? "bg-black lg:bg-black shadow-lg"
                         : ""
                 }`}
             />

@@ -28,7 +28,7 @@ const ProjectsPage = () => {
                         data(locale: "pl", formatString: "DD.MM.YYYY")
                         desc
                         img {
-                            gatsbyImageData(placeholder: NONE, height: 220)
+                            gatsbyImageData(placeholder: NONE, height: 160)
                         }
                         link
                         title
@@ -50,7 +50,7 @@ const ProjectsPage = () => {
             document.getElementById("wrapperFixed").offsetHeight
         ) {
             setNavbar(false);
-        } else if (window.scrollY > 200) {
+        } else if (window.scrollY > 210) {
             setNavbar(true);
             setItemsPosition(true);
         } else {
@@ -136,71 +136,75 @@ const ProjectsPage = () => {
             </div>
             <div
                 className="flex flex-col
-             lg:flex-row w-full z-10 mt-10 max-w-[1400px] mx-auto px-6 lg:mb-12"
+             lg:flex-row w-full z-10 mt-4 sm:mt-10 max-w-[1400px] mx-auto lg:mb-12"
             >
                 <section class="container lg:order-1 px-4 space-y-10 mx-auto lg:w-4/5 xl:w-full">
                     {data.allDatoCmsProjekty.edges.map(({ node }) => (
-                        <div className="border bg-white drop-shadow-xl flex items-stretch justify-start">
-                            <GatsbyImage
-                                className="w-max h-max object-cover object-center group-hover:scale-95 transition"
-                                image={getImage(node.img)}
-                                alt={node.title}
-                                title={node.title}
-                            />
-                            <div className="mt-8 w-full px-4">
-                                <div className="flex items-center justify-between">
+                        <div className="border relative py-4 bg-white drop-shadow-xl flex flex-col lg:flex-row items-center lg:items-stretch justify-center lg:justify-start">
+                            <div className="flex items-center justify-center">
+                                <GatsbyImage
+                                    className="h-max w-max"
+                                    imgClassName="h-max w-max"
+                                    image={getImage(node.img)}
+                                    alt={node.title}
+                                    title={node.title}
+                                />
+                            </div>
+                            <div className="mt-8 w-full px-4 flex lg:inline-block items-center justify-center flex-col">
+                                <div className="flex flex-col lg:flex-row items-center justify-between">
                                     <h2 className="text-lg font-semibold">
                                         {node.title}
                                     </h2>
-                                    <p>{node.data}</p>
+                                    <p className="text-gray-700 pb-3 lg:py-0">{node.data}</p>
                                 </div>
-                                <p className="text-gray-700">{node.sdesc}</p>
-                                <div className="pb-4 pt-6 flex items-start text-center justify-start space-x-3">
+                                <p className="text-gray-700 text-center lg:text-start px-1">{node.sdesc}</p>
+                                <div className="pb-4 pt-6 flex items-start text-center justify-start space-x-2 sm:space-x-3">
                                     <div className="flex flex-col items-center justify-center">
-                                        <div className="h-12 w-12 bg-green-300/50 rounded-full border-4 border-green-500 flex items-center justify-center">
-                                            <p className="text-green-700 font-semibold">
+                                        <div className="h-12 w-12 bg-green-300/50 rounded-full border-4 border-green-500 flex flex-wrap items-center justify-center">
+                                            <p className="text-green-700 font-semibold cursor-default">
                                                 100
                                             </p>
                                         </div>
-                                        <p className="text-[13px] font-medium  leading-none mt-1">
+                                        <p className="text-[12px] sm:text-[13px] font-medium  leading-none mt-1">
                                             Wydajność
                                         </p>
                                     </div>
                                     <div className="flex flex-col items-center justify-center">
                                         <div className="h-12 w-12 bg-green-300/50 rounded-full border-4 border-green-500 flex items-center justify-center">
-                                            <p className="text-green-700 font-semibold">
+                                            <p className="text-green-700 font-semibold cursor-default">
                                                 100
                                             </p>
                                         </div>
-                                        <p className="text-[13px] font-medium w-min leading-none mt-1">
+                                        <p className="text-[12px] sm:text-[13px] font-medium w-min leading-none mt-1">
                                             Ułatwienia Dostępu
                                         </p>
                                     </div>
                                     <div className="flex flex-col items-center justify-center">
                                         <div className="h-12 w-12 bg-green-300/50 rounded-full border-4 border-green-500 flex items-center justify-center">
-                                            <p className="text-green-700 font-semibold">
+                                            <p className="text-green-700 font-semibold cursor-default">
                                                 100
                                             </p>
                                         </div>
-                                        <p className="text-[13px] font-medium w-min leading-none mt-1">
+                                        <p className="text-[12px] sm:text-[13px] font-medium w-min leading-none mt-1">
                                             Sprawdzone Metody
                                         </p>
                                     </div>
                                     <div className="flex flex-col items-center justify-center">
                                         <div className="h-12 w-12 bg-green-300/50 rounded-full border-4 border-green-500 flex items-center justify-center">
-                                            <p className="text-green-700 font-semibold">
+                                            <p className="text-green-700 font-semibold cursor-default">
                                                 100
                                             </p>
                                         </div>
-                                        <p className="text-[13px] font-medium leading-none mt-1">
+                                        <p className="text-[12px] sm:text-[13px] font-medium leading-none mt-1">
                                             SEO
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            <div className="w-1/3 flex flex-col items-stretch justify-center border-l px-6 space-y-2">
+                            <div className="lg:w-1/3 flex flex-wrap lg:flex-col items-end pt-3 pb-6 lg:items-stretch justify-center lg:border-l px-6 space-x-2 lg:space-x-0 space-y-2">
                                 <Link
                                     to="/"
+                                    title="Zobacz Raport Google"
                                     className="border border-yellow-500 flex items-center justify-between text-[13px] font-semibold py-1 px-2 rounded-lg"
                                 >
                                     <p className="mr-1 w-max">Raport Google</p>
@@ -301,9 +305,10 @@ const ProjectsPage = () => {
                                 </Link>
                                 <Link
                                     to="/"
+                                    title="Więcej Szczegółów"
                                     className="border border-yellow-500 text-[13px] flex items-center justify-between font-semibold py-1 px-2 rounded-lg"
                                 >
-                                    <p className="mr-1">Szczegóły</p>
+                                    <p className="mr-1 w-max">Szczegóły</p>
                                     <svg
                                         width="16"
                                         height="16"
@@ -348,9 +353,10 @@ const ProjectsPage = () => {
                                 <Link
                                     to={node.link}
                                     target="_blank"
+                                    title="Zobacz na żywo"
                                     className="border bg-black text-white text-[12px] flex items-center justify-between font-semibold py-1 px-2 rounded-lg"
                                 >
-                                    <p className="mr-1">Zobacz Live</p>
+                                    <p className="mr-1 w-max">Zobacz Live</p>
                                     <svg
                                         width="16"
                                         height="16"
@@ -404,12 +410,13 @@ const ProjectsPage = () => {
                 >
                     <div
                         id="divFixed"
-                        className={`${navbar ? "lg:fixed top-28" : ""}`}
+                        className={`${navbar ? "lg:fixed top-[6.5rem]" : ""}`}
                     >
-                        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-1 gap-2 sm:gap-6 md:gap-2 mx-auto">
+                        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-1 gap-2 sm:gap-6 md:gap-2 mx-auto px-2">
                             {data.allDatoCmsUsluga.edges.map(({ node }) => (
                                 <Link
                                     to={`/projekty/` + node.slug}
+                                    title={node.title}
                                     className="relative flex flex-col items-center bg-[#1f1f1f] justify-center group py-4 px-10 text-center drop-shadow-xl rounded-lg"
                                 >
                                     <h2 className="text-gray-100 mb-2 text-sm">
@@ -418,7 +425,7 @@ const ProjectsPage = () => {
                                     <GatsbyImage
                                         image={getImage(node.img)}
                                         alt={node.title}
-                                        title={node.title}
+                                        
                                     />
                                 </Link>
                             ))}
