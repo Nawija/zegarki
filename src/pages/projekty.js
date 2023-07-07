@@ -30,6 +30,7 @@ const ProjectsPage = () => {
                         img {
                             gatsbyImageData(placeholder: NONE, height: 160)
                         }
+                        googlelink
                         link
                         title
                         sdesc
@@ -78,7 +79,11 @@ const ProjectsPage = () => {
                             Strona Główna
                         </Link>
                         <span>/</span>
-                        <Link to="/projekty" title="Projekty" className="px-2 py-2">
+                        <Link
+                            to="/projekty"
+                            title="Projekty"
+                            className="px-2 py-2"
+                        >
                             Projekty
                         </Link>
                     </div>
@@ -155,9 +160,13 @@ const ProjectsPage = () => {
                                     <h2 className="text-lg font-semibold">
                                         {node.title}
                                     </h2>
-                                    <p className="text-gray-700 pb-3 lg:py-0">{node.data}</p>
+                                    <p className="text-gray-700 pb-3 lg:py-0">
+                                        {node.data}
+                                    </p>
                                 </div>
-                                <p className="text-gray-700 text-center lg:text-start px-1">{node.sdesc}</p>
+                                <p className="text-gray-700 text-center lg:text-start px-1">
+                                    {node.sdesc}
+                                </p>
                                 <div className="pb-4 pt-6 flex items-start text-center justify-start space-x-2 sm:space-x-3">
                                     <div className="flex flex-col items-center justify-center">
                                         <div className="h-12 w-12 bg-green-300/50 rounded-full border-4 border-green-500 flex flex-wrap items-center justify-center">
@@ -203,9 +212,10 @@ const ProjectsPage = () => {
                             </div>
                             <div className="lg:w-1/3 flex flex-wrap lg:flex-col items-end pt-3 pb-6 lg:items-stretch justify-center lg:border-l px-6 space-x-2 lg:space-x-0 space-y-2">
                                 <Link
-                                    to="/"
+                                    to={node.googlelink}
+                                    target="_blank"
                                     title="Zobacz Raport Google"
-                                    className="border border-yellow-500 flex items-center justify-between text-[13px] font-semibold py-1 px-2 rounded-lg"
+                                    className="border border-yellow-500 flex items-center justify-between text-[14px] font-semibold py-1.5 px-2 rounded-lg"
                                 >
                                     <p className="mr-1 w-max">Raport Google</p>
                                     <svg
@@ -304,9 +314,9 @@ const ProjectsPage = () => {
                                     </svg>
                                 </Link>
                                 <Link
-                                    to="/"
+                                    to={"/projekty/" + node.slug}
                                     title="Więcej Szczegółów"
-                                    className="border border-yellow-500 text-[13px] flex items-center justify-between font-semibold py-1 px-2 rounded-lg"
+                                    className="border border-yellow-500 text-[14px] flex items-center justify-between font-semibold py-1.5 px-2 rounded-lg"
                                 >
                                     <p className="mr-1 w-max">Szczegóły</p>
                                     <svg
@@ -354,7 +364,7 @@ const ProjectsPage = () => {
                                     to={node.link}
                                     target="_blank"
                                     title="Zobacz na żywo"
-                                    className="border bg-black text-white text-[12px] flex items-center justify-between font-semibold py-1 px-2 rounded-lg"
+                                    className="border bg-black text-white text-[13px] flex items-center justify-between font-semibold py-1.5 px-2 rounded-lg"
                                 >
                                     <p className="mr-1 w-max">Zobacz Live</p>
                                     <svg
@@ -425,7 +435,6 @@ const ProjectsPage = () => {
                                     <GatsbyImage
                                         image={getImage(node.img)}
                                         alt={node.title}
-                                        
                                     />
                                 </Link>
                             ))}
