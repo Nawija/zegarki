@@ -189,7 +189,7 @@ const GatsbyAnimation = () => {
   }, []);
 
   return (
-    <div className='absolute inset-0 z-10' id="large-header" ref={largeHeaderRef}>
+    <div className='absolute inset-0 z-10 overflow-hidden' id="large-header" ref={largeHeaderRef}>
       <canvas id="demo-canvas" ref={canvasRef}></canvas>
     </div>
   );
