@@ -427,7 +427,7 @@ const ProjectsPage = () => {
                                 <Link
                                     to={`/projekty/` + node.slug}
                                     title={node.title}
-                                    className="relative flex flex-col items-center bg-[#1f1f1f] justify-center group py-4 px-10 text-center drop-shadow-xl rounded-lg"
+                                    className="relative lg:hover:bg-black transition-colors flex flex-col items-center bg-[#1f1f1f] justify-center group py-4 px-10 text-center drop-shadow-xl rounded-lg"
                                 >
                                     <h2 className="text-gray-100 mb-2 text-sm">
                                         {node.title}

@@ -7,8 +7,8 @@ import "../styles/liveBacground.css";
 
 const HeroSecond = () => (
     <div className="relative flex items-center justify-center w-full mx-auto">
-            <LiveBackground />
         <div className="relative w-full -z-20 overflow-hidden">
+            <LiveBackground />
             <StaticImage
                 className="h-40 lg:h-52 xl:h-56 w-full md:w-full"
                 quality={100}

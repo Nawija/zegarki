@@ -30,9 +30,7 @@ const Header = () => {
         >
             <div
                 className={`h-full w-full mx-auto py-1 absolute top-0 -z-10 transition-colors duration-300 ${
-                    navbar
-                        ? "bg-black lg:bg-black shadow-lg"
-                        : ""
+                    navbar ? "bg-black lg:bg-black shadow-lg" : ""
                 }`}
             />
             <nav
@@ -173,7 +171,7 @@ const Header = () => {
                             onClick={closeMenu}
                             title="Darmowa Wycena"
                             aria-label="Darmowa Wycena"
-                            className={`flex items-center justify-center border-yellow-500 bg-black/40 text-base lg:text-sm w-max mx-auto font-semibold shadow-lg px-4 py-2 border rounded-lg transition md:hover:scale-[.98] ${
+                            className={`flex relative items-center justify-center border-yellow-500 bg-black/40 text-base lg:text-sm w-max mx-auto font-semibold shadow-lg px-4 py-2 border rounded-lg transition md:hover:scale-[.98] ${
                                 navbar && !showMenu
                                     ? "bg-black/5"
                                     : "text-gray-100 shadow-yellow-400/30 md:hover:shadow-xl"
@@ -181,7 +179,12 @@ const Header = () => {
                             to="/darmowa-wycena"
                         >
                             Darmowa Wycena
+                            <span className="absolute -top-1 -right-1 flex h-3 w-3">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"></span>
+                        </span>
                         </Link>
+                        
                     </li>
                 </ul>
             </nav>
