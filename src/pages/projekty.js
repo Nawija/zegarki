@@ -78,7 +78,7 @@ const ProjectsPage = () => {
                             Strona Główna
                         </Link>
                         <span>/</span>
-                        <Link to="/" title="Projekty" className="px-2 py-2">
+                        <Link to="/projekty" title="Projekty" className="px-2 py-2">
                             Projekty
                         </Link>
                     </div>
