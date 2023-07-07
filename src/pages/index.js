@@ -2,12 +2,9 @@ import React from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 
-import LiveBackground from "../components/liveBackground"
-
 const IndexPage = () => {
     return (
         <Layout>
-        <LiveBackground />
             <div className="bg-gray-950 h-screen w-full"></div>
         </Layout>
     );

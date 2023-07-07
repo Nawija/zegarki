@@ -67,7 +67,7 @@ const ProjectsPage = () => {
     }, []);
     return (
         <Layout>
-            <HeroSecond />
+            <HeroSecond titleHero="Profesjonalne Usługi" />
             <div className=" bg-white text-sm drop-shadow-lg">
                 <div className="flex flex-wrap items-center justify-between max-w-screen-2xl mx-auto px-3 py-2">
                     <div>
@@ -215,7 +215,7 @@ const ProjectsPage = () => {
                                     to={node.googlelink}
                                     target="_blank"
                                     title="Zobacz Raport Google"
-                                    className="border border-yellow-500 flex items-center justify-between text-[14px] font-semibold py-1.5 px-2 rounded-lg"
+                                    className="border border-yellow-500 hoverBorder flex items-center justify-between text-[14px] font-semibold py-1.5 px-2 rounded-lg"
                                 >
                                     <p className="mr-1 w-max">Raport Google</p>
                                     <svg
@@ -316,7 +316,7 @@ const ProjectsPage = () => {
                                 <Link
                                     to={"/projekty/" + node.slug}
                                     title="Więcej Szczegółów"
-                                    className="border border-yellow-500 text-[14px] flex items-center justify-between font-semibold py-1.5 px-2 rounded-lg"
+                                    className="border border-yellow-500 hoverBorder text-[14px] flex items-center justify-between font-semibold py-1.5 px-2 rounded-lg"
                                 >
                                     <p className="mr-1 w-max">Szczegóły</p>
                                     <svg
