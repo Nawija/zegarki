@@ -8,19 +8,19 @@ import HeroSecond from "../components/HeroSecond";
 
 import "../styles/template.css";
 
-// import {
-//     FacebookIcon,
-//     TwitterIcon,
-//     PinterestIcon,
-//     WhatsappIcon,
-// } from "react-share";
+import {
+    FacebookIcon,
+    TwitterIcon,
+    PinterestIcon,
+    WhatsappIcon,
+} from "react-share";
 
-// import {
-//     FacebookShareButton,
-//     TwitterShareButton,
-//     PinterestShareButton,
-//     WhatsappShareButton,
-// } from "react-share";
+import {
+    FacebookShareButton,
+    TwitterShareButton,
+    PinterestShareButton,
+    WhatsappShareButton,
+} from "react-share";
 
 const ProjectTemplate = ({
     pageContext: { slug },
@@ -112,6 +112,66 @@ const ProjectTemplate = ({
                 className="flex flex-col
              lg:flex-row w-full z-10  max-w-[1400px] mx-auto lg:mb-12 pb-4 pt-2 lg:mt-10"
             >
+                <section
+                    className={`flex justify-center lg:justify-start w-full lg:w-[65%] my-6 lg:my-0 items-start`}
+                >
+                    <div className="flex flex-col items-center justify-center drop-shadow-lg">
+                        <GatsbyImage
+                            className="h-max"
+                            imgClassName="h-max"
+                            loading="eager"
+                            image={getImage(datoCmsProjekty.img)}
+                            alt={datoCmsProjekty.title}
+                            title={datoCmsProjekty.title}
+                        />
+                        <div className="flex items-center border p-4 justify-end space-x-4 my-2 ml-auto pr-4">
+                        <p>Udostepnij</p>
+                            <div className=" space-x-4">
+                                <FacebookShareButton
+                                    url={`https://seovileo.pl/${datoCmsProjekty.slug}`}
+                                    quote={datoCmsProjekty.title}
+                                    hashtag="#seovileo"
+                                >
+                                    <div className="w-6 h-6">
+                                        <FacebookIcon size={33} round={true} />
+                                    </div>
+                                </FacebookShareButton>
+                                <TwitterShareButton
+                                    url={`https://seovileo.pl/${datoCmsProjekty.slug}`}
+                                    title={datoCmsProjekty.title}
+                                    hashtags={[
+                                        "seovileo",
+                                        "strona internetowa",
+                                    ]}
+                                >
+                                    <div className="w-6 h-6">
+                                        <TwitterIcon size={33} round={true} />
+                                    </div>
+                                </TwitterShareButton>
+                                <PinterestShareButton
+                                    url={`https://seovileo.pl/${datoCmsProjekty.slug}`}
+                                    media={datoCmsProjekty.img.url}
+                                    summary={datoCmsProjekty.title}
+                                    source="Seovileo.pl"
+                                >
+                                    <div className="w-6 h-6">
+                                        <PinterestIcon size={33} round={true} />
+                                    </div>
+                                </PinterestShareButton>
+                                <WhatsappShareButton
+                                    url={`https://seovileo.pl/${datoCmsProjekty.slug}`}
+                                    title={datoCmsProjekty.title}
+                                    summary={datoCmsProjekty.title}
+                                    source="Seovileo.pl"
+                                >
+                                    <div className="w-6 h-6">
+                                        <WhatsappIcon size={33} round={true} />
+                                    </div>
+                                </WhatsappShareButton>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <section class="container order-1 px-4 space-y-10 mx-auto lg:w-4/5 xl:w-full">
                     <div className="border relative py-4 bg-white drop-shadow-xl flex flex-col lg:flex-row items-center lg:items-stretch justify-center lg:justify-start">
                         <div className="mt-8 w-full px-4 lg:px-12 flex lg:inline-block items-center justify-center flex-col">
@@ -447,20 +507,6 @@ const ProjectTemplate = ({
                         </div>
                     </div>
                 </section>
-                <section
-                    className={`flex justify-center lg:justify-start w-full lg:w-[65%] my-6 lg:my-0 items-start`}
-                >
-                    <div className="flex items-center justify-center drop-shadow-lg">
-                        <GatsbyImage
-                            className="h-max"
-                            imgClassName="h-max"
-                            loading="eager"
-                            image={getImage(datoCmsProjekty.img)}
-                            alt={datoCmsProjekty.title}
-                            title={datoCmsProjekty.title}
-                        />
-                    </div>
-                </section>
             </div>
 
             <div className="flex flex-wrap items-center justify-center mx-auto max-w-[1400px]">
@@ -535,7 +581,7 @@ export const query = graphql`
             edges {
                 node {
                     img {
-                        gatsbyImageData(placeholder: NONE, height: 200)
+                        gatsbyImageData(placeholder: NONE, height: 160)
                     }
                     title
                     slug
