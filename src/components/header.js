@@ -10,7 +10,7 @@ const Header = () => {
     const [navbar, setNavbar] = useState(false);
 
     const changeBackground = () => {
-        if (window.scrollY >= 1) {
+        if (window.scrollY >= 500) {
             setNavbar(true);
         } else {
             setNavbar(false);
@@ -25,7 +25,7 @@ const Header = () => {
     return (
         <header
             className="
-                    z-50 mx-auto fixed w-full top-0 text-center text-gray-100
+                    z-50 mx-auto border-b w-full top-0 text-center text-gray-900
             "
         >
             <div
@@ -171,17 +171,17 @@ const Header = () => {
                             onClick={closeMenu}
                             title="Darmowa Wycena"
                             aria-label="Darmowa Wycena"
-                            className={`flex relative items-center justify-center border-yellow-500 bg-black/40 text-base lg:text-sm w-max mx-auto font-semibold shadow-lg px-4 py-2 border rounded-lg transition md:hover:scale-[.98] ${
+                            className={`flex relative items-center justify-center border-yellow-500 bg-gradient-to-tr from-amber-400 to-yellow-500 text-base lg:text-sm w-max mx-auto font-semibold shadow-md px-4 py-2 border rounded-lg transition md:hover:scale-[.98] ${
                                 navbar && !showMenu
                                     ? "bg-black/5"
-                                    : "text-gray-100 shadow-yellow-400/30 md:hover:shadow-xl"
+                                    : "text-gray-100 shadow-orange-400/90 md:hover:shadow-xl"
                             }`}
                             to="/darmowa-wycena"
                         >
                             Darmowa Wycena
                             <span className="absolute -top-1 -right-1 flex h-3 w-3">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"></span>
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-3 w-3 bg-orange-400"></span>
                         </span>
                         </Link>
                         
