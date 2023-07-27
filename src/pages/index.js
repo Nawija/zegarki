@@ -24,7 +24,7 @@ const IndexPage = () => {
         slickPrev: "flex",
         infinite: true,
         speed: 500,
-        autoplaySpeed: 3000,
+        autoplaySpeed: 3500,
         slidesToShow: 4,
         arrows: true,
         slidesToScroll: 1,
@@ -32,67 +32,100 @@ const IndexPage = () => {
 
     return (
         <Layout>
-            <Slider className=" bg-gray-200/70 py-12 text-center" {...settings}>
-                <StaticImage
-                    quality={100}
-                    layout="fullWidth"
-                    className="max-w-screen-2xl mx-auto rounded-lg"
-                    src="https://mebloo.pl/img/dostawa_www_3.jpg"
-                />
-
-                <StaticImage
-                    quality={100}
-                    className="max-w-screen-2xl mx-auto rounded-lg"
-                    src="https://mebloo.pl/img/gala19_www.jpg"
-                />
-
-                <StaticImage
-                    quality={100}
-                    className="max-w-screen-2xl mx-auto rounded-lg"
-                    src="https://mebloo.pl/img/Ortensiawww.jpg"
-                />
-
-                <StaticImage
-                    quality={100}
-                    className="max-w-screen-2xl mx-auto rounded-lg"
-                    src="https://mebloo.pl/img/meblowy_szok_cenowy_nowy.jpg"
-                />
-            </Slider>
-            <Slider
-                className="py-12 text-center max-w-screen-2xl mx-auto"
-                {...settingsCircle}
-            >
-                <Link to="/meble" className="rounded-full w-max h-max bg-red-100">
+            <div className="bg-gray-200/70 py-12 text-center">
+                <Slider {...settings}>
                     <StaticImage
                         quality={100}
-                        src="https://cdn-icons-png.flaticon.com/128/5564/5564823.png"
+                        draggable="false"
+                        layout="fullWidth"
+                        className="max-w-screen-2xl mx-auto rounded-lg"
+                        src="https://mebloo.pl/img/dostawa_www_3.jpg"
                     />
-                </Link>
 
-                <div>
                     <StaticImage
                         quality={100}
-                        className="h-40 w-40 max-w-screen-2xl rounded-full"
+                        draggable="false"
+                        className="max-w-screen-2xl mx-auto rounded-lg"
                         src="https://mebloo.pl/img/gala19_www.jpg"
                     />
-                </div>
 
-                <div>
                     <StaticImage
                         quality={100}
-                        className="h-40 w-40 max-w-screen-2xl rounded-full"
+                        draggable="false"
+                        className="max-w-screen-2xl mx-auto rounded-lg"
                         src="https://mebloo.pl/img/Ortensiawww.jpg"
                     />
-                </div>
 
-                <div>
                     <StaticImage
                         quality={100}
-                        className="h-40 w-40 max-w-screen-2xl rounded-full mx-5"
-                        src="https://images.pexels.com/photos/7957758/pexels-photo-7957758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        draggable="false"
+                        className="max-w-screen-2xl mx-auto rounded-lg"
+                        src="https://mebloo.pl/img/meblowy_szok_cenowy_nowy.jpg"
                     />
-                </div>
-            </Slider>
+                </Slider>
+            </div>
+            <div className="max-w-7xl mx-auto">
+                <Slider
+                    className="py-12 text-center max-w-screen-2xl mx-auto"
+                    {...settingsCircle}
+                >
+                    <Link
+                        to="/meble"
+                        className="rounded-2xl w-max h-max"
+                    >
+                        <StaticImage
+                            quality={100}
+                            draggable="false"
+                            src="https://cdn-icons-png.flaticon.com/128/5564/5564823.png"
+                        />
+                        <div className="w-[40px] h-[2px] rounded-2xl mx-auto my-2 bg-green-600" />
+                        <p className="font-semibold">Salon</p>
+                    </Link>
+
+                    <div>
+                        <StaticImage
+                            quality={100}
+                            draggable="false"
+                            className="h-40 w-40 max-w-screen-2xl rounded-2xl"
+                            src="https://mebloo.pl/img/gala19_www.jpg"
+                        />
+                    </div>
+                    <div>
+                        <StaticImage
+                            quality={100}
+                            draggable="false"
+                            className="h-40 w-40 max-w-screen-2xl rounded-2xl"
+                            src="https://mebloo.pl/img/gala19_www.jpg"
+                        />
+                    </div>
+                    <div>
+                        <StaticImage
+                            draggable="false"
+                            quality={100}
+                            className="h-40 w-40 max-w-screen-2xl rounded-2xl"
+                            src="https://mebloo.pl/img/gala19_www.jpg"
+                        />
+                    </div>
+
+                    <div>
+                        <StaticImage
+                            quality={100}
+                            draggable="false"
+                            className="h-40 w-40 max-w-screen-2xl rounded-2xl"
+                            src="https://mebloo.pl/img/Ortensiawww.jpg"
+                        />
+                    </div>
+
+                    <div>
+                        <StaticImage
+                            quality={100}
+                            draggable="false"
+                            className="h-40 w-40 max-w-screen-2xl rounded-2xl mx-5"
+                            src="https://images.pexels.com/photos/7957758/pexels-photo-7957758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        />
+                    </div>
+                </Slider>
+            </div>
         </Layout>
     );
 };

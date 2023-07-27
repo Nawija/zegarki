@@ -55,7 +55,7 @@ const Header = () => {
                         />
                     </div>
                     <p
-                        className={`ml-1 tracking-wide transition-colors font-bold ${
+                        className={`ml-1 tracking-wide transition-colors font-semibold ${
                             navbar && !showMenu ? "first-color" : "second-color"
                         }`}
                     >

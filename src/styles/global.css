@@ -6,7 +6,7 @@ body {
     background-color: #f7f7f7;
 }
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
     a {
         transition-property: color, bacground-color, border-color, scale, filter;
         transition-duration: 0.2s;
@@ -15,4 +15,4 @@ body {
         filter: saturate(10%);
         scale: 1.02;
     }
-}
+} */
