@@ -69,32 +69,34 @@ const IndexPage = () => {
                     className="py-12 text-center max-w-screen-2xl mx-auto"
                     {...settingsCircle}
                 >
-                    <Link
-                        to="/meble"
-                        className="rounded-2xl w-max h-max"
-                    >
+                    <Link to="/strona-internetowa" className="h-20 w-20">
                         <StaticImage
                             quality={100}
                             draggable="false"
-                            src="https://cdn-icons-png.flaticon.com/128/5564/5564823.png"
+                            className="h-20 w-20"
+                            src="https://cdn-icons-png.flaticon.com/128/556/556813.png"
                         />
                         <div className="w-[40px] h-[2px] rounded-2xl mx-auto my-2 bg-green-600" />
-                        <p className="font-semibold">Salon</p>
+                        <p className="font-semibold">Strona Internetowa</p>
                     </Link>
 
                     <div>
-                        <StaticImage
-                            quality={100}
-                            draggable="false"
-                            className="h-40 w-40 max-w-screen-2xl rounded-2xl"
-                            src="https://mebloo.pl/img/gala19_www.jpg"
-                        />
+                        <Link to="/hosting" className="h-20 w-20">
+                            <StaticImage
+                                quality={100}
+                                draggable="false"
+                                className="h-20 w-20 max-w-screen-2xl rounded-2xl"
+                                src="https://cdn-icons-png.flaticon.com/128/2906/2906206.png"
+                            />
+                            <div className="w-[40px] h-[2px] rounded-2xl mx-auto my-2 bg-green-600" />
+                            <p className="font-semibold">Darmowy Hosting</p>
+                        </Link>
                     </div>
                     <div>
                         <StaticImage
                             quality={100}
                             draggable="false"
-                            className="h-40 w-40 max-w-screen-2xl rounded-2xl"
+                            className="h-24 w-24 max-w-screen-2xl rounded-2xl"
                             src="https://mebloo.pl/img/gala19_www.jpg"
                         />
                     </div>
@@ -102,7 +104,7 @@ const IndexPage = () => {
                         <StaticImage
                             draggable="false"
                             quality={100}
-                            className="h-40 w-40 max-w-screen-2xl rounded-2xl"
+                            className="h-24 w-24 max-w-screen-2xl rounded-2xl"
                             src="https://mebloo.pl/img/gala19_www.jpg"
                         />
                     </div>
@@ -111,7 +113,7 @@ const IndexPage = () => {
                         <StaticImage
                             quality={100}
                             draggable="false"
-                            className="h-40 w-40 max-w-screen-2xl rounded-2xl"
+                            className="h-24 w-24 max-w-screen-2xl rounded-2xl"
                             src="https://mebloo.pl/img/Ortensiawww.jpg"
                         />
                     </div>
@@ -120,7 +122,7 @@ const IndexPage = () => {
                         <StaticImage
                             quality={100}
                             draggable="false"
-                            className="h-40 w-40 max-w-screen-2xl rounded-2xl mx-5"
+                            className="h-24 w-24 max-w-screen-2xl rounded-2xl mx-5"
                             src="https://images.pexels.com/photos/7957758/pexels-photo-7957758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                         />
                     </div>
