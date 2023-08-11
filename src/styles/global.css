@@ -6,6 +6,31 @@ body {
     background-color: #f7f7f7;
 }
 
+.slick-dots {
+    position: absolute;
+    bottom: 25px !important;
+
+    display: block;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+
+.slick-dots li button:before {
+    font-size: 12px !important;
+    color: white !important;
+    opacity: 0.5 !important;
+}
+.slick-dots li.slick-active button:before {
+    opacity: 1 !important;
+    color: white !important;
+}
+
 /* @media (min-width: 1024px) {
     a {
         transition-property: color, bacground-color, border-color, scale, filter;

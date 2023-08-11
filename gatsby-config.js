@@ -52,7 +52,7 @@ module.exports = {
                 background_color: `#0C0904`,
                 theme_color: `#0C0904`,
                 display: `standalone`,
-                icon: `src/images/favicon.png`,
+                icon: `src/images/favicon.jpg`,
             },
         },
     ],

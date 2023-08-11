@@ -13,7 +13,7 @@ const IndexPage = () => {
         dots: true,
         infinite: true,
         speed: 500,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 3000,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -32,39 +32,79 @@ const IndexPage = () => {
 
     return (
         <Layout>
-            <div className="bg-gray-200/70 py-12 text-center">
+            <div className="text-center mt-32">
                 <Slider {...settings}>
                     <StaticImage
                         quality={100}
                         draggable="false"
-                        layout="fullWidth"
-                        className="max-w-screen-2xl mx-auto rounded-lg"
-                        src="https://mebloo.pl/img/dostawa_www_3.jpg"
+                        className="max-w-screen-2xl mx-auto h-full"
+                        src="../images/xx.jpg"
                     />
 
                     <StaticImage
                         quality={100}
                         draggable="false"
-                        className="max-w-screen-2xl mx-auto rounded-lg"
-                        src="https://mebloo.pl/img/gala19_www.jpg"
+                        className="max-w-screen-2xl mx-auto h-full"
+                        src="../images/xx.jpg"
                     />
 
                     <StaticImage
                         quality={100}
                         draggable="false"
-                        className="max-w-screen-2xl mx-auto rounded-lg"
-                        src="https://mebloo.pl/img/Ortensiawww.jpg"
+                        className="max-w-screen-2xl mx-auto h-full"
+                        src="../images/xx.jpg"
                     />
 
                     <StaticImage
                         quality={100}
                         draggable="false"
-                        className="max-w-screen-2xl mx-auto rounded-lg"
-                        src="https://mebloo.pl/img/meblowy_szok_cenowy_nowy.jpg"
+                        className="max-w-screen-2xl mx-auto h-full"
+                        src="../images/xx.jpg"
                     />
                 </Slider>
             </div>
-            <div className="max-w-7xl mx-auto">
+
+            <div className="mx-auto max-w-7xl">
+                <h1 className="py-6 text-xl text-center font-bold">Where does it come from? - jak powstają soki naturalne?</h1>
+                <p>
+                    Contrary to popular belief, Lorem Ipsum is not simply random
+                    text. It has roots in a piece of classical Latin literature
+                    from 45 BC, making it over 2000 years old. Richard
+                    McClintock, a Latin professor at Hampden-Sydney College in
+                    Virginia, looked up one of the more obscure Latin words,
+                    consectetur, from a Lorem Ipsum passage, and going through
+                    the cites of the word in classical literature, discovered
+                    the undoubtable source. Lorem Ipsum comes from sections
+                    1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The
+                    Extremes of Good and Evil) by Cicero, written in 45 BC. This
+                    book is a treatise on the theory of ethics, very popular
+                    during the Renaissance. The first line of Lorem Ipsum,
+                    "Lorem ipsum dolor sit amet..", comes from a line in section
+                    1.10.32
+                </p>
+                <h2 className="py-3">Na czym polega proces tłoczenia soków?</h2>
+                <p>
+                    Contrary to popular belief, Lorem Ipsum is not simply random
+                    text. It has roots in a piece of classical Latin literature
+                    from 45 BC, making it over 2000 years old. Richard
+                    McClintock, a Latin professor at Hampden-Sydney College in
+                    Virginia, looked up one of the more obscure Latin words,
+                    consectetur, from a Lorem Ipsum passage, and going through
+                    the cites of the word in classical literature
+                </p>
+                <h2 className="py-3 clq">Tłoczenie soków a wartości odżywcze soku</h2>
+                <p>
+                    Contrary to popular belief, Lorem Ipsum is not simply random
+                    text. It has roots in a piece of classical Latin literature
+                    from 45 BC, making it over 2000 years old. Richard
+                    McClintock, a Latin professor at Hampden-Sydney College in
+                    Virginia, looked up one of the more obscure Latin words,
+                    consectetur, from a Lorem Ipsum passage, and going through
+                    the cites of the word in classical literature
+                </p>
+            </div>
+
+            {/* <div className="max-w-7xl mx-auto">
                 <Slider
                     className="py-12 text-center max-w-screen-2xl mx-auto"
                     {...settingsCircle}
@@ -127,7 +167,7 @@ const IndexPage = () => {
                         />
                     </div>
                 </Slider>
-            </div>
+            </div> */}
         </Layout>
     );
 };
