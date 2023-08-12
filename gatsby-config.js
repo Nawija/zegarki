@@ -5,14 +5,14 @@ module.exports = {
     siteMetadata: {
         title: ``,
         description: ``,
-        author: `Seovileo`,
-        siteUrl: `http://seovileo.pl/`,
+        author: `lancuckiesady`,
+        siteUrl: `http://lancuckiesady.com/`,
     },
     plugins: [
         {
             resolve: "gatsby-source-datocms",
             options: {
-                apiToken: "949a6d3042f4035b35f2f0631e3fb3",
+                apiToken: "40962a45d588d6f2de56ad9ba2ed83",
             },
         },
         "gatsby-plugin-image",

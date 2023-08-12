@@ -3,9 +3,9 @@ const path = require("path");
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
 
-    const queryProjects = await graphql(`
+    const queryProducts = await graphql(`
         {
-            allDatoCmsProjekty {
+            allDatoCmsProdukty {
                 nodes {
                     slug
                 }
@@ -13,13 +13,13 @@ exports.createPages = async ({ graphql, actions }) => {
         }
     `);
 
-    const projectTemplate = path.resolve(`./src/templates/projectTemplate.js`);
+    const produktyTemp = path.resolve(`./src/templates/produktyTemp.js`);
 
-    queryProjects.data.allDatoCmsProjekty.nodes.forEach((node) => {
+    queryProducts.data.allDatoCmsProdukty.nodes.forEach((node) => {
         const { slug } = node;
         createPage({
-            path: `/projekty/${slug}`,
-            component: projectTemplate,
+            path: `${slug}`,
+            component: produktyTemp,
             context: {
                 slug,
             },
