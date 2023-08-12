@@ -24,7 +24,7 @@ const ProjectTemplate = ({
                         title="łancuckie sady"
                     />
                 </div>
-                <div className="flex flex-col items-start justify-start w-full lg:w-1/2 ml-12 pt-2">
+                <div className="flex flex-col items-start justify-start w-full lg:w-1/2 lg:ml-12 px-6 lg:px-0 pt-5 lg:pt-2">
                     <h1 className="text-2xl font-semibold capitalize">
                         {datoCmsProdukty.title}
                     </h1>
@@ -53,15 +53,15 @@ const ProjectTemplate = ({
             </div>
 
             <div className="flex flex-col lg:flex-row items-start justify-center my-4 lg:my-10 max-w-screen-xl mx-auto">
-                <div className="flex flex-col items-center justify-center w-full lg:w-1/2 -ml-10">
+                <div className="flex flex-col items-center justify-center w-full lg:w-1/2 px-5 lg:px-0 lg:-ml-10">
                     <div className="flex flex-col items-start justify-start w-full mt-6">
                         <p className="font-semibold text-lg">Opis</p>
                         <div className="h-[2px] bg-red-600 w-10 mt-1 mb-3" />
                         <p>{datoCmsProdukty.desc}</p>
                     </div>
                 </div>
-                <div className="flex flex-col items-start justify-start w-full lg:w-1/3 ml-12 pt-2">
-                    <div className="flex flex-col items-start justify-start w-full ml-28 mt-6 bg-[#ECECEC] p-6">
+                <div className="flex flex-col items-start justify-start w-full lg:w-1/3 lg:ml-12 pt-2">
+                    <div className="flex flex-col items-start justify-start w-full lg:ml-28 mt-6 bg-[#ECECEC] p-6">
                         <p className="text-lg font-semibold -tracking-wide">
                             Szczegóły produktu
                         </p>
@@ -130,7 +130,7 @@ const ProjectTemplate = ({
                 </div>
             </div>
 
-            <div className="sm:my-6 lg:my-20 max-w-screen-xl mx-auto">
+            <div className="sm:my-6 lg:my-20 max-w-screen-xl mx-auto px-1">
                 <h2 className="ml-8 font-medium mb-3">Nasze Produkty z Jabłek:</h2>
                 <div className="flex flex-wrap ">
                     {allDatoCmsProdukty.edges.map(({ node }) => (

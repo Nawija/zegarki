@@ -85,11 +85,13 @@ const IndexPage = () => {
 
     return (
         <Layout>
-            <div className="text-center mt-16 lg:mt-32">
+            <div className="text-center mt-20 lg:mt-32">
                 <Slider {...settings}>
                     {data.allDatoCmsSlajdy.edges.map(({ node }) => (
                         <GatsbyImage
                             loading="eager"
+                            className="min-h-[14rem]"
+                            imgClassName="min-h-[14rem]"
                             image={getImage(node.slajd)}
                             alt="lancuckiesady"
                         />
@@ -97,7 +99,7 @@ const IndexPage = () => {
                 </Slider>
             </div>
 
-            <div className="mx-auto max-w-6xl py-4 px-3 sm:px-12 lg:px-0">
+            <div className="mx-auto max-w-6xl py-4 px-5 sm:px-12 lg:px-0">
                 <h1 className="py-6 text-xl text-center font-bold">
                     Where does it come from? - jak powstają soki naturalne?
                 </h1>
