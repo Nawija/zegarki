@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
@@ -47,7 +47,14 @@ const IndexPage = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
     };
+    const [isDragging, setIsDragging] = useState(false);
     var settingsCircle = {
+        beforeChange: () => {
+            setIsDragging(true);
+        },
+        afterChange: () => {
+            setIsDragging(false);
+        },
         dots: false,
         arrows: true,
         infinite: true,
@@ -81,6 +88,11 @@ const IndexPage = () => {
                 },
             },
         ],
+    };
+    const handleLinkClick = (event) => {
+        if (isDragging) {
+            event.preventDefault();
+        }
     };
 
     return (
@@ -152,6 +164,7 @@ const IndexPage = () => {
                 >
                     {data.allDatoCmsProdukty.edges.map(({ node }) => (
                         <Link
+                            onClick={handleLinkClick}
                             to={"/" + node.slug}
                             draggable="false"
                             className=" lg:hover:bg-[#f3f0f0ee] transition-colors hover:shadow-xl py-4 w-[80%]"
