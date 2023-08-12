@@ -16,9 +16,9 @@ const ProjectTemplate = ({
         <Layout>
             <TopImg />
             <div className="flex flex-col lg:flex-row items-start justify-center my-4 lg:my-10 max-w-screen-xl mx-auto">
-                <div className="flex flex-col items-center justify-center w-full lg:w-1/2">
+                <div className="flex flex-col items-center justify-center lg:w-1/2 relative">
                     <GatsbyImage
-                        className="object-cover object-center w-full h-auto"
+                        loading="eager"
                         image={getImage(datoCmsProdukty.img)}
                         alt="łancuckie sady"
                         title="łancuckie sady"
@@ -59,8 +59,11 @@ const ProjectTemplate = ({
                         <div className="h-[2px] bg-red-600 w-10 mt-1 mb-3" />
                         <p>{datoCmsProdukty.desc}</p>
                         <div>
-                        <StaticImage className="mt-4" quality={100} src="../images/eko.jpg"/>
-                        
+                            <StaticImage
+                                className="mt-4"
+                                quality={100}
+                                src="../images/eko.jpg"
+                            />
                         </div>
                     </div>
                 </div>
@@ -135,7 +138,9 @@ const ProjectTemplate = ({
             </div>
 
             <div className="sm:my-6 lg:my-20 max-w-screen-xl mx-auto px-1">
-                <h2 className="ml-8 font-medium mb-3">Nasze Produkty z Jabłek:</h2>
+                <h2 className="ml-8 font-medium mb-3">
+                    Nasze Produkty z Jabłek:
+                </h2>
                 <div className="flex flex-wrap ">
                     {allDatoCmsProdukty.edges.map(({ node }) => (
                         <div className="relative mx-auto">
