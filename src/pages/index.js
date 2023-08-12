@@ -44,9 +44,7 @@ const IndexPage = () => {
         autoplay: true,
         autoplaySpeed: 3500,
         pauseOnHover: false,
-        focusOnSelect: true,
         slidesToShow: 1,
-        variableWidth: true,
         slidesToScroll: 1,
     };
     var settingsCircle = {
