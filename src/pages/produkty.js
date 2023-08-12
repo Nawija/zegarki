@@ -9,7 +9,7 @@ import { useStaticQuery, graphql, Link } from "gatsby";
 const Produkty = () => {
     const data = useStaticQuery(graphql`
         {
-            allDatoCmsProdukty {
+            allDatoCmsProdukty(sort: { position: ASC }) {
                 edges {
                     node {
                         slug
@@ -27,13 +27,16 @@ const Produkty = () => {
         <Layout>
             <TopImg />
             <div className="sm:my-6 lg:my-20 max-w-screen-xl mx-auto">
-                <h1 className="ml-8 font-medium mb-3">
+                <h1 className="ml-8 font-medium mb-3 mt-3 text-lg">
                     Nasze Produkty z Jabłek:
                 </h1>
                 <div className="flex flex-wrap ">
                     {data.allDatoCmsProdukty.edges.map(({ node }) => (
                         <div className="relative mx-auto">
-                            <Link to={"/" + node.slug} className="py-3 flex items-center justify-center flex-col">
+                            <Link
+                                to={"/" + node.slug}
+                                className="py-3 flex items-center justify-center flex-col"
+                            >
                                 <GatsbyImage
                                     className="w-[94%] mx-auto"
                                     imgClassName="w-[94%]"

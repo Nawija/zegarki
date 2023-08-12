@@ -1,5 +1,5 @@
 import React from "react";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image";
 import { graphql, Link } from "gatsby";
 
 import Layout from "../components/layout";
@@ -58,6 +58,10 @@ const ProjectTemplate = ({
                         <p className="font-semibold text-lg">Opis</p>
                         <div className="h-[2px] bg-red-600 w-10 mt-1 mb-3" />
                         <p>{datoCmsProdukty.desc}</p>
+                        <div>
+                        <StaticImage className="mt-4" quality={100} src="../images/eko.jpg"/>
+                        
+                        </div>
                     </div>
                 </div>
                 <div className="flex flex-col items-start justify-start w-full lg:w-1/3 lg:ml-12 pt-2">

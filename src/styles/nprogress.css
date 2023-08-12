@@ -20,8 +20,9 @@
     border-top: 6px solid transparent !important;
     border-left: 6px solid transparent !important;
     border-right: 6px solid transparent !important;
-    height: 100px !important;
-    width: 100px !important;
+    border-radius: 19px;
+    height: 110px !important;
+    width: 110px !important;
     position: fixed;
     top: 50%;
     left: 50%;

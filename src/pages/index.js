@@ -21,7 +21,7 @@ const IndexPage = () => {
                 }
             }
 
-            allDatoCmsProdukty {
+            allDatoCmsProdukty(sort: { position: ASC }) {
                 edges {
                     node {
                         slug
@@ -40,10 +40,10 @@ const IndexPage = () => {
         dots: true,
         arrows: false,
         infinite: true,
-        speed: 800,
+        speed: 700,
         autoplay: true,
-        autoplaySpeed: 3500,
-        pauseOnHover: false,
+        autoplaySpeed: 3600,
+        pauseOnHover: true,
         slidesToShow: 1,
         slidesToScroll: 1,
     };
@@ -154,7 +154,7 @@ const IndexPage = () => {
                         <Link
                             to={"/" + node.slug}
                             draggable="false"
-                            className=" lg:hover:bg-[#eceaeaee] transition-colors hover:shadow-xl py-4 w-[80%]"
+                            className=" lg:hover:bg-[#f3f0f0ee] transition-colors hover:shadow-xl py-4 w-[80%]"
                         >
                             <GatsbyImage
                                 loading="eager"
