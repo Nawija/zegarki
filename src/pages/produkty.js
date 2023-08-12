@@ -3,7 +3,7 @@ import Layout from "../components/layout";
 import Seo from "../components/seo";
 import TopImg from "../components/topImg";
 
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { useStaticQuery, graphql, Link } from "gatsby";
 
 const Produkty = () => {
