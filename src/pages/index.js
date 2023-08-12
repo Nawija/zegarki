@@ -20,7 +20,6 @@ const IndexPage = () => {
         slidesToScroll: 1,
     };
     var settingsCircle = {
-        centerPadding: "100px",
         dots: false,
         arrows: true,
 
@@ -40,17 +39,17 @@ const IndexPage = () => {
               }
             },
             {
-              breakpoint: 600,
+              breakpoint: 700,
               settings: {
                 slidesToShow: 2,
-                slidesToScroll: 2,
-                initialSlide: 2
+                slidesToScroll: 1,
+                initialSlide: 1
               }
             },
             {
               breakpoint: 480,
               settings: {
-                slidesToShow: 1,
+                slidesToShow: 2,
                 slidesToScroll: 1
               }
             }
@@ -134,9 +133,9 @@ const IndexPage = () => {
                 </p>
             </div>
 
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-auto py-4 lg:py-20 pl-6">
                 <Slider
-                    className="py-20 text-center max-w-screen-2xl mx-auto "
+                    className=" text-center max-w-screen-2xl mx-auto px-4"
                     {...settingsCircle}
                 >
                     <Link

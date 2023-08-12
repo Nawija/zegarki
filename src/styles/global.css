@@ -36,11 +36,11 @@
 }
 .slick-prev
 {
-    left: -32px !important;
+    left: -15px !important;
 }
 [dir='rtl'] .slick-prev
 {
-    right: -32px !important;
+    right: -15px !important;
     left: auto;
 }
 /* @media (min-width: 1024px) {
