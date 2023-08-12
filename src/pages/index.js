@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { Link } from "gatsby";
@@ -64,6 +64,7 @@ const IndexPage = () => {
                     <StaticImage
                         quality={100}
                         draggable="false"
+                        loading="eager"
                         height={500}
                         className="max-w-screen-2xl mx-auto h-full"
                         src="../images/lancuckiesady.jpg"
@@ -137,20 +138,6 @@ const IndexPage = () => {
                 <Slider
                     className="py-20 text-center max-w-screen-2xl mx-auto "
                     {...settingsCircle}
-                    breakpoints={[
-                        {
-                            breakpoint: 768,
-                            slidesToShow: 1,
-                        },
-                        {
-                            breakpoint: 992,
-                            slidesToShow: 2,
-                        },
-                        {
-                            breakpoint: 1200,
-                            slidesToShow: 4,
-                        },
-                    ]}
                 >
                     <Link
                         to="/"
