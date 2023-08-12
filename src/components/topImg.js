@@ -6,6 +6,7 @@ const TopImg = () => {
         <section className="mt-20 lg:mt-32 relative">
             <StaticImage
                 className="hidden lg:block"
+                imgClassName="hidden lg:block"
                 loading="eager"
                 quality={100}
                 src="../images/tło.jpg"
