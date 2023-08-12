@@ -33,12 +33,14 @@ const Produkty = () => {
                 <div className="flex flex-wrap ">
                     {data.allDatoCmsProdukty.edges.map(({ node }) => (
                         <div className="relative mx-auto">
-                            <Link to={"/" + node.slug} className="py-4">
+                            <Link to={"/" + node.slug} className="py-3 flex items-center justify-center flex-col">
                                 <GatsbyImage
+                                    className="w-[94%] mx-auto"
+                                    imgClassName="w-[94%]"
                                     image={getImage(node.img)}
                                     alt="lancuckie sady"
                                 />
-                                <div className="flex items-center justify-between py-2">
+                                <div className="flex items-center justify-between py-2 w-[94%] mx-auto">
                                     <p className="font-medium text-sm capitalize">
                                         {node.title}
                                     </p>
