@@ -16,12 +16,15 @@ const Layout = ({ children }) => {
     `);
 
     return (
-        <div className="relative text-base max-w-[2000px] mx-auto">
+        <>
             <Header siteTitle={data.site.siteMetadata?.title || `Seovileo`} />
-            <main className="w-full overflow-hidden min-h-screen">{children}</main>
-
+            <div className="relative text-base max-w-[1600px] mx-auto">
+                <main className="w-full overflow-hidden min-h-screen">
+                    {children}
+                </main>
+            </div>
             <Footer />
-        </div>
+        </>
     );
 };
 

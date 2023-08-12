@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { Link } from "gatsby";
@@ -11,61 +11,86 @@ import { StaticImage } from "gatsby-plugin-image";
 const IndexPage = () => {
     var settings = {
         dots: true,
+        arrows: false,
         infinite: true,
-        speed: 500,
-        autoplay: false,
-        autoplaySpeed: 3000,
+        speed: 800,
+        autoplay: true,
+        autoplaySpeed: 3500,
         slidesToShow: 1,
         slidesToScroll: 1,
     };
     var settingsCircle = {
         centerPadding: "100px",
-        dots: true,
-        slickPrev: "flex",
+        dots: false,
+        arrows: true,
+
         infinite: true,
         speed: 500,
-        autoplaySpeed: 3500,
         slidesToShow: 4,
-        arrows: true,
         slidesToScroll: 1,
+        initialSlide: 0,
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                initialSlide: 2
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+              }
+            }
+          ]
     };
 
     return (
         <Layout>
-            <div className="text-center mt-32">
+            <div className="text-center mt-16 lg:mt-32">
                 <Slider {...settings}>
                     <StaticImage
                         quality={100}
                         draggable="false"
+                        height={500}
                         className="max-w-screen-2xl mx-auto h-full"
-                        src="../images/xx.jpg"
+                        src="../images/lancuckiesady.jpg"
                     />
 
                     <StaticImage
                         quality={100}
                         draggable="false"
+                        height={500}
                         className="max-w-screen-2xl mx-auto h-full"
-                        src="../images/xx.jpg"
+                        src="../images/lancuckiesady1.jpg"
                     />
 
                     <StaticImage
                         quality={100}
                         draggable="false"
+                        height={500}
                         className="max-w-screen-2xl mx-auto h-full"
-                        src="../images/xx.jpg"
-                    />
-
-                    <StaticImage
-                        quality={100}
-                        draggable="false"
-                        className="max-w-screen-2xl mx-auto h-full"
-                        src="../images/xx.jpg"
+                        src="../images/lancuckiesady2.jpg"
                     />
                 </Slider>
             </div>
 
-            <div className="mx-auto max-w-7xl">
-                <h1 className="py-6 text-xl text-center font-bold">Where does it come from? - jak powstają soki naturalne?</h1>
+            <div className="mx-auto max-w-6xl py-4 px-3 sm:px-12 lg:px-0">
+                <h1 className="py-6 text-xl text-center font-bold">
+                    Where does it come from? - jak powstają soki naturalne?
+                </h1>
                 <p>
                     Contrary to popular belief, Lorem Ipsum is not simply random
                     text. It has roots in a piece of classical Latin literature
@@ -82,7 +107,9 @@ const IndexPage = () => {
                     "Lorem ipsum dolor sit amet..", comes from a line in section
                     1.10.32
                 </p>
-                <h2 className="py-3">Na czym polega proces tłoczenia soków?</h2>
+                <h2 className="pt-3 pb-1 font-bold text-lg">
+                    Na czym polega proces tłoczenia soków?
+                </h2>
                 <p>
                     Contrary to popular belief, Lorem Ipsum is not simply random
                     text. It has roots in a piece of classical Latin literature
@@ -92,7 +119,9 @@ const IndexPage = () => {
                     consectetur, from a Lorem Ipsum passage, and going through
                     the cites of the word in classical literature
                 </p>
-                <h2 className="py-3 clq">Tłoczenie soków a wartości odżywcze soku</h2>
+                <h2 className="pt-3 pb-1 font-bold text-lg">
+                    Tłoczenie soków a wartości odżywcze soku
+                </h2>
                 <p>
                     Contrary to popular belief, Lorem Ipsum is not simply random
                     text. It has roots in a piece of classical Latin literature
@@ -104,70 +133,202 @@ const IndexPage = () => {
                 </p>
             </div>
 
-            {/* <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-auto">
                 <Slider
-                    className="py-12 text-center max-w-screen-2xl mx-auto"
+                    className="py-20 text-center max-w-screen-2xl mx-auto "
                     {...settingsCircle}
+                    breakpoints={[
+                        {
+                            breakpoint: 768,
+                            slidesToShow: 1,
+                        },
+                        {
+                            breakpoint: 992,
+                            slidesToShow: 2,
+                        },
+                        {
+                            breakpoint: 1200,
+                            slidesToShow: 4,
+                        },
+                    ]}
                 >
-                    <Link to="/strona-internetowa" className="h-20 w-20">
+                    <Link
+                        to="/"
+                        draggable="false"
+                        className=" lg:hover:bg-[#eceaeaee] transition-colors hover:shadow-xl py-4"
+                    >
                         <StaticImage
                             quality={100}
                             draggable="false"
-                            className="h-20 w-20"
-                            src="https://cdn-icons-png.flaticon.com/128/556/556813.png"
+                            height={300}
+                            width={200}
+                            src="../images/ba.jpg"
                         />
-                        <div className="w-[40px] h-[2px] rounded-2xl mx-auto my-2 bg-green-600" />
-                        <p className="font-semibold">Strona Internetowa</p>
+                        <div className="flex items-center justify-between py-2 px-6">
+                            <p className="font-medium">Sok jabłkowy 330ml</p>
+                            <p className="font-medium text-red-600">17,80zł</p>
+                        </div>
                     </Link>
 
-                    <div>
-                        <Link to="/hosting" className="h-20 w-20">
-                            <StaticImage
-                                quality={100}
-                                draggable="false"
-                                className="h-20 w-20 max-w-screen-2xl rounded-2xl"
-                                src="https://cdn-icons-png.flaticon.com/128/2906/2906206.png"
-                            />
-                            <div className="w-[40px] h-[2px] rounded-2xl mx-auto my-2 bg-green-600" />
-                            <p className="font-semibold">Darmowy Hosting</p>
-                        </Link>
-                    </div>
-                    <div>
+                    <Link
+                        to="/"
+                        draggable="false"
+                        className=" lg:hover:bg-[#eceaeaee] transition-colors hover:shadow-xl py-4"
+                    >
                         <StaticImage
                             quality={100}
                             draggable="false"
-                            className="h-24 w-24 max-w-screen-2xl rounded-2xl"
-                            src="https://mebloo.pl/img/gala19_www.jpg"
+                            height={300}
+                            width={200}
+                            src="../images/ba.jpg"
                         />
-                    </div>
-                    <div>
-                        <StaticImage
-                            draggable="false"
-                            quality={100}
-                            className="h-24 w-24 max-w-screen-2xl rounded-2xl"
-                            src="https://mebloo.pl/img/gala19_www.jpg"
-                        />
-                    </div>
-
-                    <div>
-                        <StaticImage
-                            quality={100}
-                            draggable="false"
-                            className="h-24 w-24 max-w-screen-2xl rounded-2xl"
-                            src="https://mebloo.pl/img/Ortensiawww.jpg"
-                        />
-                    </div>
-
-                    <div>
+                        <div className="flex items-center justify-between py-2 px-6">
+                            <p className="font-medium">Sok jabłkowy 330ml</p>
+                            <p className="font-medium text-red-600">17,80zł</p>
+                        </div>
+                    </Link>
+                    <Link
+                        to="/"
+                        draggable="false"
+                        className=" lg:hover:bg-[#eceaeaee] transition-colors hover:shadow-xl py-4"
+                    >
                         <StaticImage
                             quality={100}
                             draggable="false"
-                            className="h-24 w-24 max-w-screen-2xl rounded-2xl mx-5"
-                            src="https://images.pexels.com/photos/7957758/pexels-photo-7957758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                            height={300}
+                            width={200}
+                            src="../images/ba.jpg"
                         />
-                    </div>
+                        <div className="flex items-center justify-between py-2 px-6">
+                            <p className="font-medium">Sok jabłkowy 330ml</p>
+                            <p className="font-medium text-red-600">17,80zł</p>
+                        </div>
+                    </Link>
+                    <Link
+                        to="/"
+                        draggable="false"
+                        className=" lg:hover:bg-[#eceaeaee] transition-colors hover:shadow-xl py-4"
+                    >
+                        <StaticImage
+                            quality={100}
+                            draggable="false"
+                            height={300}
+                            width={200}
+                            src="../images/ba.jpg"
+                        />
+                        <div className="flex items-center justify-between py-2 px-6">
+                            <p className="font-medium">Sok jabłkowy 330ml</p>
+                            <p className="font-medium text-red-600">17,80zł</p>
+                        </div>
+                    </Link>
+                    <Link
+                        to="/"
+                        draggable="false"
+                        className=" lg:hover:bg-[#eceaeaee] transition-colors hover:shadow-xl py-4"
+                    >
+                        <StaticImage
+                            quality={100}
+                            draggable="false"
+                            height={300}
+                            width={200}
+                            src="../images/ba.jpg"
+                        />
+                        <div className="flex items-center justify-between py-2 px-6">
+                            <p className="font-medium">Sok jabłkowy 330ml</p>
+                            <p className="font-medium text-red-600">17,80zł</p>
+                        </div>
+                    </Link>
                 </Slider>
-            </div> */}
+            </div>
+
+            <section className="max-w-screen-xl mx-auto pt-12">
+                <div className="flex flex-col lg:flex-row items-center justify-center">
+                    <div className="lg:w-1/2">
+                        <StaticImage quality={100} src="../images/x1.jpg" />
+                    </div>
+                    <div className="flex flex-col items-start justify-center lg:w-1/2 p-12">
+                        <h2 className="text-lg font-bold pb-2">
+                            Why do we use it?
+                        </h2>
+                        <p>
+                            It is a long established fact that a reader will be
+                            distracted by the readable content of a page when
+                            looking at its layout. The point of using Lorem
+                            Ipsum is that it has a more-or-less normal
+                            distribution of letters, as opposed to using
+                            'Content here, content here', making it look like
+                            readable English. Many desktop publishing packages
+                            and web page editors now use Lorem Ipsum as their
+                            default model text, and a search for 'lorem ipsum'
+                            will uncover many web sites still in their infancy.
+                            Various versions have evolved over the years,
+                            sometimes by accident, sometimes on purpose
+                            (injected humour and the like).
+                        </p>
+                    </div>
+                </div>
+
+                <div className="flex flex-col lg:flex-row items-center justify-center">
+                    <div className="lg:w-1/2 lg:order-1">
+                        <StaticImage quality={100} src="../images/x2.jpg" />
+                    </div>
+                    <div className="flex flex-col items-start justify-center lg:w-1/2 p-12">
+                        <h2 className="text-lg font-bold pb-2">
+                            Why do we use it?
+                        </h2>
+                        <p>
+                            It is a long established fact that a reader will be
+                            distracted by the readable content of a page when
+                            looking at its layout. The point of using Lorem
+                            Ipsum is that it has a more-or-less normal
+                            distribution of letters, as opposed to using
+                            'Content here, content here', making it look like
+                            readable English. Many desktop publishing packages
+                            and web page editors now use Lorem Ipsum as their
+                            default model text, and a search for 'lorem ipsum'
+                            will uncover many web sites still in their infancy.
+                            Various versions have evolved over the years,
+                            sometimes by accident, sometimes on purpose
+                            (injected humour and the like).
+                        </p>
+                    </div>
+                </div>
+
+                <div className="flex flex-col lg:flex-row items-center justify-center">
+                    <div className="lg:w-1/2">
+                        <StaticImage quality={100} src="../images/x3.jpg" />
+                    </div>
+                    <div className="flex flex-col items-start justify-center lg:w-1/2 p-12">
+                        <h2 className="text-lg font-bold pb-2">
+                            Why do we use it?
+                        </h2>
+                        <p>
+                            It is a long established fact that a reader will be
+                            distracted by the readable content of a page when
+                            looking at its layout. The point of using Lorem
+                            Ipsum is that it has a more-or-less normal
+                            distribution of letters, as opposed to using
+                            'Content here, content here', making it look like
+                            readable English. Many desktop publishing packages
+                            and web page editors now use Lorem Ipsum as their
+                            default model text, and a search for 'lorem ipsum'
+                            will uncover many web sites still in their infancy.
+                            Various versions have evolved over the years,
+                            sometimes by accident, sometimes on purpose
+                            (injected humour and the like).
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section className="max-w-screen-xl mx-auto text-center py-20 font-bold">
+                <p>+48 555 555 555</p>
+                <p>
+                    Obsługa Klienta Łańcucke Sady
+                    <br /> od poniedziałku do piątku 9:00-17:00
+                </p>
+                <p>kontakt@lancuckiesady.com</p>
+            </section>
         </Layout>
     );
 };
@@ -176,7 +337,7 @@ export default IndexPage;
 
 export const Head = () => (
     <Seo
-        title="Projektowanie i tworzenie stron internetowych | Strony www | CMS"
-        description="Przygotuj się na prawdziwą rewolucję w świecie stron www. Usługi projektowania i tworzenia stron internetowych, które przynoszą prawdziwe rezultaty !!"
+        title="Łańcuckie Sady | Sok jabłkowy "
+        description="Przygotuj się na prawdziwą rewolucję"
     />
 );
