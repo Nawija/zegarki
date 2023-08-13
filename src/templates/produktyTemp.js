@@ -16,7 +16,7 @@ const ProjectTemplate = ({
         <Layout>
             <TopImg />
             <div className="flex flex-col lg:flex-row items-start justify-center my-4 lg:my-10 max-w-screen-xl mx-auto">
-                <div className="flex flex-col items-center justify-center lg:w-1/2 relative">
+                <div className="flex flex-col items-center justify-center w-52 mx-auto -mt-16 md:w-64 lg:mt-0 lg:w-1/2 relative">
                     <GatsbyImage
                         loading="eager"
                         image={getImage(datoCmsProdukty.img)}
@@ -180,7 +180,7 @@ export const query = graphql`
             sdesc
             desc
             img {
-                gatsbyImageData(height: 550, width: 500, layout: FIXED)
+                gatsbyImageData(height: 550, width: 500)
             }
         }
         allDatoCmsProdukty(sort: { position: ASC }) {
