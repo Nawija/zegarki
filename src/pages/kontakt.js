@@ -11,7 +11,7 @@ const KontaktPage = () => {
 
             <section className="flex flex-col lg:flex-row items-start justify-center mx-auto px-3 my-6 lg:my-10 max-w-screen-xl">
                 <div className="flex flex-col items-center mx-auto lg:ml-auto justify-center lg:w-1/3 order-1 space-y-6 mt-6 lg:mt-0">
-                    <div className="flex items-center justify-center text-gray-700 bg-gray-50 border-2 rounded-2xl shadow-lg py-6 sm:py-8 lg:py-12 body-font relative w-full mx-auto px-6">
+                    <div className="flex items-center justify-center text-gray-700 bg-gray-50 border-2  shadow-lg py-6 sm:py-8 lg:py-12 body-font relative w-full mx-auto px-6">
                         <Link
                             to="tel:+48555555555"
                             className="flex items-center justify-center"
@@ -35,7 +35,7 @@ const KontaktPage = () => {
                             <p>+48 555 555 555</p>
                         </Link>
                     </div>
-                    <div className="flex items-center justify-center text-gray-700 bg-gray-50 border-2 rounded-2xl shadow-lg py-6 sm:py-8 lg:py-12 body-font relative w-full mx-auto px-6">
+                    <div className="flex items-center justify-center text-gray-700 bg-gray-50 border-2  shadow-lg py-6 sm:py-8 lg:py-12 body-font relative w-full mx-auto px-6">
                         <Link
                             to="mailto:xxx@wp.pl"
                             className="flex items-center justify-center"
@@ -72,7 +72,7 @@ const KontaktPage = () => {
                             <p>seovileo@gmail.com</p>
                         </Link>
                     </div>
-                    <div className="flex items-center justify-center text-gray-700 bg-gray-50 border-2 rounded-2xl shadow-lg py-6 sm:py-8 lg:py-12 body-font relative w-full mx-auto px-6">
+                    <div className="flex items-center justify-center text-gray-700 bg-gray-50 border-2  shadow-lg py-6 sm:py-8 lg:py-12 body-font relative w-full mx-auto px-6">
                         <Link
                             to="https://goo.gl/maps/6T3yMfNiEXggfGVi8?coh=178572&entry=tt"
                             className="flex items-center justify-center"
@@ -107,7 +107,7 @@ const KontaktPage = () => {
                         </Link>
                     </div>
                 </div>
-                <div class="text-gray-700 bg-gray-50 border-2 rounded-2xl lg:order-2 shadow-lg py-6 sm:py-8 lg:py-12 body-font relative w-full lg:w-1/2 mx-auto px-6">
+                <div class="text-gray-700 bg-gray-50 border-2  lg:order-2 shadow-lg py-6 sm:py-8 lg:py-12 body-font relative w-full lg:w-1/2 mx-auto px-6">
                     <div class="flex flex-col text-start w-full mb-6">
                         <p class="lg:w-[75%] mx-auto text-xl leading-relaxed text-gray-900 font-semibold mb-4">
                             Wyślij wiadomość
