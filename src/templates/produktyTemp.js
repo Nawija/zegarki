@@ -38,13 +38,13 @@ const ProjectTemplate = ({
                     <div className="mt-4">
                         <Link
                             to="/kontakt"
-                            className="mr-4 py-3 px-6 bg-[#C20404] text-white text-sm"
+                            className="mr-4 py-3 px-6 bg-[#C20404] transition-colors hover:bg-[#9d2b2b] text-white text-sm"
                         >
                             Kontakt
                         </Link>
                         <Link
                             to="/kontakt"
-                            className="mr-4 py-3 px-6 border text-black border-gray-600 text-sm"
+                            className="mr-4 py-3 px-6 border text-black border-gray-600 hover:border-gray-300 transition-colors text-sm"
                         >
                             Kontakt
                         </Link>

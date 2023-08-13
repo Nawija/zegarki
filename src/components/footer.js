@@ -116,7 +116,7 @@ const Footer = () => (
                 </Link>
             </div>
         </div>
-        <div className="bg-[#3d600b] w-full text-center py-2 px-4 text-[13px]">
+        <div className="bg-[hsl(7,67%,12%)] w-full text-center py-2 px-4 text-[13px]">
             <p>
                 © 2023 - Design by{" "}
                 <Link

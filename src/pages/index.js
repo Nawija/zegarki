@@ -60,7 +60,7 @@ const IndexPage = () => {
         infinite: true,
         speed: 500,
         slidesToShow: 4,
-        slidesToScroll: 1,
+        slidesToScroll: 3,
         initialSlide: 0,
         responsive: [
             {
@@ -111,10 +111,11 @@ const IndexPage = () => {
                 </Slider>
             </div>
 
-            <div className="mx-auto max-w-6xl py-4 px-5 sm:px-12 lg:px-0">
-                <h1 className="py-6 text-xl text-center font-bold">
+            <div className="mx-auto max-w-6xl py-4 px-6 sm:px-12 lg:px-0">
+                <h1 className="pt-6 pb-2 text-xl text-center font-bold">
                     Where does it come from? - jak powstają soki naturalne?
                 </h1>
+                <div className="h-[1px] bg-red-600 w-[20%] mx-auto mb-8" />
                 <p>
                     Contrary to popular belief, Lorem Ipsum is not simply random
                     text. It has roots in a piece of classical Latin literature
@@ -131,9 +132,10 @@ const IndexPage = () => {
                     "Lorem ipsum dolor sit amet..", comes from a line in section
                     1.10.32
                 </p>
-                <h2 className="pt-3 pb-1 font-bold text-lg">
+                <h2 className="pt-8 pb-1 font-bold text-lg">
                     Na czym polega proces tłoczenia soków?
                 </h2>
+                <div className="h-[1px] bg-red-600 w-[15%] mr-auto mb-10" />
                 <p>
                     Contrary to popular belief, Lorem Ipsum is not simply random
                     text. It has roots in a piece of classical Latin literature
@@ -143,9 +145,10 @@ const IndexPage = () => {
                     consectetur, from a Lorem Ipsum passage, and going through
                     the cites of the word in classical literature
                 </p>
-                <h2 className="pt-3 pb-1 font-bold text-lg">
+                <h2 className="pt-8 pb-1 font-bold text-lg">
                     Tłoczenie soków a wartości odżywcze soku
                 </h2>
+                <div className="h-[1px] bg-red-600 w-[15%] mr-auto mb-10" />
                 <p>
                     Contrary to popular belief, Lorem Ipsum is not simply random
                     text. It has roots in a piece of classical Latin literature
