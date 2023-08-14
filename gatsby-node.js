@@ -5,7 +5,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const queryProducts = await graphql(`
         {
-            allDatoCmsProdukty {
+            allDatoCmsProjekty {
                 nodes {
                     slug
                 }
@@ -13,13 +13,13 @@ exports.createPages = async ({ graphql, actions }) => {
         }
     `);
 
-    const produktyTemp = path.resolve(`./src/templates/produktyTemp.js`);
+    const projektyTemp = path.resolve(`./src/templates/projektyTemp.js`);
 
-    queryProducts.data.allDatoCmsProdukty.nodes.forEach((node) => {
+    queryProducts.data.allDatoCmsProjekty.nodes.forEach((node) => {
         const { slug } = node;
         createPage({
             path: `${slug}`,
-            component: produktyTemp,
+            component: projektyTemp,
             context: {
                 slug,
             },
