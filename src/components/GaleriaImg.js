@@ -11,8 +11,8 @@ const Galeria = () => {
                     node {
                         img {
                             gatsbyImageData(
-                                width: 600
-                                placeholder: NONE
+                                width: 700
+                                placeholder: BLURRED
                                 layout: CONSTRAINED
                             )
                         }
@@ -61,23 +61,22 @@ const Galeria = () => {
     };
 
     return (
-        <section className="py-4 relative">
-            <div>
-                <section className="text-gray-700 body-font">
-                    <div className="px-5 max-w-screen-xl mx-auto">
-                        <div className="flex flex-wrap sm:mt-6">
+        <section className="pb-4 relative">
+
+
+                    <div className="max-w-screen-2xl mx-auto">
+                        <div className="flex flex-wrap w-full ml-auto sm:mt-6">
                             {data.allDatoCmsGaleriaa.edges.map(({ node }) => (
                                 <div className=" mx-auto py-0.5" key={node.img}>
                                     <button onClick={() => openModal(node.img)}>
-                                        <div className="relative h-56 w-72 md:h-52 md:w-60 mx-auto group overflow-hidden">
+                                        <div className="relative h-56 w-72 md:h-52 md:w-60 mx-auto group rounded-md overflow-hidden">
                                             <GatsbyImage
-                                                className="object-cover object-center w-full h-full block"
+                                                className="w-full h-full"
                                                 image={getImage(node.img)}
                                                 alt="łancuckie sady"
                                                 title="łancuckie sady"
-                                                layout="fixed"
                                             />
-                                            <div className="bg-black/40 absolute inset-0 flex items-center justify-center translate-y-full lg:group-hover:translate-y-0 transition-transform duration-300">
+                                            <div className="bg-black/40 absolute inset-0 flex items-center justify-center opacity-0 lg:group-hover:opacity-100 transition-opacity duration-200 ">
                                                 <svg
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     class="icon icon-tabler icon-tabler-zoom-in"
@@ -110,8 +109,8 @@ const Galeria = () => {
                             ))}
                         </div>
                     </div>
-                </section>
-            </div>
+
+
 
             <Modal
                 isOpen={isModalOpen}

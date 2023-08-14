@@ -29,18 +29,15 @@ const Header = () => {
             "
         >
             <div
-                className={`h-full w-full mx-auto py-1 absolute top-0 -z-10 transition-colors duration-300 ${
-                    navbar
-                        ? "bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg "
-                        : "lg:border-b"
-                }`}
+                className="h-full w-full mx-auto absolute top-0 z-10 transition-colors duration-300
+bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
             />
             <nav
-                className={`max-w-screen-2xl mx-auto px-4 py-2 flex flex-col items-center justify-between w-full navTextColor transition-colors duration-100 z-50 ${
+                className={`max-w-screen-2xl mx-auto px-4 z py-2 flex flex-col items-center justify-between w-full transition-colors duration-100 -z-20 ${
                     showMenu ? "bg-white" : ""
                 }`}
             >
-                <div className="flex items-center justify-between w-full">
+                <div className="flex items-center justify-between w-full z-20">
                     <Link
                         to="/"
                         className="flex items-center justify-center"
@@ -93,7 +90,9 @@ const Header = () => {
                                 fill="black"
                             />
                         </svg>
-                        <p className="mr-1 w-max lg:flex hidden">+48570037077</p>
+                        <p className="mr-1 w-max lg:flex hidden">
+                            +48570037077
+                        </p>
                     </Link>
                     <button
                         aria-label="Menu"
@@ -118,7 +117,7 @@ const Header = () => {
                     </button>
                 </div>
                 <ul
-                    className={`absolute top-full left-0 w-full text-center -z-10 ${
+                    className={`absolute top-[99%] left-0 w-full text-center -z-10 ${
                         showMenu
                             ? "text-lg bg-white space-y-5 lg:space-y-0 opacity-100 transition pt-2 pb-12 lg:pb-2 -translate-y-0 "
                             : "py-2 lg:opacity-100 lg:static lg:flex lg:flex-row lg:items-center lg:justify-around lg:mt-3 lg:translate-y-0 lg:py-0 opacity-0 -translate-y-full transition lg:z-10 lg:max-w-screen-lg lg:border-t"
@@ -152,6 +151,21 @@ const Header = () => {
                             to="/projekty"
                         >
                             Projekty
+                        </Link>
+                    </li>
+                    <li className="mx-5 my-2 lg:my-0">
+                        <Link
+                            onClick={closeMenu}
+                            title="Funkcje"
+                            aria-label="Funkcje"
+                            className={
+                                navbar && !showMenu
+                                    ? "font-semibold text-base lg:text-sm hover-link transition-colors px-2 py-2"
+                                    : "font-semibold  text-base lg:text-sm hover-link transition-colors px-2 py-2"
+                            }
+                            to="/funkcje"
+                        >
+                            Funkcje
                         </Link>
                     </li>
 
@@ -189,19 +203,19 @@ const Header = () => {
                     <li className="mx-5 py-2 lg:my-0 relative bg-yellow-500">
                         <Link
                             onClick={closeMenu}
-                            title="Galeria"
-                            aria-label="Galeria"
+                            title="Darmowy Kalkulator"
+                            aria-label="Darmowy Kalkulator"
                             className={
                                 navbar && !showMenu
                                     ? "font-semibold text-base lg:text-sm hover-link transition-colors px-5 relative text-white tracking-wide"
                                     : "font-semibold text-base lg:text-sm hover-link transition-colors px-5 relative text-white tracking-wide"
                             }
-                            to="/galeria"
+                            to="/"
                         >
                             Kalkulator
-                        <p className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-[7px] text-white font-bold tracking-widest bg-black px-2 uppercase">
-                            Darmowy
-                        </p>
+                            <p className="absolute bottom-0 translate-y-full left-1/2 -translate-x-1/2 text-[7px] text-white font-bold tracking-widest bg-black px-2 uppercase">
+                                Darmowy
+                            </p>
                         </Link>
                     </li>
 

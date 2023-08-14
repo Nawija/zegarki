@@ -15,6 +15,6 @@ const Galeria = () => {
     );
 };
 
-export const Head = () => <Seo title="Galeria Łancuckie Sady" />;
+export const Head = () => <Seo title="Galeria | Seovileo" />;
 
 export default Galeria;

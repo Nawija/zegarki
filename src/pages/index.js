@@ -28,7 +28,7 @@ const IndexPage = () => {
                     node {
                         slug
                         title
-                        
+
                         img {
                             gatsbyImageData(height: 200)
                         }
@@ -194,7 +194,7 @@ const IndexPage = () => {
                         ))}
                     </Slider>
                 </div>
-{/* 
+                {/* 
                 <section className="max-w-screen-xl mx-auto pt-6">
                     <div className="flex flex-col lg:flex-row items-center justify-center">
                         <div className="lg:w-1/2">
@@ -285,8 +285,5 @@ const IndexPage = () => {
 export default IndexPage;
 
 export const Head = () => (
-    <Seo
-        title="Seovileo"
-        description="Przygotuj się na prawdziwą rewolucję"
-    />
+    <Seo title="Seovileo" description="Przygotuj się na prawdziwą rewolucję" />
 );
