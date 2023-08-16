@@ -139,7 +139,7 @@ const ProjectTemplate = ({
 
             <div className="sm:my-6 lg:my-20 max-w-screen-xl mx-auto px-1">
                 <h2 className="ml-8 font-medium mb-3">
-                    Nasze Produkty z Jabłek:
+                    Więcej Projektów:
                 </h2>
                 <div className="flex flex-wrap ">
                     {allDatoCmsProjekty.edges.map(({ node }) => (
@@ -179,14 +179,14 @@ export const query = graphql`
             sdesc
             desc
             img {
-                gatsbyImageData(height: 550, width: 500)
+                gatsbyImageData(height: 550)
             }
         }
         allDatoCmsProjekty(sort: { position: ASC }) {
             edges {
                 node {
                     img {
-                        gatsbyImageData(height: 250, width: 200)
+                        gatsbyImageData(height: 120)
                     }
                     slug
                     title

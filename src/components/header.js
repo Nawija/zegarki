@@ -248,7 +248,7 @@ bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
                                     ? "font-semibold text-base lg:text-sm hover-link py-3 transition-colors px-5 relative text-white tracking-wide"
                                     : "font-semibold text-base lg:text-sm hover-link py-3 transition-colors px-5 relative text-white tracking-wide"
                             }
-                            to="/"
+                            to="/darmowa-wycena"
                         >
                             Kalkulator
                             <p className="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 text-[7px] text-white font-bold tracking-widest bg-black px-2  rounded-md uppercase">

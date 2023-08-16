@@ -7,7 +7,7 @@ import TopImg from "../components/topImg";
 const KontaktPage = () => {
     return (
         <Layout>
-            <TopImg />
+            <TopImg headh1="Kontakt"/>
 
             <section className="flex flex-col lg:flex-row items-start justify-center mx-auto my-6 lg:my-10 max-w-screen-xl px-6">
                 <div className="flex flex-col items-center mx-auto lg:ml-auto justify-center lg:w-1/3 order-1 space-y-6 mt-6 lg:mt-0">
