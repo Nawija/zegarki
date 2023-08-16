@@ -8,8 +8,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import InfoSale from "../components/infoSale";
-
 const IndexPage = () => {
     const data = useStaticQuery(graphql`
         {
@@ -17,7 +15,7 @@ const IndexPage = () => {
                 edges {
                     node {
                         img {
-                            gatsbyImageData(width: 1600, height: 550)
+                            gatsbyImageData(width: 1500, height: 500)
                         }
                     }
                 }
@@ -30,7 +28,7 @@ const IndexPage = () => {
                         title
 
                         img {
-                            gatsbyImageData(height: 200)
+                            gatsbyImageData(height: 100)
                         }
                     }
                 }
@@ -99,73 +97,18 @@ const IndexPage = () => {
 
     return (
         <>
-            <InfoSale />
             <Layout>
-                <div className="text-center">
-                    <Slider {...settings}>
-                        {data.allDatoCmsSlajdy.edges.map(({ node }) => (
-                            <GatsbyImage
-                                loading="eager"
-                                className="min-h-[14rem]"
-                                imgClassName="min-h-[14rem]"
-                                image={getImage(node.img)}
-                                alt="lancuckiesady"
-                            />
-                        ))}
-                    </Slider>
-                </div>
-
-                <div className="mx-auto max-w-6xl py-4 px-6 sm:px-12 lg:px-0">
-                    <h1 className="pt-6 pb-2 text-xl text-center font-bold">
-                        Where does it come from? - jak powstają soki naturalne?
-                    </h1>
-                    <div className="h-[1px] bg-green-600 w-[20%] mx-auto mb-8" />
-                    <p>
-                        Contrary to popular belief, Lorem Ipsum is not simply
-                        random text. It has roots in a piece of classical Latin
-                        literature from 45 BC, making it over 2000 years old.
-                        Richard McClintock, a Latin professor at Hampden-Sydney
-                        College in Virginia, looked up one of the more obscure
-                        Latin words, consectetur, from a Lorem Ipsum passage,
-                        and going through the cites of the word in classical
-                        literature, discovered the undoubtable source. Lorem
-                        Ipsum comes from sections 1.10.32 and 1.10.33 of "de
-                        Finibus Bonorum et Malorum" (The Extremes of Good and
-                        Evil) by Cicero, written in 45 BC. This book is a
-                        treatise on the theory of ethics, very popular during
-                        the Renaissance. The first line of Lorem Ipsum, "Lorem
-                        ipsum dolor sit amet..", comes from a line in section
-                        1.10.32
-                    </p>
-                    <h2 className="pt-8 pb-1 font-bold text-lg">
-                        Na czym polega proces tłoczenia soków?
-                    </h2>
-                    <div className="h-[1px] bg-green-600 w-[15%] mr-auto mb-10" />
-                    <p>
-                        Contrary to popular belief, Lorem Ipsum is not simply
-                        random text. It has roots in a piece of classical Latin
-                        literature from 45 BC, making it over 2000 years old.
-                        Richard McClintock, a Latin professor at Hampden-Sydney
-                        College in Virginia, looked up one of the more obscure
-                        Latin words, consectetur, from a Lorem Ipsum passage,
-                        and going through the cites of the word in classical
-                        literature
-                    </p>
-                    <h2 className="pt-8 pb-1 font-bold text-lg">
-                        Tłoczenie soków a wartości odżywcze soku
-                    </h2>
-                    <div className="h-[1px] bg-green-600 w-[15%] mr-auto mb-10" />
-                    <p>
-                        Contrary to popular belief, Lorem Ipsum is not simply
-                        random text. It has roots in a piece of classical Latin
-                        literature from 45 BC, making it over 2000 years old.
-                        Richard McClintock, a Latin professor at Hampden-Sydney
-                        College in Virginia, looked up one of the more obscure
-                        Latin words, consectetur, from a Lorem Ipsum passage,
-                        and going through the cites of the word in classical
-                        literature
-                    </p>
-                </div>
+                <Slider {...settings}>
+                    {data.allDatoCmsSlajdy.edges.map(({ node }) => (
+                        <GatsbyImage
+                            loading="eager"
+                            className="min-h-[14rem]"
+                            imgClassName="min-h-[14rem]"
+                            image={getImage(node.img)}
+                            alt="lancuckiesady"
+                        />
+                    ))}
+                </Slider>
 
                 <div className="max-w-7xl mx-auto py-4 lg:py-20">
                     <Slider
@@ -176,14 +119,17 @@ const IndexPage = () => {
                             <Link
                                 onClick={handleLinkClick}
                                 to={"/" + node.slug}
-                                draggable="false"
-                                className=" lg:hover:bg-[#f3f0f0ee] transition-colors hover:shadow-xl py-4 w-[80%]"
+                                className="shadow-xl py-4"
                             >
-                                <GatsbyImage
-                                    loading="eager"
-                                    image={getImage(node.img)}
-                                    alt="lancuckie sady"
-                                />
+
+                                    <GatsbyImage
+                                        loading="eager"
+                                        draggable="false"
+                                        image={getImage(node.img)}
+                                        alt={
+                                            node.title + "- projekt seovileo.pl"
+                                        }
+                                    />
                                 <div className="flex items-center justify-between py-2 px-6">
                                     <p className="font-medium">{node.title}</p>
                                     <p className="font-medium text-red-600">
