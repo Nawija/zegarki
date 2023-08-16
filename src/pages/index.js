@@ -15,7 +15,7 @@ const IndexPage = () => {
                 edges {
                     node {
                         img {
-                            gatsbyImageData(width: 1500, height: 500)
+                            gatsbyImageData(width: 1536, height: 500)
                         }
                     }
                 }
@@ -26,9 +26,9 @@ const IndexPage = () => {
                     node {
                         slug
                         title
-
+                        data
                         img {
-                            gatsbyImageData(height: 100)
+                            gatsbyImageData(height: 120)
                         }
                     }
                 }
@@ -98,30 +98,32 @@ const IndexPage = () => {
     return (
         <>
             <Layout>
-                <Slider {...settings}>
-                    {data.allDatoCmsSlajdy.edges.map(({ node }) => (
-                        <GatsbyImage
-                            loading="eager"
-                            className="min-h-[14rem]"
-                            imgClassName="min-h-[14rem]"
-                            image={getImage(node.img)}
-                            alt="lancuckiesady"
-                        />
-                    ))}
-                </Slider>
+                <div className="mx-auto text-center">
+                    <Slider {...settings}>
+                        {data.allDatoCmsSlajdy.edges.map(({ node }) => (
+                            <GatsbyImage
+                                loading="eager"
+                                className="min-h-[14rem] max-w-screen-2xl"
+                                imgClassName="min-h-[14rem]"
+                                image={getImage(node.img)}
+                                alt="lancuckiesady"
+                            />
+                        ))}
+                    </Slider>
+                </div>
 
                 <div className="max-w-7xl mx-auto py-4 lg:py-20">
                     <Slider
-                        className=" text-center max-w-screen-2xl mx-auto w-[140%] md:w-full"
+                        className=" text-center max-w-screen-xl mx-auto w-[140%] md:w-full"
                         {...settingsCircle}
                     >
                         {data.allDatoCmsProjekty.edges.map(({ node }) => (
                             <Link
                                 onClick={handleLinkClick}
                                 to={"/" + node.slug}
-                                className="shadow-xl py-4"
+                                className="py-4"
                             >
-
+                                <div className="rounded-xl overflow-hidden py-8 px-3 mx-auto w-max shadow-xl bg-white">
                                     <GatsbyImage
                                         loading="eager"
                                         draggable="false"
@@ -130,12 +132,16 @@ const IndexPage = () => {
                                             node.title + "- projekt seovileo.pl"
                                         }
                                     />
-                                <div className="flex items-center justify-between py-2 px-6">
+                                </div>
+                                <div className="flex items-center justify-between pt-2 px-6">
                                     <p className="font-medium">{node.title}</p>
                                     <p className="font-medium text-red-600">
                                         {node.price}
                                     </p>
                                 </div>
+                                <p className="text-start px-6 pb-2">
+                                    {node.data}
+                                </p>
                             </Link>
                         ))}
                     </Slider>

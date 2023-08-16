@@ -238,7 +238,7 @@ bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
                             Galeria
                         </Link>
                     </li>
-                    <li className="mx-5 py-2 lg:my-0 relative bg-yellow-500">
+                    <li className="mx-5 py-2 lg:my-0 relative bg-yellow-500 rounded-md">
                         <Link
                             onClick={closeMenu}
                             title="Darmowy Kalkulator"
@@ -251,7 +251,7 @@ bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
                             to="/"
                         >
                             Kalkulator
-                            <p className="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 text-[7px] text-white font-bold tracking-widest bg-black px-2 uppercase">
+                            <p className="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 text-[7px] text-white font-bold tracking-widest bg-black px-2  rounded-md uppercase">
                                 Darmowy
                             </p>
                         </Link>
