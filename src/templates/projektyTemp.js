@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image";
 import { graphql, Link } from "gatsby";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import TopImg from "../components/topImg";
+import Spinner from "../components/Spinner";
 
 import "../styles/template.css";
 
@@ -12,6 +13,11 @@ const ProjectTemplate = ({
     pageContext: { slug },
     data: { datoCmsProjekty, allDatoCmsProjekty },
 }) => {
+    const [imageLoaded, setImageLoaded] = useState(false);
+
+    const handleImageLoaded = () => {
+        setImageLoaded(true);
+    };
     return (
         <Layout>
             <TopImg />
@@ -22,7 +28,13 @@ const ProjectTemplate = ({
                         image={getImage(datoCmsProjekty.img)}
                         alt="łancuckie sady"
                         title="łancuckie sady"
+                        onLoad={handleImageLoaded}
+                        style={{
+                            filter: imageLoaded ? "none" : "blur(10px)",
+                            transition: "filter 0.5s",
+                        }}
                     />
+                    {!imageLoaded && <Spinner />}
                 </div>
                 <div className="flex flex-col items-start justify-start w-full lg:w-1/2 lg:ml-12 px-6 lg:px-0 pt-5 lg:pt-2">
                     <h1 className="text-2xl font-semibold capitalize">
@@ -138,9 +150,7 @@ const ProjectTemplate = ({
             </div>
 
             <div className="sm:my-6 lg:my-20 max-w-screen-xl mx-auto px-1">
-                <h2 className="ml-8 font-medium mb-3">
-                    Więcej Projektów:
-                </h2>
+                <h2 className="ml-8 font-medium mb-3">Więcej Projektów:</h2>
                 <div className="flex flex-wrap ">
                     {allDatoCmsProjekty.edges.map(({ node }) => (
                         <div className="relative mx-auto">
@@ -179,7 +189,7 @@ export const query = graphql`
             sdesc
             desc
             img {
-                gatsbyImageData(height: 550)
+                gatsbyImageData(height: 550, placeholder: NONE)
             }
         }
         allDatoCmsProjekty(sort: { position: ASC }) {

@@ -237,10 +237,10 @@ bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
                     <li className="mx-5 py-2 lg:my-0">
                         <Link
                             onClick={closeMenu}
-                            title="Usługi"
-                            aria-label="Usługi"
+                            title="Blog"
+                            aria-label="Blog"
                             className="relative"
-                            to="/"
+                            to="/blog"
                         >
                             <p className="px-2 py-2 font-semibold text-base lg:text-sm transition-colors">
                                 Blog
@@ -250,10 +250,10 @@ bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
                     <li className="mx-5 py-2 lg:my-0">
                         <Link
                             onClick={closeMenu}
-                            title="Usługi"
-                            aria-label="Usługi"
+                            title="Kontakt"
+                            aria-label="Kontakt"
                             className="relative"
-                            to="/"
+                            to="/kontakt"
                         >
                             <p className="px-2 py-2 font-semibold text-base lg:text-sm transition-colors">
                                 Kontakt
