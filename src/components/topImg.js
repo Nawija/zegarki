@@ -3,7 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 const TopImg = ({ headh1 }) => {
     return (
-        <div className="w-full relative mb-6">
+        <div className="w-full relative text-center mb-6">
             <StaticImage
                 width={1500}
                 height={300}

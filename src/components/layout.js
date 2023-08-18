@@ -18,11 +18,11 @@ const Layout = ({ children }) => {
     return (
         <>
             <Header siteTitle={data.site.siteMetadata?.title || `Seovileo`} />
-            <div className="relative text-base max-w-[1600px] mx-auto">
-                <main className="w-full overflow-hidden min-h-screen">
-                    {children}
-                </main>
-            </div>
+
+            <main className="w-full overflow-hidden min-h-screen">
+                {children}
+            </main>
+
             <Footer />
         </>
     );

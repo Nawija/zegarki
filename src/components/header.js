@@ -22,10 +22,16 @@ const Header = () => {
         window.addEventListener("scroll", changeBackground);
     });
 
+    const [isHovered, setIsHovered] = useState(false);
+
+    const handleLinkHover = () => {
+        setIsHovered(!isHovered);
+    };
+
     return (
         <header
             className="
-                    z-40 mx-auto sticky w-full top-0 text-center
+                    z-30 mx-auto sticky w-full top-0 text-center
             "
         >
             <div
@@ -93,9 +99,7 @@ bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
                                 ></path>
                                 <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
                             </svg>
-                            <p className="w-max lg:flex hidden">
-                                Facebook
-                            </p>
+                            <p className="w-max lg:flex hidden">Facebook</p>
                         </Link>
                         <Link
                             onClick={closeMenu}
@@ -127,9 +131,7 @@ bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
                                 ></path>
                                 <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"></path>
                             </svg>
-                            <p className="w-max lg:flex hidden">
-                                +48570037077
-                            </p>
+                            <p className="w-max lg:flex hidden">+48570037077</p>
                         </Link>
                         <button
                             aria-label="Menu"
@@ -164,46 +166,40 @@ bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
                     <li className="mx-5 py-2 lg:my-0">
                         <Link
                             onClick={closeMenu}
-                            title="Strona Główna"
-                            aria-label="Strona Główna"
-                            className={
-                                navbar && !showMenu
-                                    ? "font-semibold text-base lg:text-sm hover-link transition-colors px-2 py-2"
-                                    : "font-semibold  text-base lg:text-sm hover-link transition-colors px-2 py-2"
-                            }
+                            title="Usługi"
+                            aria-label="Usługi"
+                            className="relative"
                             to="/"
                         >
-                            Home
+                            <p className="px-2 py-2 font-semibold text-base lg:text-sm transition-colors">
+                                Home
+                            </p>
                         </Link>
                     </li>
                     <li className="mx-5 py-2 lg:my-0">
                         <Link
                             onClick={closeMenu}
-                            title="Projekty"
-                            aria-label="Projekty"
-                            className={
-                                navbar && !showMenu
-                                    ? "font-semibold text-base lg:text-sm hover-link transition-colors px-2 py-2"
-                                    : "font-semibold  text-base lg:text-sm hover-link transition-colors px-2 py-2"
-                            }
-                            to="/projekty"
+                            title="Usługi"
+                            aria-label="Usługi"
+                            className="relative"
+                            to="/"
                         >
-                            Projekty
+                            <p className="px-2 py-2 font-semibold text-base lg:text-sm transition-colors">
+                                Projekty
+                            </p>
                         </Link>
                     </li>
                     <li className="mx-5 py-2 lg:my-0">
                         <Link
                             onClick={closeMenu}
-                            title="Funkcje"
-                            aria-label="Funkcje"
-                            className={
-                                navbar && !showMenu
-                                    ? "font-semibold text-base lg:text-sm hover-link transition-colors px-2 py-2"
-                                    : "font-semibold  text-base lg:text-sm hover-link transition-colors px-2 py-2"
-                            }
-                            to="/funkcje"
+                            title="Usługi"
+                            aria-label="Usługi"
+                            className="relative"
+                            to="/"
                         >
-                            Funkcje
+                            <p className="px-2 py-2 font-semibold text-base lg:text-sm transition-colors">
+                                Funkcje
+                            </p>
                         </Link>
                     </li>
 
@@ -212,47 +208,28 @@ bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
                             onClick={closeMenu}
                             title="Usługi"
                             aria-label="Usługi"
-                            className={
-                                navbar && !showMenu
-                                    ? "font-semibold text-base lg:text-sm hover-link transition-colors px-2 py-2"
-                                    : "font-semibold  text-base lg:text-sm hover-link transition-colors px-2 py-2"
-                            }
-                            to="/uslugi"
+                            className="relative"
+                            to="/"
                         >
-                            Usługi
+                            <p className="px-2 py-2 font-semibold text-base lg:text-sm transition-colors">
+                                Usługi
+                            </p>
                         </Link>
                     </li>
 
-                    <li className="mx-5 py-2 lg:my-0">
-                        <Link
-                            onClick={closeMenu}
-                            title="Galeria"
-                            aria-label="Galeria"
-                            className={
-                                navbar && !showMenu
-                                    ? "font-semibold text-base lg:text-sm hover-link transition-colors px-2 py-2"
-                                    : "font-semibold  text-base lg:text-sm hover-link transition-colors px-2 py-2"
-                            }
-                            to="/galeria"
-                        >
-                            Galeria
-                        </Link>
-                    </li>
                     <li className="mx-5 py-2 lg:my-0 relative bg-yellow-500 rounded-md">
                         <Link
                             onClick={closeMenu}
                             title="Darmowy Kalkulator"
                             aria-label="Darmowy Kalkulator"
-                            className={
-                                navbar && !showMenu
-                                    ? "font-semibold text-base lg:text-sm hover-link py-3 transition-colors px-5 relative text-white tracking-wide"
-                                    : "font-semibold text-base lg:text-sm hover-link py-3 transition-colors px-5 relative text-white tracking-wide"
-                            }
+                            className="relative"
                             to="/darmowa-wycena"
                         >
-                            Kalkulator
-                            <p className="absolute bottom-0 translate-y-1/2 left-1/2 -translate-x-1/2 text-[7px] text-white font-bold tracking-widest bg-black px-2  rounded-md uppercase">
-                                Darmowy
+                            <p className="px-4 py-2 font-semibold text-base lg:text-sm transition-colors relative text-white tracking-wide">
+                                Kalkulator
+                                <span className="absolute bottom-0 translate-y-full left-1/2 -translate-x-1/2 text-[7px] text-white font-bold tracking-widest bg-black px-2  rounded-md uppercase">
+                                    Darmowy
+                                </span>
                             </p>
                         </Link>
                     </li>
@@ -260,31 +237,27 @@ bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
                     <li className="mx-5 py-2 lg:my-0">
                         <Link
                             onClick={closeMenu}
-                            title="Blog"
-                            aria-label="Blog"
-                            className={
-                                navbar && !showMenu
-                                    ? "font-semibold text-base lg:text-sm hover-link transition-colors px-2 py-2"
-                                    : "font-semibold  text-base lg:text-sm hover-link transition-colors px-2 py-2"
-                            }
-                            to="/blog"
+                            title="Usługi"
+                            aria-label="Usługi"
+                            className="relative"
+                            to="/"
                         >
-                            Blog
+                            <p className="px-2 py-2 font-semibold text-base lg:text-sm transition-colors">
+                                Blog
+                            </p>
                         </Link>
                     </li>
                     <li className="mx-5 py-2 lg:my-0">
                         <Link
                             onClick={closeMenu}
-                            title="Kontakt"
-                            aria-label="Kontakt"
-                            className={
-                                navbar && !showMenu
-                                    ? "font-semibold text-base lg:text-sm hover-link transition-colors px-2 py-2"
-                                    : "font-semibold  text-base lg:text-sm hover-link transition-colors px-2 py-2"
-                            }
-                            to="/kontakt"
+                            title="Usługi"
+                            aria-label="Usługi"
+                            className="relative"
+                            to="/"
                         >
-                            Kontakt
+                            <p className="px-2 py-2 font-semibold text-base lg:text-sm transition-colors">
+                                Kontakt
+                            </p>
                         </Link>
                     </li>
                 </ul>

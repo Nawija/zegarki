@@ -146,6 +146,9 @@ const IndexPage = () => {
                         ))}
                     </Slider>
                 </div>
+
+                <section></section>
+
                 {/* 
                 <section className="max-w-screen-xl mx-auto pt-6">
                     <div className="flex flex-col lg:flex-row items-center justify-center">
