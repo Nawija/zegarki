@@ -7,6 +7,7 @@ import { useStaticQuery, graphql, Link } from "gatsby";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "../styles/Slider.css"
 
 const IndexPage = () => {
     const data = useStaticQuery(graphql`
@@ -98,12 +99,12 @@ const IndexPage = () => {
     return (
         <>
             <Layout>
-                <div className="mx-auto text-center">
+                <div className="mx-auto text-center w-full bg-gray-100">
                     <Slider {...settings}>
                         {data.allDatoCmsSlajdy.edges.map(({ node }) => (
                             <GatsbyImage
                                 loading="eager"
-                                className="min-h-[14rem] max-w-screen-2xl"
+                                className="min-h-[14rem] max-w-screen-2xl rounded-lg"
                                 imgClassName="min-h-[14rem]"
                                 image={getImage(node.img)}
                                 alt="lancuckiesady"
@@ -123,7 +124,7 @@ const IndexPage = () => {
                                 to={"/" + node.slug}
                                 className="py-4"
                             >
-                                <div className="rounded-xl overflow-hidden py-8 px-3 mx-auto w-max shadow-xl bg-white">
+                                <div className="py-8 mx-auto w-max">
                                     <GatsbyImage
                                         loading="eager"
                                         draggable="false"
@@ -133,105 +134,23 @@ const IndexPage = () => {
                                         }
                                     />
                                 </div>
-                                <div className="flex items-center justify-between pt-2 px-6">
-                                    <p className="font-medium">{node.title}</p>
-                                    <p className="font-medium text-red-600">
-                                        {node.price}
+                                <div className="mx-12">
+                                    <div className="flex items-center justify-between pt-2">
+                                        <p className="font-medium">
+                                            {node.title}
+                                        </p>
+                                        <p className="font-medium text-red-600">
+                                            1500zł
+                                        </p>
+                                    </div>
+                                    <p className="text-start pb-2 text-sm">
+                                        {node.data}
                                     </p>
                                 </div>
-                                <p className="text-start px-6 pb-2">
-                                    {node.data}
-                                </p>
                             </Link>
                         ))}
                     </Slider>
                 </div>
-
-                <section></section>
-
-                {/* 
-                <section className="max-w-screen-xl mx-auto pt-6">
-                    <div className="flex flex-col lg:flex-row items-center justify-center">
-                        <div className="lg:w-1/2">
-                            <StaticImage quality={100} src="../images/x1.jpg" />
-                        </div>
-                        <div className="flex flex-col items-start justify-center lg:w-1/2 p-12">
-                            <h2 className="text-lg font-bold pb-2">
-                                Why do we use it?
-                            </h2>
-                            <p>
-                                It is a long established fact that a reader will
-                                be distracted by the readable content of a page
-                                when looking at its layout. The point of using
-                                Lorem Ipsum is that it has a more-or-less normal
-                                distribution of letters, as opposed to using
-                                'Content here, content here', making it look
-                                like readable English. Many desktop publishing
-                                packages and web page editors now use Lorem
-                                Ipsum as their default model text, and a search
-                                for 'lorem ipsum' will uncover many web sites
-                                still in their infancy. Various versions have
-                                evolved over the years, sometimes by accident,
-                                sometimes on purpose (injected humour and the
-                                like).
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col lg:flex-row items-center justify-center">
-                        <div className="lg:w-1/2 lg:order-1">
-                            <StaticImage quality={100} src="../images/x2.jpg" />
-                        </div>
-                        <div className="flex flex-col items-start justify-center lg:w-1/2 p-12">
-                            <h2 className="text-lg font-bold pb-2">
-                                Why do we use it?
-                            </h2>
-                            <p>
-                                It is a long established fact that a reader will
-                                be distracted by the readable content of a page
-                                when looking at its layout. The point of using
-                                Lorem Ipsum is that it has a more-or-less normal
-                                distribution of letters, as opposed to using
-                                'Content here, content here', making it look
-                                like readable English. Many desktop publishing
-                                packages and web page editors now use Lorem
-                                Ipsum as their default model text, and a search
-                                for 'lorem ipsum' will uncover many web sites
-                                still in their infancy. Various versions have
-                                evolved over the years, sometimes by accident,
-                                sometimes on purpose (injected humour and the
-                                like).
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-col lg:flex-row items-center justify-center">
-                        <div className="lg:w-1/2">
-                            <StaticImage quality={100} src="../images/x3.jpg" />
-                        </div>
-                        <div className="flex flex-col items-start justify-center lg:w-1/2 p-12">
-                            <h2 className="text-lg font-bold pb-2">
-                                Why do we use it?
-                            </h2>
-                            <p>
-                                It is a long established fact that a reader will
-                                be distracted by the readable content of a page
-                                when looking at its layout. The point of using
-                                Lorem Ipsum is that it has a more-or-less normal
-                                distribution of letters, as opposed to using
-                                'Content here, content here', making it look
-                                like readable English. Many desktop publishing
-                                packages and web page editors now use Lorem
-                                Ipsum as their default model text, and a search
-                                for 'lorem ipsum' will uncover many web sites
-                                still in their infancy. Various versions have
-                                evolved over the years, sometimes by accident,
-                                sometimes on purpose (injected humour and the
-                                like).
-                            </p>
-                        </div>
-                    </div>
-                </section> */}
             </Layout>
         </>
     );

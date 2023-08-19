@@ -6,49 +6,6 @@ body{
     background: #f7f7f7;
 }
 
-
-.slick-dots {
-    position: absolute;
-    bottom: 25px !important;
-
-    display: block;
-
-    width: 100%;
-    padding: 0;
-    margin: 0;
-
-    list-style: none;
-
-    text-align: center;
-}
-
-.slick-dots li button:before {
-    font-size: 12px !important;
-    color: white !important;
-    opacity: 0.5 !important;
-}
-.slick-dots li.slick-active button:before {
-    opacity: 1 !important;
-    color: white !important;
-}
-
-.slick-prev:before,
-.slick-next:before
-{
-    font-size: 30px !important;
-    color: black !important;
-    
-}
-.slick-prev
-{
-    left: 0 !important;
-    z-index: 40 !important;
-}
-.slick-next
-{
-    right: 12px !important;
-    z-index: 40 !important;
-}
 /* @media (min-width: 1024px) {
     a {
         transition-property: color, bacground-color, border-color, scale, filter;

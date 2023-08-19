@@ -163,7 +163,7 @@ bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
                             : "py-2 lg:opacity-100 lg:static lg:flex lg:flex-row lg:items-center lg:justify-around lg:mt-3 lg:translate-y-0 lg:py-0 opacity-0 -translate-y-full transition lg:z-10 lg:max-w-screen-lg lg:border-t"
                     }`}
                 >
-                    <li className="mx-5 py-2 lg:my-0">
+                    <li className="mx-5 lg:my-0">
                         <Link
                             onClick={closeMenu}
                             title="Usługi"
@@ -171,12 +171,12 @@ bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
                             className="relative"
                             to="/"
                         >
-                            <p className="px-2 py-2 font-semibold text-base lg:text-sm transition-colors">
+                            <p className="px-2 py-1 font-semibold text-base lg:text-sm transition-colors">
                                 Home
                             </p>
                         </Link>
                     </li>
-                    <li className="mx-5 py-2 lg:my-0">
+                    <li className="mx-5 lg:my-0">
                         <Link
                             onClick={closeMenu}
                             title="Usługi"
@@ -184,12 +184,12 @@ bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
                             className="relative"
                             to="/"
                         >
-                            <p className="px-2 py-2 font-semibold text-base lg:text-sm transition-colors">
+                            <p className="px-2 py-1 font-semibold text-base lg:text-sm transition-colors">
                                 Projekty
                             </p>
                         </Link>
                     </li>
-                    <li className="mx-5 py-2 lg:my-0">
+                    <li className="mx-5 lg:my-0">
                         <Link
                             onClick={closeMenu}
                             title="Usługi"
@@ -197,13 +197,13 @@ bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
                             className="relative"
                             to="/"
                         >
-                            <p className="px-2 py-2 font-semibold text-base lg:text-sm transition-colors">
+                            <p className="px-2 py-1 font-semibold text-base lg:text-sm transition-colors">
                                 Funkcje
                             </p>
                         </Link>
                     </li>
 
-                    <li className="mx-5 py-2 lg:my-0">
+                    <li className="mx-5 lg:my-0">
                         <Link
                             onClick={closeMenu}
                             title="Usługi"
@@ -211,13 +211,13 @@ bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
                             className="relative"
                             to="/"
                         >
-                            <p className="px-2 py-2 font-semibold text-base lg:text-sm transition-colors">
+                            <p className="px-2 py-1 font-semibold text-base lg:text-sm transition-colors">
                                 Usługi
                             </p>
                         </Link>
                     </li>
 
-                    <li className="mx-5 py-2 lg:my-0 relative bg-yellow-500 rounded-md">
+                    <li className="mx-5 lg:my-0 relative bg-yellow-500 rounded-md">
                         <Link
                             onClick={closeMenu}
                             title="Darmowy Kalkulator"
@@ -225,16 +225,16 @@ bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
                             className="relative"
                             to="/darmowa-wycena"
                         >
-                            <p className="px-4 py-2 font-semibold text-base lg:text-sm transition-colors relative text-white tracking-wide">
+                            <p className="px-4 py-2 lg:py-3 font-semibold text-base lg:text-sm transition-colors relative text-white tracking-wide">
                                 Kalkulator
-                                <span className="absolute bottom-0 translate-y-full left-1/2 -translate-x-1/2 text-[7px] text-white font-bold tracking-widest bg-black px-2  rounded-md uppercase">
+                                <span className="absolute bottom-0 translate-y-2/3 left-1/2 -translate-x-1/2 text-[7px] text-white font-bold tracking-widest bg-black px-2  rounded-md uppercase">
                                     Darmowy
                                 </span>
                             </p>
                         </Link>
                     </li>
 
-                    <li className="mx-5 py-2 lg:my-0">
+                    <li className="mx-5 lg:my-0">
                         <Link
                             onClick={closeMenu}
                             title="Blog"
@@ -242,12 +242,12 @@ bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
                             className="relative"
                             to="/blog"
                         >
-                            <p className="px-2 py-2 font-semibold text-base lg:text-sm transition-colors">
+                            <p className="px-2 py-1 font-semibold text-base lg:text-sm transition-colors">
                                 Blog
                             </p>
                         </Link>
                     </li>
-                    <li className="mx-5 py-2 lg:my-0">
+                    <li className="mx-5 lg:my-0">
                         <Link
                             onClick={closeMenu}
                             title="Kontakt"
@@ -255,7 +255,7 @@ bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
                             className="relative"
                             to="/kontakt"
                         >
-                            <p className="px-2 py-2 font-semibold text-base lg:text-sm transition-colors">
+                            <p className="px-2 py-1 font-semibold text-base lg:text-sm transition-colors">
                                 Kontakt
                             </p>
                         </Link>

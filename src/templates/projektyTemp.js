@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { CiShare1 } from "react-icons/ci";
 import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image";
 import { graphql, Link } from "gatsby";
 
@@ -20,7 +21,7 @@ const ProjectTemplate = ({
     };
     return (
         <Layout>
-            <TopImg />
+            <TopImg headh1={"Projekt " + datoCmsProjekty.title} />
             <div className="flex flex-col lg:flex-row items-start justify-center my-4 lg:my-10 max-w-screen-xl mx-auto">
                 <div className="flex flex-col items-center justify-center w-52 mx-auto -mt-16 md:w-64 lg:mt-0 lg:w-1/2 relative">
                     <GatsbyImage
@@ -29,10 +30,6 @@ const ProjectTemplate = ({
                         alt="łancuckie sady"
                         title="łancuckie sady"
                         onLoad={handleImageLoaded}
-                        style={{
-                            filter: imageLoaded ? "none" : "blur(10px)",
-                            transition: "filter 0.5s",
-                        }}
                     />
                     {!imageLoaded && <Spinner />}
                 </div>
@@ -47,7 +44,7 @@ const ProjectTemplate = ({
                     <div className="my-8 h-[1px] w-full bg-slate-200" />
                     <p>{datoCmsProjekty.sdesc}</p>
                     <div className="my-8 h-[1px] w-full bg-slate-200" />
-                    <div className="mt-4">
+                    <div className="mt-4 flex items-center justify-center">
                         <Link
                             to="/kontakt"
                             className="mr-4 py-3 px-6 bg-[#C20404] transition-colors hover:bg-[#9d2b2b] text-white text-sm"
@@ -55,32 +52,34 @@ const ProjectTemplate = ({
                             Kontakt
                         </Link>
                         <Link
-                            to="/kontakt"
-                            className="mr-4 py-3 px-6 border text-black border-gray-600 hover:border-gray-300 transition-colors text-sm"
+                            to={datoCmsProjekty.link}
+                            target="_blank"
+                            className="flex items-center justify-center mr-4 py-3 px-6 border text-black border-gray-600 hover:border-gray-300 transition-colors text-sm"
                         >
-                            Kontakt
+                            <CiShare1 className="mr-2 scale-110" />
+                            <p>Zobacz Live</p>
                         </Link>
                     </div>
                 </div>
             </div>
 
-            <div className="flex flex-col lg:flex-row items-start justify-center my-4 lg:my-10 max-w-screen-xl mx-auto">
-                <div className="flex flex-col items-center justify-center w-full lg:w-1/2 px-5 lg:px-0 lg:-ml-10">
+            <div className="flex flex-col lg:flex-row items-start justify-between my-4 lg:my-10 max-w-screen-xl mx-auto">
+                <div className="flex flex-col items-center justify-center w-full lg:w-1/2 px-5 lg:px-0">
                     <div className="flex flex-col items-start justify-start w-full mt-6">
                         <p className="font-semibold text-lg">Opis</p>
                         <div className="h-[2px] bg-red-600 w-10 mt-1 mb-3" />
                         <p>{datoCmsProjekty.desc}</p>
-                        <div>
+                        <div className="mt-6 flex flex-col lg:flex-row items-center justify-center">
                             <StaticImage
-                                className="mt-4"
                                 quality={100}
-                                src="../images/eko.jpg"
+                                src="../images/uiux.jpg"
                             />
+
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col items-start justify-start w-full lg:w-1/3 lg:ml-12 pt-2">
-                    <div className="flex flex-col items-start justify-start w-full lg:ml-28 mt-6 bg-[#ECECEC] p-6">
+                <div className="flex flex-col items-start justify-start w-full lg:w-1/3 pt-2">
+                    <div className="flex flex-col items-start justify-start w-full mt-6 bg-[#ECECEC] p-6">
                         <p className="text-lg font-semibold -tracking-wide">
                             Szczegóły produktu
                         </p>
@@ -177,7 +176,7 @@ const ProjectTemplate = ({
 };
 
 export const Head = ({ data: { datoCmsProjekty } }) => (
-    <Seo title={datoCmsProjekty.title + " - Łańcuckie Sady"} />
+    <Seo title={datoCmsProjekty.title + " - Seovileo"} />
 );
 
 export default ProjectTemplate;
@@ -188,6 +187,7 @@ export const query = graphql`
             title
             sdesc
             desc
+            link
             img {
                 gatsbyImageData(height: 550, placeholder: NONE)
             }
