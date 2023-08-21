@@ -79,7 +79,7 @@ const ProjectTemplate = ({
                     </div>
                 </div>
                 <div className="flex flex-col items-start justify-start w-full lg:w-1/3 pt-2">
-                    <div className="flex flex-col items-start justify-start w-full mt-6 bg-[#ECECEC] p-6">
+                    <div className="flex flex-col items-start justify-start w-full mt-6 bg-slate-100 border p-6">
                         <p className="text-lg font-semibold -tracking-wide">
                             Szczegóły produktu
                         </p>

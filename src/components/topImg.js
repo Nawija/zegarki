@@ -8,6 +8,7 @@ const TopImg = ({ headh1 }) => {
                 width={1500}
                 height={300}
                 loading="eager"
+                placeholder="dominantColor"
                 quality={100}
                 className="min-h-[11rem]"
                 imgClassName="h-full w-full"
