@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+
+import { BiSolidChevronDown } from "react-icons/bi";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
@@ -29,239 +31,88 @@ const Header = () => {
     };
 
     return (
-        <header
-            className="
-                    z-30 mx-auto sticky w-full top-0 text-center
-            "
-        >
-            <div
-                className="h-full w-full mx-auto absolute top-0 z-10 transition-colors duration-300
-bg-white lg:bg-white/90 lg:backdrop-blur-xl shadow-lg"
-            />
-            <nav
-                className={`max-w-screen-xl mx-auto px-4 pt-2 flex flex-col items-center justify-between w-full transition-colors duration-100 -z-20 ${
-                    showMenu ? "bg-white" : ""
-                }`}
-            >
-                <div className="flex items-center justify-between w-full z-20">
-                    <Link
-                        to="/"
-                        className="flex items-center justify-center"
-                        title="Logo Seovileo"
-                        aria-label="Logo"
+        <header className="flex items-center justify-between px-2 py-4 max-w-screen-xl mx-auto">
+            <Link to="/" className="flex items-center justify-center">
+                <StaticImage
+                    quality={100}
+                    className="w-11 mr-1"
+                    src="../images/favicon.png"
+                />
+                <p className="font-semibold text-gray-800">Seovileo</p>
+            </Link>
+            <nav>
+                <ul className="flex items-center justify-center space-x-4 font-medium text-[15px]">
+                    <li className="list-none">
+                        <Link to="/" className="py-1 px-2">
+                            Home
+                        </Link>
+                    </li>
+                    <li
+                        className="list-none relative py-1 px-2 cursor-pointer"
+                        onMouseEnter={handleLinkHover}
+                        onMouseLeave={handleLinkHover}
                     >
-                        <div className="h-auto w-10 ">
-                            <StaticImage
-                                quality={100}
-                                className="h-full w-full"
-                                loading="eager"
-                                placeholder="blurred"
-                                src="../images/favicon.png"
-                                alt="seovileo logo"
-                            />
+                        <p>Oferta</p>
+                        <BiSolidChevronDown
+                            className={`absolute -right-2 top-1/2 -translate-y-1/2 transition-transform ${
+                                isHovered ? "rotate-90" : ""
+                            } `}
+                        />
+                        <div
+                            className={`
+                            flex flex-col items-center w-max rounded-lg justify-center space-y-8 text-black p-10 bg-white/30 backdrop-blur-lg 
+                                ${
+                                    isHovered
+                                        ? "absolute top-[99%] left-1/2 -translate-x-1/2 z-50 opacity-100"
+                                        : "opacity-0 hidden"
+                                }
+                            `}
+                        >
+                            <Link to="/galeria">Kalkulator Stron</Link>
+                            <Link to="/">Kalkulator Sklepów</Link>
+                            <Link to="/">Home</Link>
                         </div>
-                        <p
-                            className={`ml-1.5 -tracking-wide transition-colors font-bold ${
-                                navbar && !showMenu
-                                    ? "text-gray-700"
-                                    : "text-gray-700"
-                            }`}
-                        >
-                            Seovileo
-                        </p>
-                    </Link>
-                    <div className="flex items-center justify-center space-x-3 pb-1 lg:space-x-6">
-                        <Link
-                            to="https://www.facebook.com/seovileo"
-                            target="_blank"
-                            className={`flex items-center justify-center border-blue-600 text-blue-700 rounded-lg text-base lg:text-sm font-semibold shadow-lg px-3 lg:px-4 py-2 border transition md:hover:scale-[.98] ${
-                                navbar && !showMenu
-                                    ? ""
-                                    : " shadow-blue-600/20 md:hover:shadow-xl"
-                            }`}
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="lg:mr-1"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                stroke-width="2"
-                                stroke="currentColor"
-                                fill="none"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <path
-                                    stroke="none"
-                                    d="M0 0h24v24H0z"
-                                    fill="none"
-                                ></path>
-                                <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
-                            </svg>
-                            <p className="w-max lg:flex hidden">Facebook</p>
-                        </Link>
-                        <Link
-                            onClick={closeMenu}
-                            title="Kontakt"
-                            aria-label="kontakt"
-                            className={`flex items-center justify-center border-green-600 text-green-700 rounded-lg text-base lg:text-sm font-semibold shadow-lg px-3 lg:px-4 py-2 border transition md:hover:scale-[.98] ${
-                                navbar && !showMenu
-                                    ? ""
-                                    : " shadow-green-600/20 md:hover:shadow-xl"
-                            }`}
-                            to="tel:+48570037077"
-                        >
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="lg:mr-1"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                stroke-width="2"
-                                stroke="currentColor"
-                                fill="none"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <path
-                                    stroke="none"
-                                    d="M0 0h24v24H0z"
-                                    fill="none"
-                                ></path>
-                                <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2"></path>
-                            </svg>
-                            <p className="w-max lg:flex hidden">+48570037077</p>
-                        </Link>
-                        <button
-                            aria-label="Menu"
-                            onClick={handleMenu}
-                            className="lg:hidden p-2.5 transition-colors z-50"
-                        >
-                            <div
-                                className={`w-5 h-1 transition bg-gray-800 rounded-2xl m-1 ${
-                                    showMenu ? "translate-y-2 rotate-45" : ""
-                                }`}
-                            />
-                            <div
-                                className={`w-3 h-1 transition bg-gray-800 rounded-2xl m-1 ${
-                                    showMenu ? "opacity-0" : ""
-                                }`}
-                            />
-                            <div
-                                className={`w-5 h-1 transition bg-gray-800 rounded-2xl m-1 ${
-                                    showMenu ? "-translate-y-2 -rotate-45" : ""
-                                }`}
-                            />
-                        </button>
-                    </div>
-                </div>
-                <ul
-                    className={`absolute top-[99%] left-0 w-full text-center -z-10 ${
-                        showMenu
-                            ? "text-lg bg-white space-y-6 lg:space-y-0 opacity-100 transition pt-10 pb-12 lg:pb-2 -translate-y-0 "
-                            : "py-2 lg:opacity-100 lg:static lg:flex lg:flex-row lg:items-center lg:justify-around lg:mt-3 lg:translate-y-0 lg:py-0 opacity-0 -translate-y-full transition lg:z-10 lg:max-w-screen-lg lg:border-t"
-                    }`}
-                >
-                    <li className="mx-5 lg:my-0">
-                        <Link
-                            onClick={closeMenu}
-                            title="Usługi"
-                            aria-label="Usługi"
-                            className="relative"
-                            to="/"
-                        >
-                            <p className="px-2 py-1 font-semibold text-base lg:text-sm transition-colors">
-                                Home
-                            </p>
+                    </li>
+                    <li className="list-none">
+                        <Link to="/" className="py-1 px-2">
+                            Blog
                         </Link>
                     </li>
-                    <li className="mx-5 lg:my-0">
-                        <Link
-                            onClick={closeMenu}
-                            title="Usługi"
-                            aria-label="Usługi"
-                            className="relative"
-                            to="/"
-                        >
-                            <p className="px-2 py-1 font-semibold text-base lg:text-sm transition-colors">
-                                Projekty
-                            </p>
-                        </Link>
-                    </li>
-                    <li className="mx-5 lg:my-0">
-                        <Link
-                            onClick={closeMenu}
-                            title="Usługi"
-                            aria-label="Usługi"
-                            className="relative"
-                            to="/"
-                        >
-                            <p className="px-2 py-1 font-semibold text-base lg:text-sm transition-colors">
-                                Funkcje
-                            </p>
-                        </Link>
-                    </li>
-
-                    <li className="mx-5 lg:my-0">
-                        <Link
-                            onClick={closeMenu}
-                            title="Usługi"
-                            aria-label="Usługi"
-                            className="relative"
-                            to="/"
-                        >
-                            <p className="px-2 py-1 font-semibold text-base lg:text-sm transition-colors">
-                                Usługi
-                            </p>
-                        </Link>
-                    </li>
-
-                    <li className="mx-5 lg:my-0 relative bg-yellow-500 rounded-md">
-                        <Link
-                            onClick={closeMenu}
-                            title="Darmowy Kalkulator"
-                            aria-label="Darmowy Kalkulator"
-                            className="relative"
-                            to="/darmowa-wycena"
-                        >
-                            <p className="px-4 py-2 lg:py-3 font-semibold text-base lg:text-sm transition-colors relative text-white tracking-wide">
-                                Kalkulator
-                                <span className="absolute bottom-0 translate-y-2/3 left-1/2 -translate-x-1/2 text-[7px] text-white font-bold tracking-widest bg-black px-2  rounded-md uppercase">
-                                    Darmowy
-                                </span>
-                            </p>
-                        </Link>
-                    </li>
-
-                    <li className="mx-5 lg:my-0">
-                        <Link
-                            onClick={closeMenu}
-                            title="Blog"
-                            aria-label="Blog"
-                            className="relative"
-                            to="/blog"
-                        >
-                            <p className="px-2 py-1 font-semibold text-base lg:text-sm transition-colors">
-                                Blog
-                            </p>
-                        </Link>
-                    </li>
-                    <li className="mx-5 lg:my-0">
-                        <Link
-                            onClick={closeMenu}
-                            title="Kontakt"
-                            aria-label="Kontakt"
-                            className="relative"
-                            to="/kontakt"
-                        >
-                            <p className="px-2 py-1 font-semibold text-base lg:text-sm transition-colors">
-                                Kontakt
-                            </p>
+                    <li className="list-none">
+                        <Link to="/" className="py-1 px-2">
+                            Kontakt
                         </Link>
                     </li>
                 </ul>
             </nav>
+            <Link
+                to="/"
+                className="border border-yellow-400 p-2 rounded-lg relative font-medium text-[15px]"
+            >
+                Darmowa Wycena
+                <div className="absolute h-2.5 w-2.5 bg-orange-400 rounded-full -top-1 -right-1 animate-ping" />
+            </Link>
+            <button
+                aria-label="Menu"
+                onClick={handleMenu}
+                className="lg:hidden p-2.5 transition-colors z-50"
+            >
+                <div
+                    className={`w-5 h-1 transition bg-gray-800 rounded-2xl m-1 ${
+                        showMenu ? "translate-y-2 rotate-45" : ""
+                    }`}
+                />
+                <div
+                    className={`w-3 h-1 transition bg-gray-800 rounded-2xl m-1 ${
+                        showMenu ? "opacity-0" : ""
+                    }`}
+                />
+                <div
+                    className={`w-5 h-1 transition bg-gray-800 rounded-2xl m-1 ${
+                        showMenu ? "-translate-y-2 -rotate-45" : ""
+                    }`}
+                />
+            </button>
         </header>
     );
 };
