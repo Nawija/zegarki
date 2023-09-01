@@ -29,11 +29,29 @@ const Header = () => {
         window.addEventListener("scroll", changeBackground);
     });
 
-    const [isHovered, setIsHovered] = useState(false);
+    const [showOfferMenu, setOfferMenu] = useState(false);
+    const [showFunctionMenu, setFunctionMenu] = useState(false);
 
-    const handleLinkHover = () => {
-        setIsHovered(!isHovered);
+    const handleOfferHover = () => {
+        setOfferMenu(true);
+        setFunctionMenu(false);
     };
+
+    const handleFunctionHover = () => {
+        setFunctionMenu(true);
+        setOfferMenu(false);
+    };
+
+    const handleLinkLeave = () => {
+        setOfferMenu(false);
+        setFunctionMenu(false);
+    };
+    const [showOfferMenuMobile, setOfferMenuMobile] = useState(false);
+    const [showFunctionMenuMobile, setFunctionMenuMobile] = useState(false);
+
+    const handleOfferMobile = () => setOfferMenuMobile(!showOfferMenuMobile);
+    const handleFunctionMobile = () =>
+        setFunctionMenuMobile(!showFunctionMenuMobile);
 
     return (
         <header
@@ -53,7 +71,157 @@ const Header = () => {
                     </p>
                 </Link>
 
-                <ul className="flex items-center bg-white justify-between space-x-4 font-medium text-[15px] ml-10">
+                {/* -------------- Nav Mobile */}
+                <ul
+                    className={`lg:hidden overflow-auto absolute top-[99%] left-0 w-full bg-white font-semibold text-center transition-all duration-100 space-y-6 pb-6  ${
+                        showMenu
+                            ? "translate-y-0 shadow-xl"
+                            : "-translate-y-[200%] text-[0px] text-white bg-transparent"
+                    }`}
+                >
+                    <li className="list-none bg-white flex items-center justify-center">
+                        <Link to="/" className="py-3 px-3 text-main">
+                            Home
+                        </Link>
+                    </li>
+                    <button
+                        className="flex w-max mx-auto flex-col items-center justify-center list-none relative py-3 px-3 text-main active:bg-none bg-transparent"
+                        onClick={handleOfferMobile}
+                    >
+                        <div className="flex items-center justify-center">
+                            <p>Oferta</p>
+                            <BiSolidChevronDown
+                                className={`transition-[transform,colors] ${
+                                    showOfferMenuMobile
+                                        ? "rotate-90 text-yellow-500"
+                                        : ""
+                                } `}
+                            />
+                        </div>
+                        <div
+                            className={`
+                         overflow-y-scroll transition-[height] 
+                            ${showOfferMenuMobile ? "h-64 p-4 " : "h-0"}
+                        `}
+                        >
+                            <Link
+                                to="/galeria"
+                                className="flex items-center justify-between py-4 px-8 text-main"
+                            >
+                                <p className="w-max">Strona Internetowa</p>
+                                <div className="flex">
+                                    <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                    <FaLaptopCode className="text-2xl" />{" "}
+                                </div>
+                            </Link>
+                            <Link
+                                to="/galeria"
+                                className="flex items-center justify-between py-4 px-8 text-main"
+                            >
+                                <p className="w-max">Sklep Internetowy</p>
+                                <div className="flex items-end justify-between">
+                                    <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                    <MdShoppingCart className="text-2xl" />{" "}
+                                </div>
+                            </Link>
+                            <Link
+                                to="/galeria"
+                                className="flex items-center justify-between py-4 px-8 text-main"
+                            >
+                                <p className="w-max">Pozycjonowanie SEO</p>
+                                <div className="flex items-end justify-between">
+                                    <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                    <TbSeo className="text-2xl" />{" "}
+                                </div>
+                            </Link>
+                            <Link
+                                to="/galeria"
+                                className="flex items-center justify-between py-4 px-8 text-main"
+                            >
+                                <p className="w-max">Projekt Graficzny</p>
+                                <div className="flex items-end justify-between">
+                                    <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                    <SiTaichigraphics className="text-2xl" />{" "}
+                                </div>
+                            </Link>
+                        </div>
+                    </button>
+                    <button
+                        className="flex w-max mx-auto flex-col items-center justify-center list-none relative py-3 px-3 text-main active:bg-none bg-transparent"
+                        onClick={handleFunctionMobile}
+                    >
+                        <div className="flex items-center justify-center ">
+                            <p>Smart</p>
+                            <BiSolidChevronDown
+                                className={`transition-[transform,colors] ${
+                                    showFunctionMenuMobile
+                                        ? "rotate-90 text-yellow-500"
+                                        : ""
+                                } `}
+                            />
+                        </div>
+                        <div
+                            className={`
+                         overflow-y-scroll transition-[height] 
+                            ${showFunctionMenuMobile ? "h-64 p-4 " : "h-0"}
+                        `}
+                        >
+                            <Link
+                                to="/galeria"
+                                className="flex items-center justify-between py-4 px-8 text-main"
+                            >
+                                <p className="w-max">Strona Internetowa</p>
+                                <div className="flex">
+                                    <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                    <FaLaptopCode className="text-2xl" />{" "}
+                                </div>
+                            </Link>
+                            <Link
+                                to="/galeria"
+                                className="flex items-center justify-between py-4 px-8 text-main"
+                            >
+                                <p className="w-max">Sklep Internetowy</p>
+                                <div className="flex items-end justify-between">
+                                    <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                    <MdShoppingCart className="text-2xl" />{" "}
+                                </div>
+                            </Link>
+                            <Link
+                                to="/galeria"
+                                className="flex items-center justify-between py-4 px-8 text-main"
+                            >
+                                <p className="w-max">Pozycjonowanie SEO</p>
+                                <div className="flex items-end justify-between">
+                                    <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                    <TbSeo className="text-2xl" />{" "}
+                                </div>
+                            </Link>
+                            <Link
+                                to="/galeria"
+                                className="flex items-center justify-between py-4 px-8 text-main"
+                            >
+                                <p className="w-max">Projekt Graficzny</p>
+                                <div className="flex items-end justify-between">
+                                    <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                    <SiTaichigraphics className="text-2xl" />{" "}
+                                </div>
+                            </Link>
+                        </div>
+                    </button>
+                    <li className="list-none flex items-center justify-center">
+                        <Link to="/" className="py-3 px-3 text-main">
+                            Blog
+                        </Link>
+                    </li>
+                    <li className="list-none flex items-center justify-center">
+                        <Link to="/" className="py-3 px-3 text-main">
+                            Kontakt
+                        </Link>
+                    </li>
+                </ul>
+
+                {/* ---------Nav lg */}
+                <ul className="hidden lg:flex lg:items-center bg-white lg:justify-between lg:space-x-4 lg:font-medium lg:text-[15px] lg:ml-10">
                     <li className="list-none bg-white">
                         <Link
                             to="/"
@@ -64,24 +232,81 @@ const Header = () => {
                     </li>
                     <li
                         className="flex items-center z-0 bg-white justify-center list-none relative py-3 px-3 cursor-pointer hover:bg-blue-50 rounded-lg text-main"
-                        onMouseEnter={handleLinkHover}
-                        onMouseLeave={handleLinkHover}
+                        onMouseEnter={handleOfferHover}
+                        onMouseLeave={handleLinkLeave}
                     >
                         <p>Oferta</p>
                         <BiSolidChevronDown
                             className={`transition-[transform,colors] ${
-                                isHovered ? "rotate-90 text-yellow-500" : ""
+                                showOfferMenu ? "rotate-90 text-yellow-500" : ""
                             } `}
                         />
                         <div
                             className={`
-                            absolute rounded-lg top-[99%] -z-10 left-1/2 -translate-x-1/2 delay-100 text-black p-10 bg-white border-b-2 border-gray-300
-                                ${
-                                    isHovered
-                                        ? " translate-y-0"
-                                        : "-translate-y-[200%]"
-                                }
-                            `}
+                        absolute rounded-lg top-[99%] -z-10 left-1/2 -translate-x-1/2 delay-100 text-black p-10 bg-white border-b-2 border-gray-300
+                            ${showOfferMenu ? "" : "hidden"}
+                        `}
+                        >
+                            <Link
+                                to="/galeria"
+                                className="flex items-center justify-between hover:bg-blue-50 py-4 px-8 rounded-lg text-main"
+                            >
+                                <p className="w-max">Strona Internetowa</p>
+                                <div className="flex">
+                                    <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                    <FaLaptopCode className="text-2xl" />{" "}
+                                </div>
+                            </Link>
+                            <Link
+                                to="/galeria"
+                                className="flex items-center justify-between hover:bg-blue-50 py-4 px-8 rounded-lg text-main"
+                            >
+                                <p className="w-max">Sklep Internetowy</p>
+                                <div className="flex items-end justify-between">
+                                    <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                    <MdShoppingCart className="text-2xl" />{" "}
+                                </div>
+                            </Link>
+                            <Link
+                                to="/galeria"
+                                className="flex items-center justify-between hover:bg-blue-50 py-4 px-8 rounded-lg text-main"
+                            >
+                                <p className="w-max">Pozycjonowanie SEO</p>
+                                <div className="flex items-end justify-between">
+                                    <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                    <TbSeo className="text-2xl" />{" "}
+                                </div>
+                            </Link>
+                            <Link
+                                to="/galeria"
+                                className="flex items-center justify-between hover:bg-blue-50 py-4 px-8 rounded-lg text-main"
+                            >
+                                <p className="w-max">Projekt Graficzny</p>
+                                <div className="flex items-end justify-between">
+                                    <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                    <SiTaichigraphics className="text-2xl" />{" "}
+                                </div>
+                            </Link>
+                        </div>
+                    </li>
+                    <li
+                        className="flex items-center z-0 bg-white justify-center list-none relative py-3 px-3 cursor-pointer hover:bg-blue-50 rounded-lg text-main"
+                        onMouseEnter={handleFunctionHover}
+                        onMouseLeave={handleLinkLeave}
+                    >
+                        <p>Smart</p>
+                        <BiSolidChevronDown
+                            className={`transition-[transform,colors] ${
+                                showFunctionMenu
+                                    ? "rotate-90 text-yellow-500"
+                                    : ""
+                            } `}
+                        />
+                        <div
+                            className={`
+                        absolute rounded-lg top-[99%] -z-10 left-1/2 -translate-x-1/2 delay-100 text-black p-10 bg-white border-b-2 border-gray-300
+                            ${showFunctionMenu ? "" : "hidden"}
+                        `}
                         >
                             <Link
                                 to="/galeria"
@@ -145,7 +370,7 @@ const Header = () => {
 
                 <Link
                     to="/darmowa-wycena"
-                    className="flex items-center justify-center border border-blue-600 bg-gradient-to-b from-blue-400 to-blue-700 shadow-lg shadow-blue-800 text-white py-2 px-3 rounded-lg relative font-semibold tracking-wide text-[14px]"
+                    className=" hidden lg:flex items-center justify-center border border-blue-600 bg-gradient-to-b from-blue-400 to-blue-700 shadow-lg shadow-blue-800 text-white py-2 px-3 rounded-lg relative font-semibold tracking-wide text-[14px]"
                 >
                     <p className="mr-1">Darmowa Wycena</p>
                     <MdOutlineBorderColor className="text-sm" />

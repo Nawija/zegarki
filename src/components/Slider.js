@@ -42,7 +42,7 @@ const SliderCom = () => {
             {data.allDatoCmsSlajdy.edges.map(({ node }) => (
                 <div key={node.id}>
                     <GatsbyImage
-                        className="scale-up-top min-h-[11rem]"
+                        className="scale-up-top min-h-[13rem]"
                         loading="eager"
                         image={getImage(node.img)}
                         alt="lancuckiesady"
