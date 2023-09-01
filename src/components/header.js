@@ -80,7 +80,11 @@ const Header = () => {
                     }`}
                 >
                     <li className="list-none bg-white flex items-center justify-center">
-                        <Link to="/" className="py-3 px-3 text-main">
+                        <Link
+                            to="/"
+                            className="py-3 px-3 text-main"
+                            onClick={closeMenu}
+                        >
                             Home
                         </Link>
                     </li>
@@ -209,12 +213,20 @@ const Header = () => {
                         </div>
                     </button>
                     <li className="list-none flex items-center justify-center">
-                        <Link to="/" className="py-3 px-3 text-main">
+                        <Link
+                            to="/"
+                            className="py-3 px-3 text-main"
+                            onClick={closeMenu}
+                        >
                             Blog
                         </Link>
                     </li>
                     <li className="list-none flex items-center justify-center">
-                        <Link to="/" className="py-3 px-3 text-main">
+                        <Link
+                            to="/"
+                            className="py-3 px-3 text-main"
+                            onClick={closeMenu}
+                        >
                             Kontakt
                         </Link>
                     </li>
