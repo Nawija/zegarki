@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 
 const Footer = () => (
-    <div className="bg-gray-800 text-gray-400 w-full z-50">
+    <div className="bg-gray-800 text-white w-full z-50 mt-20">
         <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
             <div className="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
                 <div className="col-span-full lg:col-span-2">
@@ -20,7 +20,7 @@ const Footer = () => (
                                 src="../images/favicon.png"
                                 alt="seovileo"
                             />
-                            <p className="font-bold text-gray-300 transition-all duration-200 text-2xl w-max -mt-1">
+                            <p className="font-semibold -tracking-wide text-xl w-max -mt-1">
                                 Seovileo
                             </p>
                         </Link>
@@ -35,7 +35,6 @@ const Footer = () => (
                         <span class="inline-flex">
                             <Link
                                 to="https://www.facebook.com/seovileo/"
-                                class="text-gray-500"
                             >
                                 <svg
                                     aria-label="facebook"
@@ -51,7 +50,7 @@ const Footer = () => (
                             </Link>
                             <Link
                                 to="https://twitter.com/seovileo"
-                                class="ml-4 text-gray-500"
+                                class="ml-4 "
                             >
                                 <svg
                                     aria-label="twitter"
@@ -67,7 +66,7 @@ const Footer = () => (
                             </Link>
                             <Link
                                 to="https://www.instagram.com/seovileo/"
-                                class="ml-4 text-gray-500"
+                                class="ml-4 "
                             >
                                 <svg
                                     aria-label="instagram"
@@ -93,7 +92,7 @@ const Footer = () => (
                             <Link
                                 to="mailto:
 seovileo@email.com"
-                                class="ml-4 text-gray-500"
+                                class="ml-4 "
                             >
                                 <svg
                                     aria-label="czat"
@@ -112,7 +111,7 @@ seovileo@email.com"
                 </div>
 
                 <div>
-                    <div className="mb-4 font-bold uppercase tracking-widest text-gray-100">
+                    <div className="mb-4 font-bold uppercase tracking-widest">
                         Szybkie Linki
                     </div>
 
@@ -155,7 +154,7 @@ seovileo@email.com"
                 </div>
 
                 <div>
-                    <div className="mb-4 font-bold uppercase tracking-widest text-gray-100">
+                    <div className="mb-4 font-bold uppercase tracking-widest">
                         Portfolio
                     </div>
 
@@ -181,7 +180,7 @@ seovileo@email.com"
                 </div>
 
                 <div>
-                    <div className="mb-4 font-bold uppercase tracking-widest text-gray-100">
+                    <div className="mb-4 font-bold uppercase tracking-widest">
                         Support
                     </div>
 
@@ -207,7 +206,7 @@ seovileo@email.com"
                 </div>
 
                 <div>
-                    <div className="mb-4 font-bold uppercase tracking-widest text-gray-100">
+                    <div className="mb-4 font-bold uppercase tracking-widest">
                         FAQ
                     </div>
 
@@ -235,7 +234,7 @@ seovileo@email.com"
 
             <div className="border-t border-gray-700 py-8 text-center text-sm ">
                 © 2023 - Design by{" "}
-                <Link className="text-gray-300" to="https://seovileo.pl/">
+                <Link className="" to="https://seovileo.pl/">
                     @Seovileo.pl
                 </Link>{" "}
                 / All rights reserved.

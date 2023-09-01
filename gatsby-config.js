@@ -5,8 +5,8 @@ module.exports = {
     siteMetadata: {
         title: ``,
         description: ``,
-        author: `lancuckiesady`,
-        siteUrl: `http://lancuckiesady.com/`,
+        author: `Seovileo`,
+        siteUrl: `https://seovileo.pl/`,
     },
     plugins: [
         {
@@ -31,7 +31,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-nprogress`,
             options: {
-                showSpinner: true,
+                showSpinner: false,
                 minimum: 0.1,
             },
         },

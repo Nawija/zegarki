@@ -1,18 +1,53 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* 
 body{
     background: #f7f7f7;
+} */
+
+.text-main {
+    color: #2a3551;
+}
+.bg-main {
+    background-color: #2a3551;
+}
+.text-second {
+    color: #2563eb;
+}
+.bg-second {
+    background-color: #2563eb;
 }
 
-/* @media (min-width: 1024px) {
-    a {
-        transition-property: color, bacground-color, border-color, scale, filter;
-        transition-duration: 0.2s;
+.btn-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #3b82f6;
+    background: linear-gradient(to bottom, #60a5fa, #2563eb);
+    box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.5),
+        0 1px 3px 0 rgba(59, 130, 246, 0.3);
+    color: #ffffff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    font-size: 14px;
+}
+.btn-second {
+}
+
+.slide-bottom {
+    animation: slide-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) alternate
+        both;
+}
+
+@keyframes slide-bottom {
+    0% {
+        transform: translateY(-200px);
     }
-    a:hover {
-        filter: saturate(10%);
-        scale: 1.02;
+    100% {
+        transform: translateY(0px);
     }
-} */
+}

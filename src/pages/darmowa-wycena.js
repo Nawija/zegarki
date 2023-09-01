@@ -58,7 +58,7 @@ const CalcPrice = () => {
             </div>
             <div className="flex flex-wrap items-start justify-center max-w-screen-2xl mx-auto">
                 <form
-                    className="p-6 bg-gray-200 w-[90%] sm:w-4/5 md:w-4/6 lg:w-[55%] rounded-xl mb-12 md:mb-2 lg:mb-24"
+                    className="p-6 bg-blue-50 w-[90%] sm:w-4/5 md:w-4/6 lg:w-[55%] rounded-lg border mb-12 md:mb-2 lg:mb-24"
                     action="https://public.herotofu.com/v1/d1061fe0-e21a-11ed-8300-fd92f9e8911a"
                     method="post"
                     accept-charset="UTF-8"
@@ -111,7 +111,7 @@ const CalcPrice = () => {
                             Opisz swoją firmę
                         </label>
                         <textarea
-                            className="mr-2 w-full px-4 py-3 h-24 rounded-xl"
+                            className="mr-2 w-full px-4 py-3 h-24 rounded-lg"
                             type="text"
                             id="t1"
                             name="OpisFirmy"
@@ -122,7 +122,7 @@ const CalcPrice = () => {
                             Posiadasz identyfikację wizualną firmy?
                         </label>
                         <textarea
-                            className="mr-2 w-full px-4 py-3 h-24 rounded-xl"
+                            className="mr-2 w-full px-4 py-3 h-24 rounded-lg"
                             type="text"
                             id="t4"
                             name="IdentyfikacjaFirmy"
@@ -139,7 +139,7 @@ const CalcPrice = () => {
                             Wygląd strony - Inspirację
                         </label>
                         <textarea
-                            className="mr-2 w-full px-4 py-3 h-24 rounded-xl"
+                            className="mr-2 w-full px-4 py-3 h-24 rounded-lg"
                             type="text"
                             id="t5"
                             placeholder="Pomoze okreslic wyglad strony internetowej"
@@ -411,13 +411,13 @@ const CalcPrice = () => {
                         <p className="font-bold md:text-lg text-green-700 w-max">
                             Cena: {totalValue}
                         </p>
-                        <button className="px-3 md:px-7 py-3 text-white text-sm uppercase rounded-md bg-gradient-to-tr from-gray-900 to-gray-700 shadow-gray-900 hover:bg-gray-800 hover:shadow-lg focus:bg-gray-800 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-900 active:shadow-lg transition ease-in-out;">
+                        <button className="btn-main">
                             Wyślij Formularz
                         </button>
                     </div>
                 </form>
                 <div className="flex flex-col space-y-5 lg:ml-6 w-full sm:px-8 lg:px-0 md:w-3/4 lg:w-1/4">
-                    <p className="font-semibold mx-6 tracking-wide">Ciekawe Posty:</p>
+                    <p className="font-semibold mx-6 tracking-wide">Swiat IT:</p>
                     {data.allDatoCmsBlog.edges.map(({ node }) => (
                         <div className="flex mx-6 flex-col items-start gap-4 lg:gap-6">
                             <Link
