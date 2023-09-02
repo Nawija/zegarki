@@ -90,13 +90,14 @@ const IndexPage = () => {
                                             onLoad={handleImageLoaded}
                                         />
                                         {!imageLoaded && <Spinner />}
-                                        <div
-                                            className={`absolute top-0 left-0 h-1/3 w-full opacity-80 rounded-b-lg`}
-                                            style={{
-                                                background: `linear-gradient(to top, ${node.img.colors[4].hex} 0%, ${node.img.colors[0].hex} 100%)`,
-                                            }}
-                                        >
-                                            <p className="text-white text-sm font-bold tracking-wide absolute top-[30%] w-max left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                        <div className="absolute top-0 left-0 h-2/5 w-full ">
+                                            <div
+                                                className={`absolute top-0 left-0 h-full w-full opacity-20 rounded-b-lg blur-lg`}
+                                                style={{
+                                                    background: `linear-gradient(60deg, ${node.img.colors[4].hex} 0%, ${node.img.colors[0].hex} 100%)`,
+                                                }}
+                                            />
+                                            <p className="text-black text-sm font-bold tracking-wide absolute top-[21%] w-max left-1/2 -translate-x-1/2 -translate-y-1/2">
                                                 {node.title}
                                             </p>
                                         </div>
@@ -107,7 +108,7 @@ const IndexPage = () => {
                                             <div
                                                 className={`opacity-80 rounded-lg text-[12px] text-white font-bold px-2.5 py-1`}
                                                 style={{
-                                                    background: `linear-gradient(to top, ${node.img.colors[4].hex} 0%, ${node.img.colors[0].hex} 100%)`,
+                                                    background: `linear-gradient(60deg, ${node.img.colors[4].hex} 0%, ${node.img.colors[0].hex} 100%)`,
                                                 }}
                                             >
                                                 Zobacz

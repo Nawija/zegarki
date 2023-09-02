@@ -63,7 +63,7 @@ const SliderCom = () => {
                             style={{
                                 background: `${node.img.colors[0].hex}`,
                             }}
-                            className="h-full w-full absolute top-0 left-0 opacity-10"
+                            className="h-full w-full absolute top-0 left-0 opacity-5"
                         />
                         <div className="flex flex-col items-center justify-between gap-2 lg:flex-row max-w-screen-xl mx-auto">
                             <p className=" font-semibold">{node.title}</p>

@@ -5,7 +5,6 @@ import { graphql, Link } from "gatsby";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import TopImg from "../components/topImg";
 import Spinner from "../components/Spinner";
 
 import "../styles/template.css";
@@ -24,7 +23,7 @@ const ProjectTemplate = ({
             <div
                 className={`relative h-80 w-full opacity-80 rounded-b-lg`}
                 style={{
-                    background: `linear-gradient(to top, ${datoCmsProjekty.img.colors[4].hex} 0%, ${datoCmsProjekty.img.colors[0].hex} 100%)`,
+                    background: `linear-gradient(60deg, ${datoCmsProjekty.img.colors[4].hex} 0%, ${datoCmsProjekty.img.colors[0].hex} 100%)`,
                 }}
             >
                 <p className="text-white text-xl lg:text-2xl font-bold tracking-wide absolute top-1/2 w-max left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -36,7 +35,7 @@ const ProjectTemplate = ({
                     <GatsbyImage
                         loading="eager"
                         image={getImage(datoCmsProjekty.img)}
-                        className="-mt-52"
+                        className="-mt-60"
                         alt="seovileo"
                         title="seovileo"
                         onLoad={handleImageLoaded}
