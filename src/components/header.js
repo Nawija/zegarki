@@ -56,10 +56,10 @@ const Header = () => {
     return (
         <header
             className={`bg-white flex z-[999] relative ${
-                navbar ? "sticky top-0 mx-auto slide-bottom" : ""
+                navbar ? "sticky top-0 mx-auto slide-bottom shadow-xl" : ""
             }`}
         >
-            <nav className="flex items-center sticky justify-between px-2 py-4 max-w-screen-xl w-full mx-auto">
+            <nav className="flex items-center sticky justify-between px-4 py-4 max-w-screen-xl w-full mx-auto">
                 <Link to="/" className="flex items-center justify-between">
                     <StaticImage
                         quality={100}
@@ -310,7 +310,7 @@ const Header = () => {
                         <BiSolidChevronDown
                             className={`transition-[transform,colors] ${
                                 showFunctionMenu
-                                    ? "rotate-90 text-yellow-500"
+                                    ? "rotate-90 text-blue-500"
                                     : ""
                             } `}
                         />
@@ -324,9 +324,9 @@ const Header = () => {
                                 to="/galeria"
                                 className="flex items-center justify-between hover:bg-blue-50 py-4 px-8 rounded-lg text-main"
                             >
-                                <p className="w-max">Strona Internetowa</p>
+                                <p className="w-max">Inspiracje</p>
                                 <div className="flex">
-                                    <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                    <div className="bg-blue-400 h-5 w-[1.5px] mx-5" />
                                     <FaLaptopCode className="text-2xl" />{" "}
                                 </div>
                             </Link>
@@ -334,9 +334,9 @@ const Header = () => {
                                 to="/galeria"
                                 className="flex items-center justify-between hover:bg-blue-50 py-4 px-8 rounded-lg text-main"
                             >
-                                <p className="w-max">Sklep Internetowy</p>
+                                <p className="w-max">Funkcje</p>
                                 <div className="flex items-end justify-between">
-                                    <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                    <div className="bg-blue-400 h-5 w-[1.5px] mx-5" />
                                     <MdShoppingCart className="text-2xl" />{" "}
                                 </div>
                             </Link>
@@ -346,7 +346,7 @@ const Header = () => {
                             >
                                 <p className="w-max">Pozycjonowanie SEO</p>
                                 <div className="flex items-end justify-between">
-                                    <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                    <div className="bg-blue-400 h-5 w-[1.5px] mx-5" />
                                     <TbSeo className="text-2xl" />{" "}
                                 </div>
                             </Link>
@@ -356,11 +356,19 @@ const Header = () => {
                             >
                                 <p className="w-max">Projekt Graficzny</p>
                                 <div className="flex items-end justify-between">
-                                    <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                    <div className="bg-blue-400 h-5 w-[1.5px] mx-5" />
                                     <SiTaichigraphics className="text-2xl" />{" "}
                                 </div>
                             </Link>
                         </div>
+                    </li>
+                    <li className="list-none bg-white">
+                        <Link
+                            to="/"
+                            className="py-3 px-3 hover:bg-blue-50 rounded-lg text-main"
+                        >
+                            Galeria
+                        </Link>
                     </li>
                     <li className="list-none">
                         <Link

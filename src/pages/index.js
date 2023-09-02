@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
@@ -7,8 +7,6 @@ import { useStaticQuery, graphql, Link } from "gatsby";
 import Spinner from "../components/Spinner";
 
 import SliderCom from "../components/Slider";
-
-import { AiFillInstagram, AiFillFacebook } from "react-icons/ai";
 
 const IndexPage = () => {
     const [imageLoaded, setImageLoaded] = useState(false);
@@ -33,8 +31,8 @@ const IndexPage = () => {
                             }
                             gatsbyImageData(
                                 placeholder: NONE
-                                height: 330
-                                width: 350
+                                height: 250
+                                width: 250
                             )
                         }
                     }
@@ -45,36 +43,6 @@ const IndexPage = () => {
     return (
         <Layout>
             <SliderCom />
-
-            <div className="bg-blue-50 max-w-[2000px] mx-auto w-full py-2">
-                <div className="flex flex-col items-center justify-between gap-8 lg:flex-row max-w-screen-xl mx-auto">
-                    <p className="text-gray-700">Odwiedz Nas</p>
-
-                    <div className="flex items-center justify-center gap-4 lg:justify-start">
-                        <span className="text-sm font-semibold uppercase tracking-wide text-gray-700">
-                            Social Media
-                        </span>
-                        <span className="h-px w-12 bg-green-500"></span>
-
-                        <div className="flex gap-3">
-                            <Link
-                                to="/"
-                                target="_blank"
-                                className="text-2xl transition-colors text-gray-400 hover:text-second active:text-gray-600"
-                            >
-                                <AiFillFacebook />
-                            </Link>
-                            <Link
-                                to="/"
-                                target="_blank"
-                                className="text-2xl transition-colors text-gray-400 hover:text-yellow-400 active:text-gray-600"
-                            >
-                                <AiFillInstagram />
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <div className="bg-white py-6 sm:py-8 lg:py-16">
                 <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
@@ -91,7 +59,7 @@ const IndexPage = () => {
                         </p>
                     </div>
 
-                    <div className="flex flex-wrap items-center justify-center space-x-5">
+                    <div className="flex flex-wrap items-center justify-center space-x-6">
                         {data.allDatoCmsProjekty.edges.map(({ node }) => (
                             <div className="mb-4">
                                 <Link to={node.slug}>
@@ -105,46 +73,42 @@ const IndexPage = () => {
                                         />
                                         {!imageLoaded && <Spinner />}
                                         <div
-                                            className={`absolute top-0 left-0 h-full w-full opacity-20 group-hover:scale-150 transition-transform duration-500`}
+                                            className={`absolute top-0 left-0 h-1/3 w-full opacity-80 rounded-b-lg`}
                                             style={{
-                                                background: `radial-gradient(circle at center, transparent 22%, ${node.img.colors[0].hex} 62%)`,
+                                                background: `linear-gradient(to top, ${node.img.colors[4].hex} 0%, ${node.img.colors[0].hex} 100%)`,
                                             }}
-                                        />
-
-                                        <small
-                                            style={{
-                                                color: `${node.img.colors[0].hex}`,
-                                            }}
-                                            className="absolute bottom-2 right-2 z-20 font-semibold"
                                         >
-                                            {node.data}
-                                        </small>
+                                            <p className="text-white text-sm font-bold tracking-wide absolute top-[30%] w-max left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                                {node.title}
+                                            </p>
+                                        </div>
+                                        <div className="flex items-center justify-between px-3">
+                                            <small className="font-semibold">
+                                                {node.data}
+                                            </small>
+                                            <div
+                                                className={`opacity-80 rounded-lg text-[12px] text-white font-bold px-2.5 py-1`}
+                                                style={{
+                                                    background: `linear-gradient(to top, ${node.img.colors[4].hex} 0%, ${node.img.colors[0].hex} 100%)`,
+                                                }}
+                                            >
+                                                Zobacz
+                                            </div>
+                                        </div>
                                     </div>
                                 </Link>
-
-                                <div className="flex items-start justify-between gap-2 px-2">
-                                    <div className="flex flex-col">
-                                        <Link
-                                            to={node.slug}
-                                            className="font-bold transition hover:underline lg:text-lg"
-                                        >
-                                            {node.title}
-                                        </Link>
-                                    </div>
-
-                                    <span className="font-semibold  text-sm">
-                                        {node.price}
-                                    </span>
-                                </div>
                             </div>
                         ))}
                     </div>
+                    <Link to="/" className="btn-main w-max mx-auto mt-4">
+                        Więcej Projektów
+                    </Link>
                 </div>
             </div>
 
             <div className="bg-white py-6 sm:py-8 lg:py-16">
                 <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-                    <div className="flex flex-col overflow-hidden rounded-lg bg-blue-50 sm:flex-row md:h-80">
+                    <div className="flex flex-col overflow-hidden rounded-lg bg-gradient-to-br from-amber-300 to-amber-600 sm:flex-row md:h-80">
                         <div className="flex w-full flex-col p-4 sm:w-1/2 sm:p-8 lg:w-2/5">
                             <h2 className="mb-4 text-xl font-bold  md:text-2xl lg:text-4xl">
                                 Promocja
@@ -168,9 +132,9 @@ const IndexPage = () => {
                             </div>
                         </div>
 
-                        <div className="order-first h-48 w-full bg-gray-700 sm:order-none sm:h-auto sm:w-1/2 lg:w-3/5">
+                        <div className="order-first h-48 w-full bg-gray-700 sm:order-none sm:h-auto sm:w-1/2 lg:w-3/5 rounded-lg overflow-hidden">
                             <img
-                                src="https://img.freepik.com/darmowe-psd/3d-interfejs-prezentacji-makieta-strony-internetowej-na-bialym-tle_359791-208.jpg?w=2000&t=st=1693571717~exp=1693572317~hmac=996d7dfae29fb5c82626a2762e416d011c792ff375dd142b0d71c21bb91bbdd4"
+                                src="https://img.freepik.com/darmowe-zdjecie/renderowanie-3d-na-koncepcji-hostingu-strony-internetowej_23-2149484780.jpg?w=1480&t=st=1693654121~exp=1693654721~hmac=387f66bad037f860bd26aa3a61ee3fcf3cd31f7d0c74551fef45f189d0f5642f"
                                 loading="lazy"
                                 alt="Photo by Dom Hill"
                                 className="h-full w-full object-cover object-center"
