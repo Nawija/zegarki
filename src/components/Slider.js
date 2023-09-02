@@ -12,7 +12,7 @@ import { AiFillInstagram, AiFillFacebook } from "react-icons/ai";
 const SliderCom = () => {
     const data = useStaticQuery(graphql`
         {
-            allDatoCmsSlajdy {
+            allDatoCmsSlajdy(sort: { position: ASC }) {
                 edges {
                     node {
                         id
@@ -35,10 +35,10 @@ const SliderCom = () => {
         dots: false,
         arrows: false,
         infinite: true,
-        speed: 2000,
+        speed: 2500,
         fade: true,
         autoplay: true,
-        autoplaySpeed: 6500,
+        autoplaySpeed: 4400,
         pauseOnHover: false,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -50,17 +50,18 @@ const SliderCom = () => {
         >
             {data.allDatoCmsSlajdy.edges.map(({ node }) => (
                 <div className="relative" key={node.id}>
-                    <GatsbyImage
-                        className="scale-up-top min-h-[13rem]"
-                        loading="eager"
-                        image={getImage(node.img)}
-                        alt="seovileo"
-                    />
+                    <div className="relative overflow-hidden">
+                        <GatsbyImage
+                            className="scale-zoom min-h-[13rem]"
+                            loading="eager"
+                            image={getImage(node.img)}
+                            alt="seovileo"
+                        />
+                    </div>
                     <div className="max-w-[2000px] mx-auto w-full py-3 relative z-30 text-main">
                         <div
                             style={{
                                 background: `${node.img.colors[0].hex}`,
-                                
                             }}
                             className="h-full w-full absolute top-0 left-0 opacity-10"
                         />
