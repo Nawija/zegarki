@@ -5,6 +5,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import TopImg from "../components/topImg";
+import SmallHero from "../components/SmallHero";
 
 const CalcPrice = () => {
     const data = useStaticQuery(graphql`
@@ -53,7 +54,7 @@ const CalcPrice = () => {
 
     return (
         <Layout>
-            <TopImg headh1="Kalkulator Wyceny Strony Internetowej"/>
+            <SmallHero title="XX"/>
             <div className="flex flex-col items-center justify-center text-center px-2 z-50 relative">
             </div>
             <div className="flex flex-wrap items-start justify-center max-w-screen-2xl mx-auto">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
@@ -16,18 +16,6 @@ const IndexPage = () => {
     const handleImageLoaded = () => {
         setImageLoaded(true);
     };
-    const [videoLoaded, setVideoLoaded] = useState(false);
-
-    const handleVideoLoaded = () => {
-        setVideoLoaded(true);
-    };
-    useEffect(() => {
-        const delay = 5000;
-        const timer = setTimeout(() => {
-            handleVideoLoaded();
-        }, delay);
-        return () => clearTimeout(timer);
-    }, []);
     const data = useStaticQuery(graphql`
         {
             allDatoCmsProjekty {
@@ -77,8 +65,7 @@ const IndexPage = () => {
             <Hero />
             <div className="bg-gradient-to-b from-blue-300 to-blue-100 p-4 w-full relative flex items-center justify-center">
                 <p className="font-semibold mr-5 text-sm md:text-base">
-                    Nielimitowane pobieranie dla niczym nieograniczonych
-                    pomysłów
+                    Poznaj rewolucję, inspiracja na wyciągnięcie ręki
                 </p>
                 <Link
                     to="/"

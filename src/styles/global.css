@@ -68,5 +68,5 @@
 
 .fade-in {
     opacity: 100;
-    transition: opacity 1s ease-out;
+    transition: opacity 5s ease-out;
 }
