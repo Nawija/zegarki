@@ -3,7 +3,15 @@ import Modal from "react-modal";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
+import Spinner from "../components/Spinner";
+
 const Galeria = () => {
+
+    const [imageLoaded, setImageLoaded] = useState(false);
+
+    const handleImageLoaded = () => {
+        setImageLoaded(true);
+    };
     const data = useStaticQuery(graphql`
         query {
             allDatoCmsGaleriaa {
@@ -43,7 +51,7 @@ const Galeria = () => {
         setZoomFactor((prevZoom) => prevZoom + 0.3);
     };
     const handleUnZoomButtonClick = () => {
-        setZoomFactor(prevZoom => Math.max(prevZoom - 0.3, 1));
+        setZoomFactor((prevZoom) => Math.max(prevZoom - 0.3, 1));
     };
 
     const goToNextImage = () => {
@@ -59,58 +67,57 @@ const Galeria = () => {
         setSelectedImage(galleryImages[newIndex]);
         setCurrentImageIndex(newIndex);
     };
+    
 
     return (
         <section className="pb-4 relative">
-
-
-                    <div className="max-w-screen-2xl mx-auto">
-                        <div className="flex flex-wrap w-full ml-auto sm:mt-6">
-                            {data.allDatoCmsGaleriaa.edges.map(({ node }) => (
-                                <div className=" mx-auto py-0.5" key={node.img}>
-                                    <button onClick={() => openModal(node.img)}>
-                                        <div className="relative h-56 w-72 md:h-52 md:w-60 mx-auto group rounded-md overflow-hidden">
-                                            <GatsbyImage
-                                                className="w-full h-full"
-                                                image={getImage(node.img)}
-                                                alt="łancuckie sady"
-                                                title="łancuckie sady"
-                                            />
-                                            <div className="bg-black/40 absolute inset-0 flex items-center justify-center opacity-0 lg:group-hover:opacity-100 transition-opacity duration-200 ">
-                                                <svg
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    class="icon icon-tabler icon-tabler-zoom-in"
-                                                    width="24"
-                                                    height="24"
-                                                    viewBox="0 0 24 24"
-                                                    stroke-width="2"
-                                                    stroke="white"
-                                                    fill="none"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
-                                                >
-                                                    <path
-                                                        stroke="none"
-                                                        d="M0 0h24v24H0z"
-                                                        fill="none"
-                                                    ></path>
-                                                    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
-                                                    <path d="M7 10l6 0"></path>
-                                                    <path d="M10 7l0 6"></path>
-                                                    <path d="M21 21l-6 -6"></path>
-                                                </svg>
-                                                <p className="text-white">
-                                                    Zobacz
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </button>
+            <div className="max-w-screen-xl mx-auto">
+                <div className="flex flex-wrap w-full ml-auto">
+                    {data.allDatoCmsGaleriaa.edges.map(({ node }) => (
+                        <div className="p-1" key={node.img}>
+                            <button onClick={() => openModal(node.img)}>
+                                <div className="relative h-56 w-72 md:h-52 md:w-60 mx-auto group rounded-md overflow-hidden">
+                                    <GatsbyImage
+                                        className="w-full h-full"
+                                        image={getImage(node.img)}
+                                        alt="seovileo"
+                                        title="seovileo"
+                                        onLoad={handleImageLoaded}
+                                    />
+                                    {!imageLoaded && <Spinner />}
+                                    <div className="bg-black/60  absolute inset-0 flex items-center justify-center opacity-0 lg:group-hover:opacity-100 transition-opacity duration-200 delay-75 backdrop-blur-sm border text-main">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="24"
+                                            height="24"
+                                            className="mr-1 text-white"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="2"
+                                            stroke="currentColor"
+                                            fill="none"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        >
+                                            <path
+                                                stroke="none"
+                                                d="M0 0h24v24H0z"
+                                                fill="none"
+                                            ></path>
+                                            <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
+                                            <path d="M7 10l6 0"></path>
+                                            <path d="M10 7l0 6"></path>
+                                            <path d="M21 21l-6 -6"></path>
+                                        </svg>
+                                        <p className="font-medium text-white">
+                                            Zobacz
+                                        </p>
+                                    </div>
                                 </div>
-                            ))}
+                            </button>
                         </div>
-                    </div>
-
-
+                    ))}
+                </div>
+            </div>
 
             <Modal
                 isOpen={isModalOpen}
@@ -122,7 +129,6 @@ const Galeria = () => {
                 <button className="close-button" onClick={closeModal}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="icon icon-tabler icon-tabler-x"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -140,7 +146,6 @@ const Galeria = () => {
                 <button className="zoom-button" onClick={handleZoomButtonClick}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="icon icon-tabler icon-tabler-zoom-in"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -167,7 +172,6 @@ const Galeria = () => {
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="icon icon-tabler icon-tabler-zoom-in"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -190,7 +194,6 @@ const Galeria = () => {
                 <button className="prev-button" onClick={goToPreviousImage}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="icon icon-tabler icon-tabler-chevron-left"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -211,7 +214,6 @@ const Galeria = () => {
                 <button className="next-button" onClick={goToNextImage}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        class="icon icon-tabler icon-tabler-chevron-right"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -231,8 +233,8 @@ const Galeria = () => {
                 </button>
                 <GatsbyImage
                     image={getImage(selectedImage)}
-                    alt="lancuckie sady"
-                    title="lancuckie sady"
+                    alt="seovileo"
+                    title="seovileo"
                     className="modal-image"
                     style={{ transform: `scale(${zoomFactor})` }}
                 />

@@ -378,7 +378,7 @@ const Header = () => {
                     </li>
                     <li className="list-none">
                         <Link
-                            to="/"
+                            to="/galeria"
                             className="py-3 px-3 hover:bg-blue-50 rounded-lg text-main"
                         >
                             Galeria
@@ -386,7 +386,7 @@ const Header = () => {
                     </li>
                     <li className="list-none">
                         <Link
-                            to="/"
+                            to="/blog"
                             className="py-3 px-3 hover:bg-blue-50 rounded-lg text-main"
                         >
                             Blog
@@ -394,7 +394,7 @@ const Header = () => {
                     </li>
                     <li className="list-none">
                         <Link
-                            to="/"
+                            to="/kontakt"
                             className="py-3 px-3 hover:bg-blue-50 rounded-lg text-main"
                         >
                             Kontakt

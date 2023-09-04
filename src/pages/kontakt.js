@@ -2,18 +2,21 @@ import React from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { Link } from "gatsby";
-import TopImg from "../components/topImg";
+import SmallHero from "../components/SmallHero";
 
 const KontaktPage = () => {
     return (
         <Layout>
-            <TopImg headh1="Kontakt"/>
+            <SmallHero title="Kontakt" desc="Masz pytania?" />
 
             <section className="flex flex-col lg:flex-row items-start justify-center mx-auto my-6 lg:my-10 max-w-screen-xl px-6">
                 <div className="flex flex-col items-center mx-auto lg:ml-auto justify-center lg:w-1/3 order-1 space-y-6 mt-6 lg:mt-0">
-                    <div className="flex items-center justify-center text-gray-700 bg-gray-50 border-2  shadow-lg py-6 sm:py-8 lg:py-12 body-font relative w-full mx-auto px-6">
-                        <Link
-                            to="tel:+48555555555"
+                    <Link
+                        to="tel:+48570037077"
+                        className="flex items-center justify-center text-gray-700 bg-gray-50 border-2  shadow-lg py-6 sm:py-8 lg:py-12 body-font relative w-full mx-auto px-6"
+                    >
+                        <div
+                            to="tel:+48570037077"
                             className="flex items-center justify-center"
                         >
                             <svg
@@ -32,12 +35,12 @@ const KontaktPage = () => {
                                 />
                             </svg>
 
-                            <p>+48 555 555 555</p>
-                        </Link>
-                    </div>
+                            <p>+48 570 037 077</p>
+                        </div>
+                    </Link>
                     <div className="flex items-center justify-center text-gray-700 bg-gray-50 border-2  shadow-lg py-6 sm:py-8 lg:py-12 body-font relative w-full mx-auto px-6">
                         <Link
-                            to="mailto:xxx@wp.pl"
+                            to="mailto:seovileo@gmail.com"
                             className="flex items-center justify-center"
                         >
                             <svg
@@ -55,7 +58,8 @@ const KontaktPage = () => {
                                     />
                                     <path
                                         d="M19 4C20.08 4 21.027 4.57 21.555 5.427L12 11.797L2.44501 5.427C2.69574 5.01977 3.04022 4.6784 3.44971 4.43138C3.85921 4.18436 4.32184 4.03886 4.79901 4.007L5.00001 4H19Z"
-                                        fill="red"
+
+                                        className="fill-red-400"
                                     />
                                 </g>
                                 <defs>
@@ -136,7 +140,7 @@ const KontaktPage = () => {
                                             type="text"
                                             id="name"
                                             name="name"
-                                            class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                            class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:ring-2 focus:ring-yellow-400 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                                         />
                                     </div>
                                 </div>
@@ -153,7 +157,7 @@ const KontaktPage = () => {
                                             type="email"
                                             id="email"
                                             name="email"
-                                            class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:ring-2 focus:ring-red-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                                            class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:ring-2 focus:ring-yellow-400 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                                         />
                                     </div>
                                 </div>
@@ -169,12 +173,12 @@ const KontaktPage = () => {
                                         <textarea
                                             id="message"
                                             name="message"
-                                            class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:ring-2 focus:ring-red-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                                            class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:ring-2 focus:ring-yellow-400 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                                         ></textarea>
                                     </div>
                                 </div>
                                 <div class="p-2 w-full">
-                                    <button className="flex ml-auto py-3 px-6 bg-[#C20404] transition-colors hover:bg-[#9d2b2b] text-white text-sm">
+                                    <button className="btn-main ml-auto">
                                         Wyślij
                                     </button>
                                 </div>

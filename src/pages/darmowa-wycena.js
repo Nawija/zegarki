@@ -38,7 +38,7 @@ const CalcPrice = () => {
         }
     `);
 
-    const initialValues = Array.from({ length: 9 }, () => null);
+    const initialValues = Array.from({ length: 11 }, () => null);
     const [values, setValues] = useState(initialValues);
 
     const totalValue = values.reduce((acc, cur) => acc + cur, 0);
@@ -78,7 +78,7 @@ const CalcPrice = () => {
                                     className="mr-2 scale-110 cursor-pointer"
                                     type="radio"
                                     name="PageType"
-                                    value="1200"
+                                    value="1400"
                                     checked={values[0] === 1400}
                                     onChange={(e) => handleRadioChange(e, 0)}
                                 />
@@ -276,88 +276,6 @@ const CalcPrice = () => {
 
                     <div className="mb-2 mt-2">
                         <p className="font-semibold mb-1">Funkcje</p>
-                        <div className="ml-2 py-2">
-                            <div>
-                                <input
-                                    className="mr-2 scale-110"
-                                    type="checkbox"
-                                    id="4"
-                                    name="Sekcja Blog"
-                                    value="50"
-                                    checked={values[4] === 50}
-                                    onChange={handleCheckboxChange}
-                                />
-                                <label htmlFor="4">Sekcja Blog</label>
-                            </div>
-                            <div>
-                                <input
-                                    className="mr-2 scale-110"
-                                    type="checkbox"
-                                    id="5"
-                                    name="Sekcja Newsy"
-                                    value="50"
-                                    checked={values[5] === 50}
-                                    onChange={handleCheckboxChange}
-                                />
-                                <label htmlFor="5">Sekcja Newsy</label>
-                            </div>
-                            <div>
-                                <input
-                                    className="mr-2 scale-110"
-                                    type="checkbox"
-                                    id="q14"
-                                    name="Formularze kontaktowe"
-                                />
-                                <label htmlFor="q14">
-                                    Formularze kontaktowe
-                                </label>
-                            </div>
-                            <div>
-                                <input
-                                    className="mr-2 scale-110"
-                                    type="checkbox"
-                                    id="6"
-                                    name="Mapa Google Maps"
-                                    value="100"
-                                    checked={values[6] === 100}
-                                    onChange={handleCheckboxChange}
-                                />
-                                <label htmlFor="6">Mapa Google Maps</label>
-                            </div>
-                            <div>
-                                <input
-                                    className="mr-2 scale-110"
-                                    type="checkbox"
-                                    id="7"
-                                    name="Kalkulator wyceny"
-                                    value="400"
-                                    checked={values[7] === 400}
-                                    onChange={handleCheckboxChange}
-                                />
-                                <label htmlFor="7">Kalkulator wyceny</label>
-                            </div>
-                            <div>
-                                <input
-                                    className="mr-2 scale-110"
-                                    type="checkbox"
-                                    id="8"
-                                    name="Chat Online"
-                                    value="200"
-                                    checked={values[8] === 200}
-                                    onChange={handleCheckboxChange}
-                                />
-                                <label htmlFor="8">Chat Online</label>
-                            </div>
-                            <div>
-                                <input
-                                    className="mr-2 scale-110"
-                                    type="checkbox"
-                                    id="inne"
-                                    name="inne"
-                                />
-                                <label htmlFor="inne">Inne</label>
-                            </div>
-                        </div>
                         <div className="ml-2 py-2 flex flex-col">
                             <label>
                                 <input
@@ -397,53 +315,77 @@ const CalcPrice = () => {
                                 <input
                                     className="mr-2 scale-110"
                                     type="checkbox"
-                                    name="Mapa Google Maps"
+                                    name="Mapa Google 2D/3D"
                                     value="50"
-                                    checked={values[4] === 50}
-                                    onChange={(e) => handleCheckboxChange(e, 4)}
+                                    checked={values[7] === 50}
+                                    onChange={(e) => handleCheckboxChange(e, 7)}
                                 />
                                 Mapa Google 2D/3D
+                            </label>
+                            <label>
+                                <input
+                                    className="mr-2 scale-110"
+                                    type="checkbox"
+                                    name="Kalkulator wyceny"
+                                    value="150"
+                                    checked={values[8] === 150}
+                                    onChange={(e) => handleCheckboxChange(e, 8)}
+                                />
+                                Kalkulator wyceny
+                            </label>
+                            <label>
+                                <input
+                                    className="mr-2 scale-110"
+                                    type="checkbox"
+                                    name="Chat"
+                                    value="50"
+                                    checked={values[9] === 50}
+                                    onChange={(e) => handleCheckboxChange(e, 9)}
+                                />
+                                Chat
                             </label>
                         </div>
                         <div className="mb-2 mt-2">
                             <p className="font-semibold mb-1">
                                 Kto dostarczy treści?
                             </p>
-                            <div className="ml-2 py-2">
-                                <div>
+                            <div className="ml-2 py-2 flex flex-col">
+                                <label>
+                                    <input
+                                        className="mr-2 scale-110 cursor-pointer"
+                                        type="radio"
+                                        name="Zleceniodawca"
+                                        value="0"
+                                        checked={values[10] === 0}
+                                        onChange={(e) =>
+                                            handleRadioChange(e, 10)
+                                        }
+                                    />
+                                    Zleceniodawca
+                                </label>
+
+                                <label>
                                     <input
                                         className="mr-2 scale-110"
                                         type="radio"
-                                        id="q18"
-                                        name="Treści"
-                                        value="Zleceniodawca (Ty)"
+                                        name="Wykonawca"
+                                        value="600"
+                                        checked={values[11] === 600}
+                                        onChange={(e) =>
+                                            handleRadioChange(e, 11)
+                                        }
                                     />
-                                    <label htmlFor="q18">Zleceniodawca</label>
-                                </div>
-                                <div>
-                                    <input
-                                        className="mr-2 scale-110"
-                                        type="radio"
-                                        id="q19"
-                                        name="Treści"
-                                        value="Wykonawca"
-                                    />
-                                    <label htmlFor="q19">Wykonawca</label>
-                                </div>
-                                <p className="text-sm text-gray-700 mt-1 px-1 md:w-[80%]">
-                                    W przypadku wyboru wykonawcy, cena napisania
-                                    tekstów jest wyceniana indywidualnie.
-                                </p>
-                                <div>
-                                    <input
-                                        checked
-                                        className="mr-2 hidden"
-                                        type="radio"
-                                        id="totalValue"
-                                        value={totalValue}
-                                        name="SUMA WYCENY"
-                                    />
-                                </div>
+                                    Wykonawca
+                                </label>
+
+                                <input
+                                    checked
+                                    className="hidden"
+                                    type="radio"
+                                    id="totalValue"
+                                    value={totalValue}
+                                    name="Suma"
+                                />
                             </div>
                         </div>
                     </div>

@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 
-import ShipVideo from "../video/ss.mp4";
+import { AiFillHome } from "react-icons/ai";
+import { DiDotnet } from "react-icons/di";
 
-const SmallHero = ({ title }) => {
+import ShipVideo from "../video/ss.mp4";
+import { Link } from "gatsby";
+
+const SmallHero = ({ title, desc }) => {
     const [videoLoaded, setVideoLoaded] = useState(false);
 
     const handleVideoLoaded = () => {
@@ -17,7 +21,7 @@ const SmallHero = ({ title }) => {
     }, []);
 
     return (
-        <div className="h-[18rem] w-full relative mb-12">
+        <div className="h-[17rem] w-full relative mb-20 mx-auto">
             <div
                 className={`relative h-full w-full ${
                     videoLoaded ? "fade-in" : "fade-out"
@@ -41,9 +45,27 @@ const SmallHero = ({ title }) => {
             )}
 
             <div className="text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto text-center w-[90%] sm:max-w-3xl">
-                <h1 className="text-3xl lg:text-6xl font-semibold text-center">
+                <p className="text-3xl lg:text-6xl font-semibold text-center">
                     {title}
-                </h1>
+                </p>
+                <p className="text-lg font-semibold text-center mt-6">{desc}</p>
+            </div>
+            <div className="bg-blue-50">
+                <div className="max-w-[1200px] mx-auto text-[13px] flex items-center justify-start px-2">
+                    <Link
+                        className="p-3 hover:bg-blue-100 rounded-lg transition-colors"
+                        to="/"
+                    >
+                        <AiFillHome />
+                    </Link>
+                    <Link
+                        to="/technologia-premium-gatsbyjs"
+                        className="p-3 hover:bg-blue-100 rounded-lg transition-colors flex items-center justify-center font-medium"
+                    >
+                        <DiDotnet className="mr-3" />
+                        <p>premium gatsbyjs</p>
+                    </Link>
+                </div>
             </div>
         </div>
     );

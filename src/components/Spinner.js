@@ -1,11 +1,11 @@
 import React from "react"
-import { FaSpinner } from "react-icons/fa"
+import { ImSpinner9 } from "react-icons/im"
 import "../styles/Spinner.css"
 
 const Spinner = () => {
   return (
     <div className="spinner">
-      <FaSpinner className="icon" />
+      <ImSpinner9 className="icon" />
     </div>
   )
 }
