@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
@@ -13,6 +13,18 @@ const IndexPage = () => {
     const handleImageLoaded = () => {
         setImageLoaded(true);
     };
+    const [videoLoaded, setVideoLoaded] = useState(false);
+
+    const handleVideoLoaded = () => {
+        setVideoLoaded(true);
+    };
+    useEffect(() => {
+        const delay = 5000;
+        const timer = setTimeout(() => {
+            handleVideoLoaded();
+        }, delay);
+        return () => clearTimeout(timer);
+    }, []);
     const data = useStaticQuery(graphql`
         {
             allDatoCmsProjekty {
@@ -60,18 +72,21 @@ const IndexPage = () => {
     return (
         <Layout>
             <div className="h-[30rem] w-full relative">
-                <video
-                    src={StarVideo}
-                    className="absolute top-0 left-0 h-full w-full object-cover -z-10"
-                    autoPlay
-                    muted
-                    loop
-                    onLoad={handleImageLoaded}
-                />
-                {imageLoaded && (
+                <div className={videoLoaded ? "" : "fade-out"}>
+                    <video
+                        src={StarVideo}
+                        className="absolute top-0 left-0 h-full w-full object-cover -z-10"
+                        autoPlay
+                        muted
+                        loop
+                        onLoad={handleVideoLoaded}
+                    />
+                </div>
+
+                {videoLoaded && (
                     <div className="absolute top-0 left-0 bg-gradient-to-t opacity-80 from-blue-500 to-blue-800 h-full w-full" />
                 )}
-                {!imageLoaded && (
+                {!videoLoaded && (
                     <div className="absolute top-0 left-0 bg-gradient-to-t from-blue-500 to-blue-800 h-full w-full" />
                 )}
 
@@ -141,7 +156,7 @@ const IndexPage = () => {
                 </div>
             </div>
             <div className="bg-gradient-to-b from-blue-300 to-blue-100 p-4 w-full relative flex items-center justify-center">
-                <p className="font-semibold mr-5">
+                <p className="font-semibold mr-5 text-sm md:text-base">
                     Nielimitowane pobieranie dla niczym nieograniczonych
                     pomysłów
                 </p>
@@ -188,7 +203,7 @@ const IndexPage = () => {
                                                     background: `linear-gradient(60deg, ${node.img.colors[4].hex} 0%, ${node.img.colors[0].hex} 100%)`,
                                                 }}
                                             />
-                                            <p className="text-black text-sm font-bold tracking-wide absolute top-[21%] w-max left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                            <p className="text-black text-sm font-bold tracking-wide absolute top-[21%] w-max left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:-translate-y-full transition-transform duration-500">
                                                 {node.title}
                                             </p>
                                         </div>
@@ -197,12 +212,12 @@ const IndexPage = () => {
                                                 {node.data}
                                             </small>
                                             <div
-                                                className={`opacity-80 rounded-lg text-[12px] text-white font-bold px-2.5 py-1`}
+                                                className={`opacity-80 border rounded-lg text-[12px] text-white font-bold px-2.5 py-1`}
                                                 style={{
                                                     background: `linear-gradient(60deg, ${node.img.colors[4].hex} 0%, ${node.img.colors[0].hex} 100%)`,
                                                 }}
                                             >
-                                                Zobacz
+                                                <small>Zobacz</small>
                                             </div>
                                         </div>
                                     </div>
