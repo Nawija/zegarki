@@ -4,10 +4,16 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import TopImg from "../components/topImg";
 import SmallHero from "../components/SmallHero";
+import Spinner from "../components/Spinner";
 
 const CalcPrice = () => {
+    const [imageLoaded, setImageLoaded] = useState(false);
+
+    const handleImageLoaded = () => {
+        setImageLoaded(true);
+    };
+
     const data = useStaticQuery(graphql`
         {
             allDatoCmsBlog(sort: { position: ASC }, limit: 4) {
@@ -31,32 +37,30 @@ const CalcPrice = () => {
             }
         }
     `);
+
     const initialValues = Array.from({ length: 9 }, () => null);
     const [values, setValues] = useState(initialValues);
 
     const totalValue = values.reduce((acc, cur) => acc + cur, 0);
 
-    const handleRadioChange = (event) => {
-        const { id, value } = event.target;
-        const index = parseInt(id);
+    const handleRadioChange = (event, categoryIndex) => {
+        const { value } = event.target;
         const newValues = [...values];
-        newValues[index] = parseInt(value);
+        newValues[categoryIndex] = parseInt(value);
         setValues(newValues);
     };
 
-    const handleCheckboxChange = (event) => {
-        const { id, value, checked } = event.target;
-        const index = parseInt(id);
+    const handleCheckboxChange = (event, categoryIndex) => {
+        const { value, checked } = event.target;
         const newValues = [...values];
-        newValues[index] = checked ? parseInt(value) : null;
+        newValues[categoryIndex] = checked ? parseInt(value) : null;
         setValues(newValues);
     };
 
     return (
         <Layout>
-            <SmallHero title="XX"/>
-            <div className="flex flex-col items-center justify-center text-center px-2 z-50 relative">
-            </div>
+            <SmallHero title="Kalkulator" />
+            <div className="flex flex-col items-center justify-center text-center px-2 z-50 relative"></div>
             <div className="flex flex-wrap items-start justify-center max-w-screen-2xl mx-auto">
                 <form
                     className="p-6 bg-blue-50 w-[90%] sm:w-4/5 md:w-4/6 lg:w-[55%] rounded-lg border mb-12 md:mb-2 lg:mb-24"
@@ -68,43 +72,42 @@ const CalcPrice = () => {
                         <p className="font-semibold mb-1">
                             Typ strony internetowej
                         </p>
-                        <div className="ml-2 py-2">
-                            <div>
+                        <div className="ml-2 py-2 flex flex-col">
+                            <label>
                                 <input
-                                    className="mr-2 scale-110"
+                                    className="mr-2 scale-110 cursor-pointer"
                                     type="radio"
-                                    id="0"
-                                    name="Multi Page"
+                                    name="PageType"
                                     value="1200"
-                                    checked={values[0] === 1200}
-                                    onChange={handleRadioChange}
+                                    checked={values[0] === 1400}
+                                    onChange={(e) => handleRadioChange(e, 0)}
                                 />
-                                <label htmlFor="0">Multi Page</label>
-                            </div>
-                            <div>
+                                Multi Page
+                            </label>
+
+                            <label>
                                 <input
                                     className="mr-2 scale-110"
                                     type="radio"
-                                    id="00"
-                                    name="Landing Page"
+                                    name="PageType"
                                     value="900"
                                     checked={values[0] === 900}
-                                    onChange={handleRadioChange}
+                                    onChange={(e) => handleRadioChange(e, 0)}
                                 />
-                                <label htmlFor="00">Landing Page</label>
-                            </div>
-                            <div>
+                                Landing Page
+                            </label>
+
+                            <label>
                                 <input
                                     className="mr-2 scale-110"
                                     type="radio"
-                                    id="000"
-                                    name="Blog"
+                                    name="PageType"
                                     value="700"
                                     checked={values[0] === 700}
-                                    onChange={handleRadioChange}
+                                    onChange={(e) => handleRadioChange(e, 0)}
                                 />
-                                <label htmlFor="000">Blog</label>
-                            </div>
+                                Blog
+                            </label>
                         </div>
                     </div>
                     <div className="flex flex-col items-start justify-start px-1 py-3">
@@ -161,61 +164,59 @@ const CalcPrice = () => {
 
                     <div className="mb-2 mt-2">
                         <p className="font-semibold mb-1">Posiadasz domenę?</p>
-                        <div className="ml-2 py-2">
-                            <div>
+                        <div className="ml-2 py-2 flex flex-col">
+                            <label>
                                 <input
-                                    className="mr-2 scale-110"
+                                    className="mr-2 scale-110 cursor-pointer"
                                     type="radio"
-                                    id="1"
-                                    name="Domena Tak"
+                                    name="Domena"
                                     value="0"
                                     checked={values[1] === 0}
-                                    onChange={handleRadioChange}
+                                    onChange={(e) => handleRadioChange(e, 1)}
                                 />
-                                <label htmlFor="1">Tak</label>
-                            </div>
-                            <div>
+                                Tak
+                            </label>
+
+                            <label>
                                 <input
                                     className="mr-2 scale-110"
                                     type="radio"
-                                    id="1"
-                                    name="Domena Nie"
+                                    name="Domena"
                                     value="50"
                                     checked={values[1] === 50}
-                                    onChange={handleRadioChange}
+                                    onChange={(e) => handleRadioChange(e, 1)}
                                 />
-                                <label htmlFor="1">Nie</label>
-                            </div>
+                                Nie
+                            </label>
                         </div>
                     </div>
 
                     <div className="mb-2 mt-2">
                         <p className="font-semibold mb-1">Posiadasz Hosting?</p>
-                        <div className="ml-2 py-2">
-                            <div>
+                        <div className="ml-2 py-2 flex flex-col">
+                            <label>
                                 <input
-                                    className="mr-2 scale-110"
+                                    className="mr-2 scale-110 cursor-pointer"
                                     type="radio"
-                                    id="2"
-                                    name="Hosting Tak"
+                                    name="Hosting"
                                     value="0"
                                     checked={values[2] === 0}
-                                    onChange={handleRadioChange}
+                                    onChange={(e) => handleRadioChange(e, 2)}
                                 />
-                                <label htmlFor="2">Tak</label>
-                            </div>
-                            <div>
+                                Tak
+                            </label>
+
+                            <label>
                                 <input
                                     className="mr-2 scale-110"
                                     type="radio"
-                                    id="2"
-                                    name="Hosting Nie"
-                                    value="50"
-                                    checked={values[2] === 50}
-                                    onChange={handleRadioChange}
+                                    name="Hosting"
+                                    value="300"
+                                    checked={values[2] === 300}
+                                    onChange={(e) => handleRadioChange(e, 2)}
                                 />
-                                <label htmlFor="2">Nie</label>
-                            </div>
+                                Nie
+                            </label>
                         </div>
                     </div>
 
@@ -223,66 +224,58 @@ const CalcPrice = () => {
                         <p className="font-semibold mb-1">
                             Ile podstron ma posiadać strona internetowa?
                         </p>
-                        <div className="ml-2 py-2">
-                            <div>
+
+                        <div className="ml-2 py-2 flex flex-col">
+                            <label>
                                 <input
-                                    className="mr-2 scale-110"
+                                    className="mr-2 scale-110 cursor-pointer"
                                     type="radio"
-                                    id="3"
-                                    name="1-3 podstron"
+                                    name="Podstrona"
                                     value="0"
                                     checked={values[3] === 0}
-                                    onChange={handleRadioChange}
+                                    onChange={(e) => handleRadioChange(e, 3)}
                                 />
-                                <label htmlFor="3">1-3 podstron</label>
-                            </div>
-                            <div>
+                                1-3 podstron
+                            </label>
+
+                            <label>
                                 <input
                                     className="mr-2 scale-110"
                                     type="radio"
-                                    id="3"
-                                    name="4-6 podstron"
-                                    value="200"
-                                    checked={values[3] === 200}
-                                    onChange={handleRadioChange}
+                                    name="Podstrona"
+                                    value="300"
+                                    checked={values[3] === 300}
+                                    onChange={(e) => handleRadioChange(e, 3)}
                                 />
-                                <label htmlFor="3">4-6 podstron</label>
-                            </div>
-                            <div>
+                                4-6 podstron
+                            </label>
+                            <label>
                                 <input
                                     className="mr-2 scale-110"
                                     type="radio"
-                                    id="3"
-                                    name="7-9 podstron"
-                                    value="400"
-                                    checked={values[3] === 400}
-                                    onChange={handleRadioChange}
-                                />
-                                <label htmlFor="3">7-9 podstron</label>
-                            </div>
-                            <div>
-                                <input
-                                    className="mr-2 scale-110"
-                                    type="radio"
-                                    id="3"
-                                    name="Więcej Stron 9+"
+                                    name="Podstrona"
                                     value="600"
                                     checked={values[3] === 600}
-                                    onChange={handleRadioChange}
+                                    onChange={(e) => handleRadioChange(e, 3)}
                                 />
-                                <label htmlFor="3">Więcej</label>
-                            </div>
-                            <p className="text-sm text-gray-700 mt-1 px-1 md:w-[80%]">
-                                Możesz to wywnioskować z pola "Zakres Usług".
-                                Każda usługa powinna posiadać podstronę. W
-                                przypadku wyboru "Więcej" Wycena zostanie
-                                ustalona indywidualnie.
-                            </p>
+                                7-9 podstron
+                            </label>
+                            <label>
+                                <input
+                                    className="mr-2 scale-110"
+                                    type="radio"
+                                    name="Podstrona"
+                                    value="900"
+                                    checked={values[3] === 900}
+                                    onChange={(e) => handleRadioChange(e, 3)}
+                                />
+                                Więcej
+                            </label>
                         </div>
                     </div>
 
                     <div className="mb-2 mt-2">
-                        <p className="font-semibold mb-1">Funkcjonalności</p>
+                        <p className="font-semibold mb-1">Funkcje</p>
                         <div className="ml-2 py-2">
                             <div>
                                 <input
@@ -365,6 +358,53 @@ const CalcPrice = () => {
                                 <label htmlFor="inne">Inne</label>
                             </div>
                         </div>
+                        <div className="ml-2 py-2 flex flex-col">
+                            <label>
+                                <input
+                                    className="mr-2 scale-110 cursor-pointer"
+                                    type="checkbox"
+                                    name="Sekcja Blog"
+                                    value="100"
+                                    checked={values[4] === 100}
+                                    onChange={(e) => handleCheckboxChange(e, 4)}
+                                />
+                                Sekcja Blog
+                            </label>
+
+                            <label>
+                                <input
+                                    className="mr-2 scale-110"
+                                    type="checkbox"
+                                    name="Sekcja News"
+                                    value="100"
+                                    checked={values[5] === 100}
+                                    onChange={(e) => handleCheckboxChange(e, 5)}
+                                />
+                                Sekcja News
+                            </label>
+                            <label>
+                                <input
+                                    className="mr-2 scale-110"
+                                    type="checkbox"
+                                    name="Formularz Kontaktowy"
+                                    value="50"
+                                    checked={values[6] === 50}
+                                    onChange={(e) => handleCheckboxChange(e, 6)}
+                                />
+                                Formularz Kontaktowy
+                            </label>
+                            <label>
+                                <input
+                                    className="mr-2 scale-110"
+                                    type="checkbox"
+                                    name="Mapa Google Maps"
+                                    value="50"
+                                    checked={values[4] === 50}
+                                    onChange={(e) => handleCheckboxChange(e, 4)}
+                                />
+                                Mapa Google 2D/3D
+                            </label>
+                        </div>
                         <div className="mb-2 mt-2">
                             <p className="font-semibold mb-1">
                                 Kto dostarczy treści?
@@ -412,13 +452,13 @@ const CalcPrice = () => {
                         <p className="font-bold md:text-lg text-green-700 w-max">
                             Cena: {totalValue}
                         </p>
-                        <button className="btn-main">
-                            Wyślij Formularz
-                        </button>
+                        <button className="btn-main">Wyślij Formularz</button>
                     </div>
                 </form>
                 <div className="flex flex-col space-y-5 lg:ml-6 w-full sm:px-8 lg:px-0 md:w-3/4 lg:w-1/4">
-                    <p className="font-semibold mx-6 tracking-wide">Swiat IT:</p>
+                    <p className="font-semibold mx-6 tracking-wide">
+                        Blog Post:
+                    </p>
                     {data.allDatoCmsBlog.edges.map(({ node }) => (
                         <div className="flex mx-6 flex-col items-start gap-4 lg:gap-6">
                             <Link
@@ -426,11 +466,13 @@ const CalcPrice = () => {
                                 className="group w-full lg:w-full h-44 lg:h-44 block self-start shrink-0 bg-gray-100 overflow-hidden rounded-lg shadow-lg relative"
                             >
                                 <GatsbyImage
-                                    className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-105 transition"
-                                    loading="eager"
+                                    className="w-full h-full object-cover object-center absolute inset-0 group-hover:scale-110 transition-transform duration-300"
+                                    loading="lazy"
                                     image={getImage(node.img)}
                                     alt={node.title}
+                                    onLoad={handleImageLoaded}
                                 />
+                                {!imageLoaded && <Spinner />}
                             </Link>
 
                             <div className="flex flex-col gap-2">
