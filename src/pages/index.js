@@ -62,14 +62,17 @@ const IndexPage = () => {
             <div className="h-[30rem] w-full relative">
                 <video
                     src={StarVideo}
-                    className="absolute top-0 left-0 h-full w-full object-cover"
+                    className="absolute top-0 left-0 h-full w-full object-cover -z-10"
                     autoPlay
                     muted
                     loop
-                    onLoad={!handleImageLoaded}
+                    onLoad={handleImageLoaded}
                 />
                 {imageLoaded && (
-                    <div className="absolute top-0 left-0 bg-gradient-to-t from-blue-500 to-blue-800 h-full w-full opacity-70" />
+                    <div className="absolute top-0 left-0 bg-gradient-to-t opacity-80 from-blue-500 to-blue-800 h-full w-full" />
+                )}
+                {!imageLoaded && (
+                    <div className="absolute top-0 left-0 bg-gradient-to-t from-blue-500 to-blue-800 h-full w-full" />
                 )}
 
                 <div className="text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto text-center w-[90%] sm:max-w-3xl">
