@@ -55,15 +55,17 @@ const Header = () => {
 
     return (
         <header
-            className={`bg-white flex z-[999] relative ${
-                navbar ? "sticky top-0 mx-auto slide-bottom shadow-xl" : ""
+            className={`relative flex z-[999] w-full ${
+                navbar
+                    ? "sticky mx-auto top-0 slide-bottom shadow-xl bg-white"
+                    : ""
             }`}
         >
-            <nav className="flex items-center sticky justify-between px-4 py-4 max-w-screen-xl w-full mx-auto">
+            <nav className="flex items-center sticky justify-between px-4 py-2 max-w-screen-xl w-full mx-auto">
                 <Link to="/" className="flex items-center justify-between">
                     <StaticImage
                         quality={100}
-                        className="w-10 mr-1"
+                        className="w-9 mr-1"
                         src="../images/favicon.png"
                     />
                     <p className="font-semibold -tracking-wide text-main">
@@ -73,13 +75,13 @@ const Header = () => {
 
                 {/* -------------- Nav Mobile */}
                 <ul
-                    className={`lg:hidden overflow-auto absolute top-[99%] left-0 w-full bg-white font-semibold text-center transition-all duration-100 space-y-6 pb-6  ${
+                    className={`lg:hidden overflow-auto absolute top-[99%] left-0 w-full font-semibold text-center transition-all duration-100 space-y-6 pb-6  ${
                         showMenu
-                            ? "translate-y-0 shadow-xl"
+                            ? "translate-y-0 shadow-xl bg-white"
                             : "-translate-y-[200%] text-[0px] text-white bg-transparent"
                     }`}
                 >
-                    <li className="list-none bg-white flex items-center justify-center">
+                    <li className="list-none flex items-center justify-center">
                         <Link
                             to="/"
                             className="py-3 px-3 text-main"
@@ -233,8 +235,8 @@ const Header = () => {
                 </ul>
 
                 {/* ---------Nav lg */}
-                <ul className="hidden lg:flex lg:items-center bg-white lg:justify-between lg:space-x-4 lg:font-medium lg:text-[15px] lg:ml-10">
-                    <li className="list-none bg-white">
+                <ul className="hidden lg:flex lg:items-center lg:justify-between lg:space-x-4 lg:font-medium lg:text-[14px] lg:ml-10">
+                    <li className="list-none">
                         <Link
                             to="/"
                             className="py-3 px-3 hover:bg-blue-50 rounded-lg text-main"
@@ -243,11 +245,15 @@ const Header = () => {
                         </Link>
                     </li>
                     <li
-                        className="flex items-center z-0 bg-white justify-center list-none relative py-3 px-3 cursor-pointer hover:bg-blue-50 rounded-lg text-main"
+                        className="flex items-center z-0 justify-center list-none relative py-3 px-3 cursor-pointer hover:bg-blue-50 rounded-lg text-main"
                         onMouseEnter={handleOfferHover}
                         onMouseLeave={handleLinkLeave}
                     >
-                        <p>Oferta</p>
+                        <p className={`${
+                                showOfferMenu
+                                    ? "text-yellow-500"
+                                    : ""
+                            }`}>Oferta</p>
                         <BiSolidChevronDown
                             className={`transition-[transform,colors] ${
                                 showOfferMenu ? "rotate-90 text-yellow-500" : ""
@@ -255,8 +261,8 @@ const Header = () => {
                         />
                         <div
                             className={`
-                        absolute rounded-lg top-[99%] -z-10 left-1/2 -translate-x-1/2 delay-100 text-black p-10 bg-white border-b-2 border-gray-300
-                            ${showOfferMenu ? "" : "hidden"}
+                        absolute rounded-lg top-[99%] z-50 left-1/2 -translate-x-1/2 delay-100 text-black p-10 border-b-2 border-gray-300
+                            ${showOfferMenu ? "bg-white" : "hidden"}
                         `}
                         >
                             <Link
@@ -302,11 +308,19 @@ const Header = () => {
                         </div>
                     </li>
                     <li
-                        className="flex items-center z-0 bg-white justify-center list-none relative py-3 px-3 cursor-pointer hover:bg-blue-50 rounded-lg text-main"
+                        className="flex items-center z-0 justify-center list-none relative py-3 px-3 cursor-pointer hover:bg-blue-50 rounded-lg text-main"
                         onMouseEnter={handleFunctionHover}
                         onMouseLeave={handleLinkLeave}
                     >
-                        <p>Smart</p>
+                        <p
+                            className={`${
+                                showFunctionMenu
+                                    ? "text-blue-500"
+                                    : ""
+                            }`}
+                        >
+                            Smart
+                        </p>
                         <BiSolidChevronDown
                             className={`transition-[transform,colors] ${
                                 showFunctionMenu
@@ -316,7 +330,7 @@ const Header = () => {
                         />
                         <div
                             className={`
-                        absolute rounded-lg top-[99%] -z-10 left-1/2 -translate-x-1/2 delay-100 text-black p-10 bg-white border-b-2 border-gray-300
+                        absolute rounded-lg top-[99%] bg-white left-1/2 -translate-x-1/2 delay-100 text-black p-10 border-b-2 border-gray-300
                             ${showFunctionMenu ? "" : "hidden"}
                         `}
                         >
@@ -362,7 +376,7 @@ const Header = () => {
                             </Link>
                         </div>
                     </li>
-                    <li className="list-none bg-white">
+                    <li className="list-none">
                         <Link
                             to="/"
                             className="py-3 px-3 hover:bg-blue-50 rounded-lg text-main"

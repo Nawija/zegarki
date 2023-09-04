@@ -1,10 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 
-body{
-    background: #f7f7f7;
-} */
 
 .text-main {
     color: #2a3551;
@@ -52,8 +48,8 @@ body{
     }
 }
 .scale-zoom {
-    animation: scale-zoom 13s cubic-bezier(0.25, 0.46, 0.45, 0.94) alternate infinite
-        both;
+    animation: scale-zoom 13s cubic-bezier(0.25, 0.46, 0.45, 0.94) alternate
+        infinite both;
 }
 
 @keyframes scale-zoom {
