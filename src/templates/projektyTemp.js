@@ -19,9 +19,9 @@ const ProjectTemplate = ({
         setImageLoaded(true);
     };
     return (
-        <Layout bodyColor={`${datoCmsProjekty.img.colors[0].hex}`}>
+        <Layout>
             <div
-                className={`relative h-80 w-full opacity-80 rounded-b-lg`}
+                className={`relative h-72 w-full opacity-90 rounded-b-lg -mt-16`}
                 style={{
                     background: `linear-gradient(60deg, ${datoCmsProjekty.img.colors[4].hex} 0%, ${datoCmsProjekty.img.colors[0].hex} 100%)`,
                 }}
