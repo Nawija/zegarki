@@ -25,7 +25,7 @@ const HeroCom = () => {
     }, []);
 
     return (
-        <div className="h-[30rem] w-full relative">
+        <div className="h-[34rem] w-full relative -mt-16">
             <div
                 className={`relative h-full w-full ${
                     videoLoaded ? "fade-in" : "fade-out"

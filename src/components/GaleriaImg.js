@@ -92,7 +92,7 @@ const Galeria = () => {
                     {data.allDatoCmsGaleriaa.edges.map(({ node }) => (
                         <div className="p-1" key={node.img}>
                             <button onClick={() => openModal(node.img)}>
-                                <div className="relative h-56 w-72 md:h-52 md:w-60 mx-auto group rounded-md overflow-hidden">
+                                <div className="relative h-56 w-full sm:w-72 md:h-52 md:w-60 mx-auto group rounded-md overflow-hidden">
                                     <GatsbyImage
                                         className="w-full h-full"
                                         image={getImage(node.img)}

@@ -21,7 +21,7 @@ const SmallHero = ({ title, desc, smallHeroSlug1 }) => {
     }, []);
 
     return (
-        <div className="h-[17rem] w-full relative mb-20 mx-auto">
+        <div className="h-[10rem] lg:h-[18rem] w-full relative mb-8 lg:mb-20 mx-auto -mt-16">
             <div
                 className={`relative h-full w-full ${
                     videoLoaded ? "fade-in" : "fade-out"
