@@ -6,7 +6,7 @@ import { DiDotnet } from "react-icons/di";
 import ShipVideo from "../video/ss.mp4";
 import { Link } from "gatsby";
 
-const SmallHero = ({ title, desc }) => {
+const SmallHero = ({ title, desc, smallHeroSlug1 }) => {
     const [videoLoaded, setVideoLoaded] = useState(false);
 
     const handleVideoLoaded = () => {
@@ -58,13 +58,15 @@ const SmallHero = ({ title, desc }) => {
                     >
                         <AiFillHome />
                     </Link>
-                    <Link
-                        to="/technologia-premium-gatsbyjs"
-                        className="p-3 hover:bg-blue-100 rounded-lg transition-colors flex items-center justify-center font-medium"
-                    >
-                        <DiDotnet className="mr-3" />
-                        <p>premium gatsbyjs</p>
-                    </Link>
+                    {smallHeroSlug1 && (
+                        <Link
+                            to={"/" + smallHeroSlug1}
+                            className="p-3 hover:bg-blue-100 rounded-lg transition-colors flex items-center justify-center font-medium"
+                        >
+                            <DiDotnet className="mr-3" />
+                            <p>{smallHeroSlug1}</p>
+                        </Link>
+                    )}
                 </div>
             </div>
         </div>

@@ -38,7 +38,7 @@ const CalcPrice = () => {
         }
     `);
 
-    const initialValues = Array.from({ length: 11 }, () => null);
+    const initialValues = Array.from({ length: 10 }, () => null);
     const [values, setValues] = useState(initialValues);
 
     const totalValue = values.reduce((acc, cur) => acc + cur, 0);
@@ -59,7 +59,7 @@ const CalcPrice = () => {
 
     return (
         <Layout>
-            <SmallHero title="Kalkulator" />
+            <SmallHero title="Kalkulator" smallHeroSlug1="darmowa-wycena" />
             <div className="flex flex-col items-center justify-center text-center px-2 z-50 relative"></div>
             <div className="flex flex-wrap items-start justify-center max-w-screen-2xl mx-auto">
                 <form
@@ -370,9 +370,9 @@ const CalcPrice = () => {
                                         type="radio"
                                         name="Wykonawca"
                                         value="600"
-                                        checked={values[11] === 600}
+                                        checked={values[10] === 600}
                                         onChange={(e) =>
-                                            handleRadioChange(e, 11)
+                                            handleRadioChange(e, 10)
                                         }
                                     />
                                     Wykonawca

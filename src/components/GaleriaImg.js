@@ -5,8 +5,9 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import Spinner from "../components/Spinner";
 
-const Galeria = () => {
+import { FiDownload } from "react-icons/fi";
 
+const Galeria = () => {
     const [imageLoaded, setImageLoaded] = useState(false);
 
     const handleImageLoaded = () => {
@@ -67,7 +68,22 @@ const Galeria = () => {
         setSelectedImage(galleryImages[newIndex]);
         setCurrentImageIndex(newIndex);
     };
-    
+    const handleDownloadClick = () => {
+        if (
+            selectedImage &&
+            typeof selectedImage === "object" &&
+            selectedImage.images &&
+            selectedImage.images.fallback
+        ) {
+            const selectedImageSrc = selectedImage.images.fallback.src;
+            const a = document.createElement("a");
+            a.href = selectedImageSrc;
+            a.download = "nazwa_pliku.jpg"; // Tutaj możesz ustawić nazwę pliku, którą chcesz użyć.
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    };
 
     return (
         <section className="pb-4 relative">
@@ -190,6 +206,12 @@ const Galeria = () => {
                         <path d="M7 10l6 0"></path>
                         <path d="M21 21l-6 -6"></path>
                     </svg>
+                </button>
+                <button
+                    className="text-red-500 btn-download"
+                    onClick={handleDownloadClick}
+                >
+                    <FiDownload />
                 </button>
                 <button className="prev-button" onClick={goToPreviousImage}>
                     <svg

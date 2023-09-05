@@ -11,7 +11,7 @@ import GaleriaImg from "../components/GaleriaImg";
 const Galeria = () => {
     return (
         <Layout>
-            <SmallHero title="Galeria" />
+            <SmallHero title="Galeria" smallHeroSlug1="galeria" />
             <div className="flex flex-col items-center justify-center lg:flex-row lg:items-start lg:justify-start max-w-screen-xl mx-auto">
                 <GaleriaImg />
                 <div className="w-full lg:w-[25%] my-10 lg:my-0 text-start px-4">
