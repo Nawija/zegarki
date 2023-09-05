@@ -71,7 +71,10 @@ const IndexPage = () => {
                     to="/premium-gatsbyjs"
                     className="flex items-center justify-center p-3 bg-gradient-to-tr from-yellow-500/90 to-yellow-600 font-bold text-white text-sm tracking-wide rounded-lg"
                 >
-                    <p className="mr-1">Wybierz Premium</p> <FaCrown className="text-lg" />
+                    <p className="lg:mr-1">Wybierz Premium</p>
+                    <div>
+                        <FaCrown className="text-xl" />
+                    </div>
                 </Link>
             </div>
 
