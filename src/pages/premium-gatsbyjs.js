@@ -2,9 +2,6 @@ import React from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 
-import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
-
 import SmallHero from "../components/SmallHero";
 
 import { FaCrown } from "react-icons/fa";
@@ -16,6 +13,7 @@ const TechnologiaPremiumPage = () => {
             <SmallHero
                 title="Technologia Premium"
                 desc="GatsbyJS to przyszłość tworzenia stron internetowych."
+                smallHeroSlug1="premium-gatsbyjs"
             />
             <div className="px-3 max-w-screen-xl mx-auto">
                 <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
@@ -73,7 +71,7 @@ const TechnologiaPremiumPage = () => {
 };
 
 export const Head = () => (
-    <Seo title="Technologia Premium GatsbyJS | Seovileo" />
+    <Seo title="GatsbyJS - Strony internetowe w Technologii Premium | Seovileo" />
 );
 
 export default TechnologiaPremiumPage;

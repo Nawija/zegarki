@@ -51,21 +51,23 @@ const SmallHero = ({ title, desc, smallHeroSlug1 }) => {
                 <p className="text-lg font-semibold text-center mt-6">{desc}</p>
             </div>
             <div className="bg-blue-50">
-                <div className="max-w-[1200px] mx-auto text-[13px] flex items-center justify-start px-2">
+                <div className="max-w-[1200px] mx-auto text-[12px] flex items-center justify-start px-2">
                     <Link
-                        className="p-3 hover:bg-blue-100 rounded-lg transition-colors"
+                        className="p-2 hover:bg-blue-100 rounded-lg transition-colors"
                         to="/"
                     >
-                        <AiFillHome />
+                        <AiFillHome className="text-base text-main" />
                     </Link>
                     {smallHeroSlug1 && (
-                        <Link
-                            to={"/" + smallHeroSlug1}
-                            className="p-3 hover:bg-blue-100 rounded-lg transition-colors flex items-center justify-center font-medium"
-                        >
-                            <DiDotnet className="mr-3" />
-                            <p>{smallHeroSlug1}</p>
-                        </Link>
+                        <>
+                            <span className="mx-1">/</span>
+                            <Link
+                                to={"/" + smallHeroSlug1}
+                                className="p-2 hover:bg-blue-100 rounded-lg transition-colors flex items-center justify-center font-medium"
+                            >
+                                <p>{smallHeroSlug1}</p>
+                            </Link>
+                        </>
                     )}
                 </div>
             </div>
