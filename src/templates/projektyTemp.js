@@ -26,16 +26,16 @@ const ProjectTemplate = ({
                     background: `linear-gradient(60deg, ${datoCmsProjekty.img.colors[4].hex} 0%, ${datoCmsProjekty.img.colors[0].hex} 100%)`,
                 }}
             >
-                <p className="text-white text-xl lg:text-2xl font-bold tracking-wide absolute top-1/2 w-max left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <p className="text-white text-xl lg:text-2xl font-bold tracking-wide absolute top-1/3 lg:top-1/2 w-max left-1/2 -translate-x-1/2 -translate-y-1/2">
                     {"Projekt " + datoCmsProjekty.title}
                 </p>
             </div>
             <div className="flex flex-col lg:flex-row items-start justify-center my-4 lg:my-10 max-w-screen-xl mx-auto">
-                <div className="flex flex-col items-center justify-center w-52 mx-auto -mt-16 md:w-64 lg:mt-0 lg:w-1/2 relative">
+                <div className="flex flex-col items-center justify-center w-full mx-auto -mt-16 md:w-64 lg:mt-0 lg:w-1/2 relative">
                     <GatsbyImage
                         loading="eager"
                         image={getImage(datoCmsProjekty.img)}
-                        className="-mt-60"
+                        className="lg:-mt-60 -mt-32 lg:scale-105"
                         alt="seovileo"
                         title="seovileo"
                         onLoad={handleImageLoaded}
@@ -204,28 +204,21 @@ const ProjectTemplate = ({
 
                 <div className="flex flex-wrap ">
                     {allDatoCmsProjekty.edges.map(({ node }) => (
-                        <div className="relative mx-auto">
-                            <Link to={"/" + node.slug} className="py-3 px-1">
+
+                            <Link to={"/" + node.slug} className="py-3 px-1 group hover:bg-blue-50 rounded-lg transition-colors ">
                                 <GatsbyImage
                                     image={getImage(node.img)}
                                     alt="seovileo"
+                                    className="lg:group-hover:scale-105 lg:transition-transform lg:duration-300"
                                 />
-                                <div className="flex items-center justify-between text-center mx-auto w-full">
-                                    <p className="font-medium text-sm capitalize">
+                                <div className="flex items-center justify-center text-center mx-auto w-full">
+                                    <p className="font-semibold text-sm capitalize group-hover:text-yellow-600 transition-colors">
                                         {node.title}
                                     </p>
-                                    <Link
-                                        to="/kontakt"
-                                        className={`mr-4 py-1 px-2 text-white text-[12px] hover:opacity-70 transition-opacity rounded-lg font-semibold`}
-                                        style={{
-                                            backgroundColor: `${datoCmsProjekty.img.colors[0].hex}`,
-                                        }}
-                                    >
-                                        Zobacz
-                                    </Link>
+                                    
                                 </div>
                             </Link>
-                        </div>
+                        
                     ))}
                 </div>
             </div>
@@ -236,7 +229,7 @@ const ProjectTemplate = ({
 export const Head = ({ data: { datoCmsProjekty } }) => (
     <Seo
         title={
-            "Projekt" +
+            "Projekt " +
             datoCmsProjekty.title +
             " | Seovileo.pl strony internetowe"
         }
@@ -257,7 +250,7 @@ export const query = graphql`
                 colors {
                     hex
                 }
-                gatsbyImageData(placeholder: NONE, height: 600)
+                gatsbyImageData(placeholder: NONE, height: 678)
             }
         }
         allDatoCmsProjekty(sort: { position: ASC }) {

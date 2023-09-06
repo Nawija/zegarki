@@ -97,9 +97,6 @@ const IndexPage = () => {
                         {data.allDatoCmsProjekty.edges.map(({ node }) => (
                             <div className="mb-4">
                                 <Link className="relative group" to={node.slug}>
-                                    <p className="text-black text-sm font-bold tracking-wide absolute top-[8%] w-max left-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:-translate-y-[200%] transition-transform duration-500">
-                                        {node.title}
-                                    </p>
                                     <div className="relative mb-4 block w-auto overflow-hidden rounded-lg lg:mb-5">
                                         <GatsbyImage
                                             className="h-full w-full object-cover object-center transition duration-300 group-hover:scale-110 z-10"
@@ -122,12 +119,14 @@ const IndexPage = () => {
                                                 {node.data}
                                             </small>
                                             <div
-                                                className={`opacity-80 border rounded-lg text-[12px] text-white font-bold px-2.5 py-1`}
+                                                className={`rounded-lg text-[14px] font-bold px-2.5 py-1 bg-clip-text text-transparent `}
                                                 style={{
-                                                    background: `linear-gradient(60deg, ${node.img.colors[4].hex} 0%, ${node.img.colors[0].hex} 100%)`,
+                                                    backgroundImage: `linear-gradient(to right, ${node.img.colors[4].hex} 0%, ${node.img.colors[0].hex} 100%)`,
                                                 }}
                                             >
-                                                <small>Zobacz</small>
+                                                <p className="text-sm font-bold tracking-wide w-max text-shadow">
+                                                    {node.title}
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
