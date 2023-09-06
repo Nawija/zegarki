@@ -8,7 +8,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import SmallHero from "../components/SmallHero";
 import GaleriaImg from "../components/GaleriaImg";
 
-const Galeria = () => {
+const GaleriaPage = () => {
     return (
         <Layout>
             <SmallHero title="Galeria" smallHeroSlug1="galeria" />
@@ -54,4 +54,4 @@ const Galeria = () => {
 
 export const Head = () => <Seo title="Galeria | Seovileo" />;
 
-export default Galeria;
+export default GaleriaPage;

@@ -7,7 +7,7 @@ import Seo from "../components/seo";
 import SmallHero from "../components/SmallHero";
 import Spinner from "../components/Spinner";
 
-const CalcPrice = () => {
+const CalcPricePage = () => {
     const [imageLoaded, setImageLoaded] = useState(false);
 
     const handleImageLoaded = () => {
@@ -450,8 +450,8 @@ const CalcPrice = () => {
 
 export const Head = () => (
     <Seo
-        title="Strony Internetowe"
+        title="Kalkulator Stron Internetowych | Darmowa wycena stron www"
         siteUrl="https://seovileo.pl/darmowa-wycena"
     />
 );
-export default CalcPrice;
+export default CalcPricePage;

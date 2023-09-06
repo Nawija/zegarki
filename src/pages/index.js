@@ -116,17 +116,17 @@ const IndexPage = () => {
                                         </div>
                                         <div className="flex items-center justify-between px-3">
                                             <small className="font-semibold">
-                                                {node.data}
+                                                {node.title}
                                             </small>
                                             <div
                                                 className={`rounded-lg text-[14px] font-bold px-2.5 py-1 bg-clip-text text-transparent `}
                                                 style={{
-                                                    backgroundImage: `linear-gradient(to right, ${node.img.colors[4].hex} 0%, ${node.img.colors[0].hex} 100%)`,
+                                                    backgroundImage: `linear-gradient(to right, ${node.img.colors[0].hex} 0%, ${node.img.colors[4].hex} 100%)`,
                                                 }}
                                             >
-                                                <p className="text-sm font-bold tracking-wide w-max text-shadow">
-                                                    {node.title}
-                                                </p>
+                                                <small className="text-sm font-bold tracking-wide w-max">
+                                                    {node.data}
+                                                </small>
                                             </div>
                                         </div>
                                     </div>

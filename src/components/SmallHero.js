@@ -21,7 +21,7 @@ const SmallHero = ({ title, desc, smallHeroSlug1 }) => {
     }, []);
 
     return (
-        <div className="h-[10rem] lg:h-[18rem] w-full relative mb-8 lg:mb-20 mx-auto -mt-16">
+        <div className="h-[10rem] lg:h-[16rem] w-full relative mb-8 lg:mb-20 mx-auto -mt-16">
             <div
                 className={`relative h-full w-full ${
                     videoLoaded ? "fade-in" : "fade-out"
@@ -44,11 +44,13 @@ const SmallHero = ({ title, desc, smallHeroSlug1 }) => {
                 <div className="absolute top-0 left-0 bg-gradient-to-t opacity-90 from-blue-500 to-blue-800 h-full w-full" />
             )}
 
-            <div className="text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto text-center w-[90%] sm:max-w-3xl">
+            <div className="text-white absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto text-center w-[90%] sm:max-w-3xl">
                 <p className="text-3xl lg:text-6xl font-semibold text-center">
                     {title}
                 </p>
-                <p className="text-lg font-semibold text-center mt-6">{desc}</p>
+                <div className="w-1/4 h-[1px] bg-white mx-auto mt-6 rounded-xl" />
+
+                <p className="text-lg font-semibold text-center mt-6">{desc || "seovileo.pl"}</p>
             </div>
             <div className="bg-blue-50">
                 <div className="max-w-[1200px] mx-auto text-[12px] flex items-center justify-start px-2">
