@@ -40,8 +40,8 @@ const GaleriaPage = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className="border-2 shadow-xl p-4 rounded-lg bg-gradient-to-bl from-yellow-400 to-yellow-600">
-                        <p className="font-semibold text-white">
+                    <div className="border-2 p-4 rounded-lg bg-gradient-to-bl from-sky-200 to-emerald-100">
+                        <p className="font-semibold text-black">
                             Obsługujemy klientów indywidualnych jak i grupy
                             zorganizowane
                         </p>

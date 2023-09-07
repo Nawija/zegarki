@@ -7,6 +7,11 @@ import Seo from "../components/seo";
 import Spinner from "../components/Spinner";
 import SmallHero from "../components/SmallHero";
 
+import { BiShareAlt } from "react-icons/bi";
+import { FaFacebook } from "react-icons/fa";
+import { PiInstagramLogoFill } from "react-icons/pi";
+import { BsGithub } from "react-icons/bs";
+
 import "../styles/template.css";
 
 const BlogTemplate = ({
@@ -43,7 +48,7 @@ const BlogTemplate = ({
                             {!imageLoaded && <Spinner />}
                         </div>
 
-                        <p class="mb-6 text-gray-700 sm:text-lg md:mb-8">
+                        {/* <p class="mb-6 text-gray-700 sm:text-lg md:mb-8">
                             This is a section of some simple filler text, also
                             known as placeholder text. It shares some
                             characteristics of a real written text but is random
@@ -123,42 +128,82 @@ const BlogTemplate = ({
                             sample of fonts or generate text for testing. Filler
                             text is dummy text which has no meaning however
                             looks very similar to real text.
-                        </p>
+                        </p> */}
+                        <div
+                            id="descHtml"
+                            dangerouslySetInnerHTML={{
+                                __html: datoCmsBlog.desc,
+                            }}
+                        />
                     </div>
                 </div>
-                <div className="lg:w-1/3 bg-blue-50 rounded-lg p-4">
-                    <p className="font-bold text-base tracking-wide px-2">
-                        Na Czasie:
-                    </p>
-                    <div className="w-full h-[1px] mt-1 mb-5 mx-2 bg-blue-300" />
-                    {allDatoCmsBlog.edges.slice(4, 10).map(({ node }) => (
-                        <Link
-                            to={`/blog/` + node.slug}
-                            className="flex group rounded-lg items-start gap-4 lg:gap-6 mb-2 hover:bg-white transition-colors p-2"
-                        >
-                            <div className=" overflow-hidden h-16 w-28 rounded-lg relative">
-                                <GatsbyImage
-                                    className="absolute inset-0 group-hover:scale-110 h-full w-full object-cover transition-transform duration-300"
-                                    loading="lazy"
-                                    image={getImage(node.img)}
-                                    alt={node.title}
-                                    onLoad={handleImageLoaded}
-                                />
-                                {!imageLoaded && <Spinner />}
-                            </div>
+                <div className="flex flex-col lg:w-1/3">
+                    <div className="bg-blue-50 rounded-lg p-4">
+                        <p className="font-bold text-base tracking-wide px-2">
+                            Sprawdź:
+                        </p>
+                        <div className="w-full h-[1px] mt-1 mb-5 mx-2 bg-blue-300" />
+                        {allDatoCmsBlog.edges.slice(4, 10).map(({ node }) => (
+                            <Link
+                                to={`/blog/` + node.slug}
+                                className="flex group rounded-lg items-start gap-4 lg:gap-6 mb-2 hover:bg-white transition-colors p-2"
+                            >
+                                <div className=" overflow-hidden h-16 w-28 rounded-lg relative">
+                                    <GatsbyImage
+                                        className="absolute inset-0 group-hover:scale-110 h-full w-full object-cover transition-transform duration-300"
+                                        loading="lazy"
+                                        image={getImage(node.img)}
+                                        alt={node.title}
+                                        onLoad={handleImageLoaded}
+                                    />
+                                    {!imageLoaded && <Spinner />}
+                                </div>
 
-                            <div className="flex flex-col gap-2 w-3/4">
-                                <h2 className="text-gray-800 w-full text-sm font-bold">
-                                    <Link
-                                        to={`/blog/` + node.slug}
-                                        className="hoverLink active:text-gray-900 transition duration-100"
-                                    >
-                                        {node.seo.title}
-                                    </Link>
-                                </h2>
-                            </div>
-                        </Link>
-                    ))}
+                                <div className="flex flex-col gap-2 w-3/4">
+                                    <h2 className="text-gray-800 w-full text-sm font-bold">
+                                        <Link
+                                            to={`/blog/` + node.slug}
+                                            className="hoverLink active:text-gray-900 transition duration-100"
+                                        >
+                                            {node.seo.title}
+                                        </Link>
+                                    </h2>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                    <div className="bg-gray-50 rounded-lg p-4 mt-4">
+                        <p className="font-bold text-base tracking-wide px-2">
+                            Udostępnij:
+                        </p>
+                        <div className="w-full h-[1px] mt-1 mb-5 mx-2 bg-orange-300" />
+                        <div className="flex items-center justify-start ml-4 space-x-2">
+                            <Link
+                                to="/"
+                                className="bg-gradient-to-tr from-pink-600 to-orange-400 p-1.5 rounded-full"
+                            >
+                                <BiShareAlt className="text-2xl text-white" />
+                            </Link>
+                            <Link
+                                to="/"
+                                className="bg-gradient-to-tr from-blue-600 to-blue-400 p-1.5 rounded-full"
+                            >
+                                <FaFacebook className="text-2xl text-white" />
+                            </Link>
+                            <Link
+                                to="/"
+                                className="bg-gradient-to-tr from-pink-600 to-yellow-400 p-1.5 rounded-full"
+                            >
+                                <PiInstagramLogoFill className="text-2xl text-white" />
+                            </Link>
+                            <Link
+                                to="/"
+                                className="bg-black p-1.5 rounded-full"
+                            >
+                                <BsGithub className="text-2xl text-white" />
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
         </Layout>
@@ -179,6 +224,7 @@ export const query = graphql`
         datoCmsBlog(slug: { eq: $slug }) {
             slug
             title
+            desc
             img {
                 gatsbyImageData(placeholder: NONE, height: 678)
             }
