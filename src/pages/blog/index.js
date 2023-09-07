@@ -45,16 +45,16 @@ const BlogPage = () => {
                 Nowości:
             </p>
             <div className="w-full h-[1px] mt-3 mb-4 bg-gray-300 max-w-screen-xl mx-auto" />
-            <div className="flex items-start justify-start max-w-screen-xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-start justify-start max-w-screen-xl mx-auto">
                 <div className="flex flex-col items-start justify-start w-full lg:w-3/4">
-                    <div className="flex flex-wrap w-full ">
+                    <div className="flex flex-wrap ">
                         {data.allDatoCmsBlog.edges
                             .slice(0, 4)
                             .map(({ node }) => (
-                                <div className="w-1/4 flex items-stretch justify-center mb-10  ">
+                                <div className="lg:w-1/4 sm:w-1/2 flex items-stretch justify-center mb-8 lg:mb-10  ">
                                     <Link
                                         to={`/blog/` + node.slug}
-                                        className="flex flex-col items-center justify-start mr-3 group relative p-2 rounded-lg hover:shadow-lg transition-all hover:-translate-y-1 duration-200"
+                                        className="flex flex-col items-center justify-start lg:mr-3 group relative p-2 rounded-lg hover:shadow-lg transition-all hover:-translate-y-1 duration-200"
                                     >
                                         <div className=" overflow-hidden rounded-lg shadow-lg hover:shadow-none mb-1 relative">
                                             <GatsbyImage
@@ -66,8 +66,8 @@ const BlogPage = () => {
                                             {!imageLoaded && <Spinner />}
                                         </div>
 
-                                        <div className="flex flex-col gap-1 mx-2">
-                                            <h2 className="text-gray-800 w-full md:w-[90%] text-base -tracking-wide font-bold">
+                                        <div className="flex flex-col gap-1 w-3/4 lg:w-full mx-2">
+                                            <h2 className="text-gray-800 w-full text-base -tracking-wide font-bold">
                                                 {node.seo.title}
                                             </h2>
 
