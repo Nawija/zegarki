@@ -189,12 +189,12 @@ const Header = () => {
                         </div>
                     </button>
                     <li className="list-none flex items-center justify-center">
-                        <Link to="/" className="py-3 px-3" onClick={closeMenu}>
+                        <Link to="/blog" className="py-3 px-3" onClick={closeMenu}>
                             Blog
                         </Link>
                     </li>
                     <li className="list-none flex items-center justify-center">
-                        <Link to="/" className="py-3 px-3" onClick={closeMenu}>
+                        <Link to="/kontakt" className="py-3 px-3" onClick={closeMenu}>
                             Kontakt
                         </Link>
                     </li>
