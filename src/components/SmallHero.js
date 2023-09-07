@@ -44,7 +44,7 @@ const SmallHero = ({ title, desc, smallHeroSlug1, smallHeroSlug2 }) => {
             )}
 
             <div className="text-white absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto text-center w-[90%] sm:max-w-3xl">
-                <p className="text-3xl lg:text-6xl font-semibold text-center">
+                <p className="text-2xl lg:text-5xl font-semibold text-center">
                     {title}
                 </p>
                 <div className="w-1/4 h-[1px] bg-white mx-auto mt-6 rounded-xl" />
@@ -76,7 +76,7 @@ const SmallHero = ({ title, desc, smallHeroSlug1, smallHeroSlug2 }) => {
                         <>
                             <span className="mx-1">/</span>
                             <Link
-                                to={"/" + smallHeroSlug2}
+                                to={"/" + smallHeroSlug1 + "/" + smallHeroSlug2}
                                 className="p-2 hover:bg-blue-100 rounded-lg transition-colors flex items-center justify-center font-medium"
                             >
                                 <p>{smallHeroSlug2}</p>
