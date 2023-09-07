@@ -39,7 +39,7 @@ const Header = () => {
         <header
             className={`relative flex lg:hidden z-[999] w-full ${
                 navbar || (!navbar && showMenu)
-                    ? "sticky mx-auto top-0 slide-bottom shadow-xl bg-white"
+                    ? "sticky mx-auto top-0 shadow-xl bg-white"
                     : "text-white"
             }`}
         >
@@ -53,9 +53,9 @@ const Header = () => {
                     <p className="font-semibold -tracking-wide">Seovileo</p>
                 </Link>
                 <ul
-                    className={`lg:hidden overflow-auto absolute top-[99%] h-screen scroll-auto left-0 w-full font-semibold text-center transition-all duration-100 space-y-6 pb-6  ${
+                    className={`overflow-auto absolute top-[99%] left-0 w-full font-semibold text-center transition-all duration-100 space-y-6 pb-6  ${
                         showMenu
-                            ? "translate-y-0 shadow-xl bg-white"
+                            ? "translate-y-0 slide-bottom shadow-xl bg-white"
                             : "-translate-y-[200%] text-[0px] text-white bg-transparent"
                     }`}
                 >
