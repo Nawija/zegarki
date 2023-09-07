@@ -25,4 +25,27 @@ exports.createPages = async ({ graphql, actions }) => {
             },
         });
     });
+
+    const queryBlog = await graphql(`
+        {
+            allDatoCmsBlog {
+                nodes {
+                    slug
+                }
+            }
+        }
+    `);
+
+    const blogTemp = path.resolve(`./src/templates/blogTemp.js`);
+
+    queryBlog.data.allDatoCmsBlog.nodes.forEach((node) => {
+        const { slug } = node;
+        createPage({
+            path: `${slug}`,
+            component: blogTemp,
+            context: {
+                slug,
+            },
+        });
+    });
 };
