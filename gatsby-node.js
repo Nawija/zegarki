@@ -41,7 +41,7 @@ exports.createPages = async ({ graphql, actions }) => {
     queryBlog.data.allDatoCmsBlog.nodes.forEach((node) => {
         const { slug } = node;
         createPage({
-            path: `${slug}`,
+            path: `blog/${slug}`,
             component: blogTemp,
             context: {
                 slug,

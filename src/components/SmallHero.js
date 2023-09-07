@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 import { AiFillHome } from "react-icons/ai";
-import { DiDotnet } from "react-icons/di";
 
 import ShipVideo from "../video/ss.mp4";
 import { Link } from "gatsby";
 
-const SmallHero = ({ title, desc, smallHeroSlug1 }) => {
+const SmallHero = ({ title, desc, smallHeroSlug1, smallHeroSlug2 }) => {
     const [videoLoaded, setVideoLoaded] = useState(false);
 
     const handleVideoLoaded = () => {
@@ -50,7 +49,9 @@ const SmallHero = ({ title, desc, smallHeroSlug1 }) => {
                 </p>
                 <div className="w-1/4 h-[1px] bg-white mx-auto mt-6 rounded-xl" />
 
-                <p className="text-lg font-semibold text-center mt-6">{desc || "seovileo.pl"}</p>
+                <p className="text-lg font-semibold text-center mt-6">
+                    {desc || "seovileo.pl"}
+                </p>
             </div>
             <div className="bg-blue-50">
                 <div className="max-w-[1200px] mx-auto text-[12px] flex items-center justify-start px-2">
@@ -68,6 +69,17 @@ const SmallHero = ({ title, desc, smallHeroSlug1 }) => {
                                 className="p-2 hover:bg-blue-100 rounded-lg transition-colors flex items-center justify-center font-medium"
                             >
                                 <p>{smallHeroSlug1}</p>
+                            </Link>
+                        </>
+                    )}
+                    {smallHeroSlug2 && (
+                        <>
+                            <span className="mx-1">/</span>
+                            <Link
+                                to={"/" + smallHeroSlug2}
+                                className="p-2 hover:bg-blue-100 rounded-lg transition-colors flex items-center justify-center font-medium"
+                            >
+                                <p>{smallHeroSlug2}</p>
                             </Link>
                         </>
                     )}

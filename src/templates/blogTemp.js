@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import { CiShare1 } from "react-icons/ci";
-import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, Link } from "gatsby";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import Spinner from "../components/Spinner";
+import SmallHero from "../components/SmallHero";
 
 import "../styles/template.css";
 
 const BlogTemplate = ({
     pageContext: { slug },
-    data: { datoCmsProjekty, allDatoCmsProjekty },
+    data: { datoCmsBlog, allDatoCmsBlog },
 }) => {
     const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -20,18 +20,19 @@ const BlogTemplate = ({
     };
     return (
         <Layout>
+            <SmallHero smallHeroSlug1="blog" smallHeroSlug2={datoCmsBlog.slug} />
             <div class="bg-white py-6 sm:py-8 lg:py-12">
                 <div class="mx-auto max-w-screen-md px-4 md:px-8">
                     <h1 class="mb-4 text-center text-2xl font-bold text-main sm:text-3xl md:mb-6">
-                        {datoCmsProjekty.seo.title}
+                        {datoCmsBlog.seo.title}
                     </h1>
 
                     <div>
                         <GatsbyImage
-                            className="h-full w-full"
+                            className="h-full w-full rounded-lg"
                             loading="eager"
-                            image={getImage(datoCmsProjekty.img)}
-                            alt={datoCmsProjekty.seo.title}
+                            image={getImage(datoCmsBlog.img)}
+                            alt={datoCmsBlog.seo.title}
                             onLoad={handleImageLoaded}
                         />
                         {!imageLoaded && <Spinner />}
@@ -119,10 +120,10 @@ const BlogTemplate = ({
     );
 };
 
-export const Head = ({ data: { datoCmsProjekty } }) => (
+export const Head = ({ data: { datoCmsBlog } }) => (
     <Seo
-        title={datoCmsProjekty.seo.title}
-        description={datoCmsProjekty.seo.description}
+        title={datoCmsBlog.seo.title}
+        description={datoCmsBlog.seo.description}
     />
 );
 
@@ -131,6 +132,7 @@ export default BlogTemplate;
 export const query = graphql`
     query ($slug: String) {
         datoCmsBlog(slug: { eq: $slug }) {
+            slug
             title
             img {
                 gatsbyImageData(placeholder: NONE, height: 678)
