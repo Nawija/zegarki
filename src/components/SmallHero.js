@@ -47,9 +47,9 @@ const SmallHero = ({ title, desc, smallHeroSlug1, smallHeroSlug2 }) => {
                 <p className="text-2xl lg:text-5xl font-semibold text-center">
                     {title}
                 </p>
-                <div className="w-1/4 h-[1px] bg-white mx-auto mt-6 rounded-xl" />
+                <div className="w-1/4 h-[1px] bg-white mx-auto my-2 lg:my-6 rounded-xl" />
 
-                <p className="text-lg font-semibold text-center mt-6">
+                <p className="lg:text-lg font-semibold text-center">
                     {desc || "seovileo.pl"}
                 </p>
             </div>

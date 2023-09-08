@@ -7,7 +7,7 @@ import Seo from "../../components/seo";
 import SmallHero from "../../components/SmallHero";
 import Spinner from "../../components/Spinner";
 
-import { FaHotjar, FaBookOpenReader } from "react-icons/fa";
+import { FaHotjar, FaBookReader, FaArrowRightLong } from "react-icons/fa";
 
 const BlogPage = () => {
     const [imageLoaded, setImageLoaded] = useState(false);
@@ -43,12 +43,12 @@ const BlogPage = () => {
     return (
         <Layout>
             <SmallHero title="Blog" smallHeroSlug1="blog" />
-            <div className="flex items-center justify-start max-w-screen-xl mx-auto px-2 mt-10">
-                <p className="font-bold text-lg -tracking-wide ">
-                    Nowości
-                </p>
+            <div className="flex items-center justify-start max-w-screen-xl mx-auto px-4 lg:px-2 mt-12">
+                <p className="font-bold text-lg -tracking-wide ">Nowości</p>
                 <FaHotjar className="text-sm text-red-600 ml-2 mr-0.5" />
-                <small className="text-[13px] text-red-600 font-semibold">Hot</small>
+                <small className="text-[13px] text-red-600 font-semibold">
+                    Hot
+                </small>
             </div>
             <div className="w-full h-[1px] mt-3 mb-4 bg-gray-300 max-w-screen-xl mx-auto" />
             <div className="flex flex-col lg:flex-row items-start justify-start max-w-screen-xl mx-auto">
@@ -73,7 +73,7 @@ const BlogPage = () => {
                                             {!imageLoaded && <Spinner />}
                                         </div>
 
-                                        <div className="flex flex-col gap-1 w-3/4 lg:w-full mx-2">
+                                        <div className="flex flex-col gap-1 lg:w-full mx-1">
                                             <h2 className="text-gray-800 w-full text-base -tracking-wide font-bold">
                                                 {node.seo.title}
                                             </h2>
@@ -87,14 +87,15 @@ const BlogPage = () => {
                             ))}
                     </div>
 
-                    <p className="font-bold -tracking-wide px-2 mt-6">
-                        {/* <FaBookOpenReader className="text-2xl text-yellow-500" />  */}
-                        Czytaj Więcej:
-                    </p>
+                    <div className="flex items-center justify-start px-4 lg:px-2 mt-12">
+                        <p className="font-bold -tracking-wide">Blog Posty</p>
+                        <FaBookReader className="text-sm text-blue-600 ml-2 mr-0.5" />
+                    </div>
+
                     <div className="w-full h-[1px] mt-3 mb-2 bg-gray-300 mx-auto" />
-                    <div className="flex flex-wrap ">
+                    <div className="flex flex-wrap mt-3">
                         {data.allDatoCmsBlog.edges.slice(10).map(({ node }) => (
-                            <div className="lg:w-1/4 sm:w-1/2 flex items-stretch justify-center mb-4  ">
+                            <div className="lg:w-1/4 sm:w-1/2 flex items-stretch justify-center  ">
                                 <Link
                                     to={`/blog/` + node.slug}
                                     className="flex flex-col items-center justify-start group relative p-3 rounded-lg hover:bg-gray-100 transition-colors duration-100"
@@ -111,7 +112,7 @@ const BlogPage = () => {
                                     </div>
 
                                     <div className="flex flex-col gap-1 w-3/4 lg:w-full mx-2">
-                                        <h2 className="text-gray-800 w-full text-base -tracking-wide font-bold">
+                                        <h2 className="text-gray-800 w-full text-base -tracking-wider font-bold">
                                             {node.seo.title}
                                         </h2>
 
@@ -133,7 +134,7 @@ const BlogPage = () => {
                     {data.allDatoCmsBlog.edges.slice(6, 16).map(({ node }) => (
                         <Link
                             to={`/blog/` + node.slug}
-                            className="flex group rounded-lg items-start gap-4 lg:gap-6 mb-2 hover:bg-white transition-colors p-2"
+                            className="relative flex group rounded-lg items-start gap-4 lg:gap-6 mb-2 hover:bg-white transition-colors p-2"
                         >
                             <div className=" overflow-hidden h-16 w-28 rounded-lg relative">
                                 <GatsbyImage
@@ -155,6 +156,9 @@ const BlogPage = () => {
                                         {node.seo.title}
                                     </Link>
                                 </h2>
+                            </div>
+                            <div className="absolute right-0 bottom-0 h-full w-full">
+                                <FaArrowRightLong />
                             </div>
                         </Link>
                     ))}
