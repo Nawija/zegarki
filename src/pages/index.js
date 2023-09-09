@@ -63,7 +63,7 @@ const IndexPage = () => {
     return (
         <Layout>
             <Hero />
-            <div className="bg-gradient-to-b from-blue-300 to-blue-100 p-4 w-full relative flex items-center justify-center">
+            <div className="bg-gradient-to-b from-blue-300 to-blue-100 py-4 px-2 w-full relative flex items-center justify-center">
                 <p className="font-semibold mr-5 text-sm md:text-base">
                     Poznaj rewolucję, inspiracja na wyciągnięcie ręki
                 </p>
@@ -78,14 +78,14 @@ const IndexPage = () => {
                 </Link>
             </div>
 
-            <div className="bg-white py-6 sm:py-8 lg:py-16">
+            <div className=" py-6 sm:py-8 lg:py-16">
                 <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
                     <div className="mb-10 md:mb-20">
                         <h2 className="mb-4 text-center text-2xl font-bold  md:mb-6 lg:text-3xl">
                             Nasze Projekty
                         </h2>
 
-                        <p className="mx-auto max-w-screen-md text-center text-gray-700 md:text-lg">
+                        <p className="mx-auto max-w-screen-md text-center text-p md:text-lg">
                             This is a section of some simple filler text, also
                             known as placeholder text. It shares some
                             characteristics of a real written text but is random
@@ -150,7 +150,7 @@ const IndexPage = () => {
                                 Do nawet -50%
                             </h2>
 
-                            <p className="mb-8 max-w-md text-gray-700">
+                            <p className="mb-8 max-w-md text-p">
                                 This is a section of some simple filler text,
                                 also known as placeholder text. It shares some
                                 characteristics of a real written text.
@@ -185,7 +185,7 @@ const IndexPage = () => {
                             Gotowe Szablony Stron
                         </h2>
 
-                        <p className="mx-auto max-w-screen-md text-center text-gray-700 md:text-lg">
+                        <p className="mx-auto max-w-screen-md text-center text-p md:text-lg">
                             This is a section of some simple filler text, also
                             known as placeholder text. It shares some
                             characteristics of a real written text but is random
@@ -207,7 +207,7 @@ const IndexPage = () => {
                                 />
 
                                 <div className="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
-                                    <span className="text-gray-700">Men</span>
+                                    <span className="text-p">Men</span>
                                     <span className="text-lg font-bold  lg:text-xl">
                                         Business Causual
                                     </span>
@@ -228,7 +228,7 @@ const IndexPage = () => {
                                 />
 
                                 <div className="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
-                                    <span className="text-gray-700">Women</span>
+                                    <span className="text-p">Women</span>
                                     <span className="text-lg font-bold  lg:text-xl">
                                         Summer Season
                                     </span>
@@ -249,7 +249,7 @@ const IndexPage = () => {
                                 />
 
                                 <div className="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
-                                    <span className="text-gray-700">Men</span>
+                                    <span className="text-p">Men</span>
                                     <span className="text-lg font-bold  lg:text-xl">
                                         Streetwear
                                     </span>
@@ -270,7 +270,7 @@ const IndexPage = () => {
                                 />
 
                                 <div className="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
-                                    <span className="text-gray-700">Women</span>
+                                    <span className="text-p">Women</span>
                                     <span className="text-lg font-bold  lg:text-xl">
                                         Sale
                                     </span>
@@ -288,7 +288,7 @@ const IndexPage = () => {
                             <h2 className="text-center text-xl font-bold sm:text-2xl lg:text-left lg:text-3xl">
                                 Zapisz sie do newslettera
                             </h2>
-                            <p className="text-center text-gray-700 lg:text-left">
+                            <p className="text-center text-p lg:text-left">
                                 Badz na bierząco z nowościami!
                             </p>
                         </div>
@@ -303,7 +303,7 @@ const IndexPage = () => {
                                 <button className="btn-main">Wyślij</button>
                             </form>
 
-                            <p className="text-center text-xs text-gray-700 lg:text-right">
+                            <p className="text-center text-xs text-p lg:text-right">
                                 By signing up to our newsletter you agree to our{" "}
                                 <a
                                     href="#"
@@ -331,7 +331,7 @@ const IndexPage = () => {
                             Dlaczego Strona Internetowa
                         </h2>
 
-                        <p class="mx-auto max-w-screen-md text-center text-gray-700 md:text-lg">
+                        <p class="mx-auto max-w-screen-md text-center text-p md:text-lg">
                             This is a section of some simple filler text, also
                             known as placeholder text. It shares some
                             characteristics of a real written text but is random
@@ -344,7 +344,7 @@ const IndexPage = () => {
                             <h3 class="mb-2 text-lg font-semibold md:text-xl">
                                 Growth
                             </h3>
-                            <p class="mb-4 text-gray-700">
+                            <p class="mb-4 text-p">
                                 Filler text is dummy text which has no meaning
                                 however looks very similar to real text.
                             </p>
@@ -357,7 +357,7 @@ const IndexPage = () => {
                             <h3 class="mb-2 text-lg font-semibold md:text-xl">
                                 Security
                             </h3>
-                            <p class="mb-4 text-gray-700">
+                            <p class="mb-4 text-p">
                                 Filler text is dummy text which has no meaning
                                 however looks very similar to real text.
                             </p>
@@ -370,7 +370,7 @@ const IndexPage = () => {
                             <h3 class="mb-2 text-lg font-semibold md:text-xl">
                                 Cloud
                             </h3>
-                            <p class="mb-4 text-gray-700">
+                            <p class="mb-4 text-p">
                                 Filler text is dummy text which has no meaning
                                 however looks very similar to real text.
                             </p>
@@ -383,7 +383,7 @@ const IndexPage = () => {
                             <h3 class="mb-2 text-lg font-semibold md:text-xl">
                                 Speed
                             </h3>
-                            <p class="mb-4 text-gray-700">
+                            <p class="mb-4 text-p">
                                 Filler text is dummy text which has no meaning
                                 however looks very similar to real text.
                             </p>
@@ -396,7 +396,7 @@ const IndexPage = () => {
                             <h3 class="mb-2 text-lg font-semibold md:text-xl">
                                 Support
                             </h3>
-                            <p class="mb-4 text-gray-700">
+                            <p class="mb-4 text-p">
                                 Filler text is dummy text which has no meaning
                                 however looks very similar to real text.
                             </p>
@@ -409,7 +409,7 @@ const IndexPage = () => {
                             <h3 class="mb-2 text-lg font-semibold md:text-xl">
                                 Dark Mode
                             </h3>
-                            <p class="mb-4 text-gray-700">
+                            <p class="mb-4 text-p">
                                 Filler text is dummy text which has no meaning
                                 however looks very similar to real text.
                             </p>
@@ -428,7 +428,7 @@ const IndexPage = () => {
                             Krok po kroku
                         </h2>
 
-                        <p className="mx-auto max-w-screen-md text-center text-gray-700 md:text-lg">
+                        <p className="mx-auto max-w-screen-md text-center text-p md:text-lg">
                             This is a section of some simple filler text, also
                             known as placeholder text. It shares some
                             characteristics of a real written text but is random

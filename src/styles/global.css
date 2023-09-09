@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .text-main {
     color: #2a3551;
+}
+.text-p {
+    color: rgb(112, 112, 112);
 }
 .bg-main {
     background-color: #2a3551;
@@ -34,7 +38,7 @@
 .btn-second {
 }
 
-.text-shadow{
+.text-shadow {
     text-shadow: -1px 1px 2px rgba(90, 90, 90, 0.4);
 }
 

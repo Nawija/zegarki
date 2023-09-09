@@ -20,28 +20,18 @@ const SmallHero = ({ title, desc, smallHeroSlug1, smallHeroSlug2 }) => {
     }, []);
 
     return (
-        <div className="h-[10rem] lg:h-[16rem] w-full relative mb-8 lg:mb-20 mx-auto -mt-16">
+        <div className="h-[30vh] w-full relative lg:-mt-16 lg:mb-20">
+            <div className="top-0 left-0 bg-gradient-to-t opacity-80 from-blue-500 to-blue-800 mix-blend-multiply h-full w-full" />
             <div
-                className={`relative h-full w-full ${
-                    videoLoaded ? "fade-in" : "fade-out"
-                }`}
-            >
-                <video
-                    src={ShipVideo}
-                    className="absolute top-0 left-0 h-full w-full object-cover -z-10"
-                    autoPlay
-                    muted
-                    loop
-                    onLoad={handleVideoLoaded}
-                />
-            </div>
-
-            {videoLoaded && (
-                <div className="absolute top-0 left-0 bg-gradient-to-t opacity-90 from-blue-500 to-blue-800 h-full w-full" />
-            )}
-            {!videoLoaded && (
-                <div className="absolute top-0 left-0 bg-gradient-to-t opacity-90 from-blue-500 to-blue-800 h-full w-full" />
-            )}
+                className="absolute h-full w-full top-0 left-0 bg-fixed -z-10 object-cover"
+                style={{
+                    backgroundImage:
+                        "url(https://img.freepik.com/darmowe-zdjecie/sniezny-szczyt-gorski-pod-generatywna-sztuczna-inteligencja-majestatu-gwiazdzistej-galaktyki_188544-9650.jpg?w=2000&t=st=1694255929~exp=1694256529~hmac=b45ff9a1970e9cc4a7422ca5e8296d2ffb4e6852f8f33cb00472633a54f749db)",
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                }}
+            />
 
             <div className="text-white absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto text-center w-[90%] sm:max-w-3xl">
                 <p className="text-2xl lg:text-5xl font-semibold text-center">

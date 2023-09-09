@@ -16,7 +16,7 @@ const Header = () => {
     const [navbar, setNavbar] = useState(false);
 
     const changeBackground = () => {
-        if (window.scrollY >= 400) {
+        if (window.scrollY >= 2) {
             setNavbar(true);
         } else {
             setNavbar(false);
@@ -37,9 +37,9 @@ const Header = () => {
 
     return (
         <header
-            className={`relative flex lg:hidden z-[999] w-full ${
+            className={`fixed top-0 flex lg:hidden z-[999] transition-colors duration-300 w-full ${
                 navbar || (!navbar && showMenu)
-                    ? "sticky mx-auto top-0 shadow-xl bg-white"
+                    ? "mx-auto shadow-xl bg-white"
                     : "text-white"
             }`}
         >
@@ -55,8 +55,8 @@ const Header = () => {
                 <ul
                     className={`overflow-auto absolute top-[99%] left-0 w-full font-semibold text-center transition-all duration-100 space-y-6 pb-6  ${
                         showMenu
-                            ? "translate-y-0 slide-bottom shadow-xl bg-white"
-                            : "-translate-y-[200%] text-[0px] text-white bg-transparent"
+                            ? "translate-x-0 shadow-xl bg-white"
+                            : "-translate-x-[200%] text-[0px] text-white bg-transparent"
                     }`}
                 >
                     <li className="list-none flex items-center justify-center">

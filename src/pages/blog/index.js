@@ -7,7 +7,7 @@ import Seo from "../../components/seo";
 import SmallHero from "../../components/SmallHero";
 import Spinner from "../../components/Spinner";
 
-import { FaHotjar, FaBookReader, FaArrowRightLong } from "react-icons/fa";
+import { FaHotjar, FaBookReader } from "react-icons/fa";
 
 const BlogPage = () => {
     const [imageLoaded, setImageLoaded] = useState(false);
@@ -156,9 +156,6 @@ const BlogPage = () => {
                                         {node.seo.title}
                                     </Link>
                                 </h2>
-                            </div>
-                            <div className="absolute right-0 bottom-0 h-full w-full">
-                                <FaArrowRightLong />
                             </div>
                         </Link>
                     ))}
