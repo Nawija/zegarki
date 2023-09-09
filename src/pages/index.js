@@ -63,17 +63,17 @@ const IndexPage = () => {
     return (
         <Layout>
             <Hero />
-            <div className="bg-gradient-to-b text-main from-blue-300 to-blue-100 py-4 px-2 w-full relative flex items-center justify-center">
-                <p className="font-semibold mr-5 text-sm md:text-base w-[40%]">
+            <div className="bg-gradient-to-b text-main from-blue-300 to-blue-100 py-2 px-2 w-full relative flex items-center justify-center">
+                <p className="font-semibold mr-5 text-[13px] md:text-base w-[40%]">
                     Poznaj rewolucję, inspiracja na wyciągnięcie ręki
                 </p>
                 <Link
                     to="/premium-gatsbyjs"
-                    className="flex items-center justify-center p-3 bg-gradient-to-tr from-yellow-500/90 to-yellow-600 font-bold text-white text-sm tracking-wide rounded-lg"
+                    className="flex items-center justify-center p-2.5 bg-gradient-to-tr from-yellow-500/90 to-yellow-600 font-bold text-white text-[12px] tracking-wide rounded-lg"
                 >
                     <p className="mr-1">Wybierz Premium</p>
                     <div>
-                        <FaCrown className="text-lg" />
+                        <FaCrown className="text-base" />
                     </div>
                 </Link>
             </div>

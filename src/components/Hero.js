@@ -5,10 +5,13 @@ import { TypeAnimation } from "react-type-animation";
 
 const HeroCom = () => {
     return (
-        <div
-            className="w-full relative h-[40rem] lg:-mt-16"
-        >
+        <div className="w-full relative h-[35rem] lg:-mt-16">
             <div className="absolute top-0 left-0 bg-gradient-to-t from-blue-400 to-blue-700 mix-blend-multiply h-full w-full" />
+            <StaticImage
+                className="absolute top-0 left-0 h-full w-full -z-10 opacity-50"
+                placeholder="dominantColor"
+                src="https://images.unsplash.com/photo-1612534268757-5ad43935365d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3270&q=80"
+            />
 
             <div className="text-white  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto text-center w-[90%] sm:max-w-3xl">
                 <p className="text-3xl lg:text-6xl font-semibold text-center">
@@ -26,7 +29,7 @@ const HeroCom = () => {
                         ]}
                         wrapper="span"
                         speed={50}
-                        className="bg-gradient-to-t from-green-400 to-green-600 bg-clip-text text-transparent"
+                        className="bg-gradient-to-t from-yellow-400 to-yellow-600 bg-clip-text text-transparent"
                         style={{
                             fontSize: "1em",
                             width: "max-content",
