@@ -5,20 +5,13 @@ import { TypeAnimation } from "react-type-animation";
 
 const HeroCom = () => {
     return (
-        <div className="h-[80vh] w-full relative lg:-mt-16">
+        <div className="h-[81vh] w-full relative lg:-mt-16">
             <div className="absolute top-0 left-0 bg-gradient-to-t opacity-80 from-blue-500 to-blue-800 mix-blend-multiply h-full w-full" />
             <div
-                className="absolute h-full w-full top-0 left-0 bg-fixed -z-10 object-cover"
-                // style={{
-                //     backgroundImage:
-                //         "url(https://img.freepik.com/darmowe-zdjecie/niebieskie-serce-zaprojektowane-jako-centralna-jednostka-przetwarzajaca-ai-generujaca-milosc_191095-1958.jpg?w=2000&t=st=1694252970~exp=1694253570~hmac=812c9a20e39a8c23427e2a4459b0ac08a0a00972ac31099d75375d3ffbaa8de5)",
-                //     backgroundPosition: "center",
-                //     backgroundSize: "cover",
-                //     backgroundRepeat: "no-repeat",
-                // }}
+                className="absolute h-full w-full top-0 left-0 lg:bg-fixed -z-10"
                 style={{
                     backgroundImage:
-                        "url(https://img.freepik.com/darmowe-zdjecie/cyfrowy-obraz-gor-i-ksiezyca_1340-24060.jpg?w=2000&t=st=1694256286~exp=1694256886~hmac=8c38117a7a2375ce0f07c32721686d0823accf3aac7b6eea0344a7cdb592df87)",
+                        "url(https://img.freepik.com/darmowe-zdjecie/plakat-do-filmu-duch-w-muszli_1340-43129.jpg?w=2000&t=st=1694257208~exp=1694257808~hmac=64be08cb3faee05b737333652108ef30759c13d608527bd56cb3bdccdf643406)",
                     backgroundPosition: "center",
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
@@ -26,7 +19,7 @@ const HeroCom = () => {
             />
 
             <div className="text-white  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto text-center w-[90%] sm:max-w-3xl">
-                <p className="text-3xl lg:text-6xl font-semibold text-center">
+                <p className="text-3xl lg:text-7xl font-semibold text-center">
                     Niesamowite <br />
                     <TypeAnimation
                         sequence={[
@@ -44,8 +37,9 @@ const HeroCom = () => {
                         style={{
                             fontSize: "1em",
                             width: "max-content",
-                            color: "orange",
-                            fontWeight: "500",
+                            color: "yellow",
+                            fontWeight: "600",
+                            letterSpacing: "-0.02em",
                         }}
                         repeat={Infinity}
                     />
