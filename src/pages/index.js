@@ -63,7 +63,7 @@ const IndexPage = () => {
     return (
         <Layout>
             <Hero />
-            <div className="bg-gradient-to-t text-white from-gray-900 to-gray-700 py-4 px-2 w-full relative flex items-center justify-center">
+            <div className="bg-gradient-to-b text-main from-blue-300 to-blue-100 py-4 px-2 w-full relative flex items-center justify-center">
                 <p className="font-semibold mr-5 text-sm md:text-base w-[40%]">
                     Poznaj rewolucję, inspiracja na wyciągnięcie ręki
                 </p>
@@ -78,7 +78,7 @@ const IndexPage = () => {
                 </Link>
             </div>
 
-            <div className=" py-6 sm:py-8 lg:py-16">
+            <div className="bg-white py-6 sm:py-8 lg:py-16">
                 <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
                     <div className="mb-10 md:mb-20">
                         <h2 className="mb-4 text-center text-2xl font-bold  md:mb-6 lg:text-3xl">

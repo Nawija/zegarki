@@ -5,40 +5,32 @@ import { TypeAnimation } from "react-type-animation";
 
 const HeroCom = () => {
     return (
-        <div className="h-[81vh] w-full relative lg:-mt-16">
-            <div className="absolute top-0 left-0 bg-gradient-to-t opacity-80 from-blue-500 to-blue-800 mix-blend-multiply h-full w-full" />
-            <div
-                className="absolute h-full w-full top-0 left-0 lg:bg-fixed -z-10"
-                style={{
-                    backgroundImage:
-                        "url(https://img.freepik.com/darmowe-zdjecie/plakat-do-filmu-duch-w-muszli_1340-43129.jpg?w=2000&t=st=1694257208~exp=1694257808~hmac=64be08cb3faee05b737333652108ef30759c13d608527bd56cb3bdccdf643406)",
-                    backgroundPosition: "center",
-                    backgroundSize: "cover",
-                    backgroundRepeat: "no-repeat",
-                }}
-            />
+        <div
+            className="w-full relative h-[40rem] lg:-mt-16"
+        >
+            <div className="absolute top-0 left-0 bg-gradient-to-t from-blue-400 to-blue-700 mix-blend-multiply h-full w-full" />
 
             <div className="text-white  absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-auto text-center w-[90%] sm:max-w-3xl">
-                <p className="text-3xl lg:text-7xl font-semibold text-center">
+                <p className="text-3xl lg:text-6xl font-semibold text-center">
                     Niesamowite <br />
                     <TypeAnimation
                         sequence={[
                             "Strony Internetowe",
-                            1500,
-                            "Sklepy Internetowe",
-                            1500,
-                            "Pozycjonowanie SEO",
-                            1500,
+                            2200,
                             "Projekty Graficzne",
-                            1500,
+                            2200,
+                            "Sklepy Internetowe",
+                            2200,
+                            "Pozycjonowanie SEO",
+                            2200,
                         ]}
                         wrapper="span"
                         speed={50}
+                        className="bg-gradient-to-t from-green-400 to-green-600 bg-clip-text text-transparent"
                         style={{
                             fontSize: "1em",
                             width: "max-content",
-                            color: "yellow",
-                            fontWeight: "600",
+                            fontWeight: "700",
                             letterSpacing: "-0.02em",
                         }}
                         repeat={Infinity}
@@ -55,7 +47,7 @@ const HeroCom = () => {
                                 src="https://img.freepik.com/darmowe-wektory/ptak-kolorowe-logo-wektor-gradientu_343694-1365.jpg?w=826&t=st=1693820984~exp=1693821584~hmac=f291138d161f49816eba71a0e180135753782b4f1d3995f7156f297ea79f8df6"
                             />
                         </div>
-                        <p className="text-[11px] font-bold bg-blue-200/20 rounded-lg text-white w-max px-2 py-0.5 text-center mx-auto mt-1 tracking-wider">
+                        <p className="text-[11px] font-bold bg-black/30 text-white rounded-lg w-max px-2 py-0.5 text-center mx-auto mt-1 tracking-wider">
                             Nowoczesne Logo
                         </p>
                     </Link>
@@ -68,7 +60,7 @@ const HeroCom = () => {
                                 placeholder="dominantColor"
                             />
                         </div>
-                        <p className="text-[11px] font-bold bg-blue-200/20 rounded-lg text-white w-max px-2 py-0.5 text-center mx-auto mt-1 tracking-wider">
+                        <p className="text-[11px] font-bold bg-black/30 text-white rounded-lg w-max px-2 py-0.5 text-center mx-auto mt-1 tracking-wider">
                             Strona Internetowa
                         </p>
                     </Link>
@@ -81,7 +73,7 @@ const HeroCom = () => {
                                 placeholder="dominantColor"
                             />
                         </div>
-                        <p className="text-[11px] font-bold bg-blue-200/20 rounded-lg text-white w-max px-2 py-0.5 text-center mx-auto mt-1 tracking-wider">
+                        <p className="text-[11px] font-bold bg-black/30 text-white rounded-lg w-max px-2 py-0.5 text-center mx-auto mt-1 tracking-wider">
                             Sklep Internetowy
                         </p>
                     </Link>
@@ -94,7 +86,7 @@ const HeroCom = () => {
                                 placeholder="dominantColor"
                             />
                         </div>
-                        <p className="text-[11px] font-bold bg-blue-200/20 rounded-lg text-white w-max px-2 py-0.5 text-center mx-auto mt-1 tracking-wider">
+                        <p className="text-[11px] font-bold bg-black/30 text-white rounded-lg w-max px-2 py-0.5 text-center mx-auto mt-1 tracking-wider">
                             SEO
                         </p>
                     </Link>
