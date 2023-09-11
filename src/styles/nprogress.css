@@ -10,20 +10,7 @@
     backdrop-filter: blur(9px);
 }
 
-/* #nprogress .bar {
-    background: #e7d10c !important;
+#nprogress .bar {
+    background: #e70c0c !important;
+    height: 18px !important;
 }
-
-#nprogress .spinner-icon {
-    border-bottom: 6px solid #e7d10c !important;
-    border-top: 6px solid transparent !important;
-    border-left: 6px solid transparent !important;
-    border-right: 6px solid transparent !important;
-    border-radius: 19px;
-    height: 110px !important;
-    width: 110px !important;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */

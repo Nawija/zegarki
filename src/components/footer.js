@@ -1,32 +1,23 @@
 import React from "react";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 
 const Footer = () => (
-    <div className="bg-gray-800 text-white w-full z-50 mt-20">
+    <div className="bg-black text-white w-full z-50 mt-20">
         <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
             <div className="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
                 <div className="col-span-full lg:col-span-2">
-                    <div className=" ml-4 mb-4 lg:-mt-2">
+                    <div className="mb-4">
                         <Link
                             to="/"
-                            className="flex-col hover:scale-105 transition-all duration-300 flex h-auto w-20 items-center justify-center"
                             aria-label="logo"
                         >
-                            <StaticImage
-                                quality={100}
-                                className="h-full w-full"
-                                placeholder="blurred"
-                                src="../images/favicon.png"
-                                alt="seovileo"
-                            />
-                            <p className="font-semibold -tracking-wide text-xl w-max -mt-1">
-                                Seovileo
+                            <p className="font-bold -tracking-wide text-2xl w-max -mt-1">
+                                PROMOWATCH
                             </p>
                         </Link>
                     </div>
 
-                    <p className="mb-6  sm:pr-8">
+                    <p className="mb-6">
                         Stwórz swoją idealną stronę internetową z niezależnym
                         freelancerem
                     </p>
