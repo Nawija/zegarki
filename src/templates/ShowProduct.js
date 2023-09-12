@@ -4,6 +4,11 @@ import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import Spinner from "../components/Spinner";
+import Slider from "react-slick";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "../styles/Slider.css";
 
 const ShowProduct = ({
     pageContext: { slug },
@@ -14,16 +19,29 @@ const ShowProduct = ({
     const handleImageLoaded = () => {
         setImageLoaded(true);
     };
+    var settings = {
+        arrows: true,
+        infinite: true,
+        speed: 700,
+        pauseOnHover: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+    };
     return (
         <Layout>
             <nav className="text-[13px] flex-s wrapper font-medium">
-                <Link to="/">Start</Link>
-                <span className="mx-2">&#8226;</span>
-                <Link to="/hugo-boss">Hugo Boss</Link>
-                <span className="mx-2">&#8226;</span>
-                <p>{datoCmsHugoBoss.title}</p>
+                <Link to="/" className="p-2">
+                    Start
+                </Link>
+                <span className="py-2">&#8226;</span>
+                <Link to="/hugo-boss" className="p-2">
+                    Hugo Boss
+                </Link>
+                <span className="py-2">&#8226;</span>
+                <p className="p-2">{datoCmsHugoBoss.title}</p>
             </nav>
-            <div className="flex flex-col lg:flex-row items-start justify-center wrapper">
+
+            <div className="flex flex-col lg:flex-row items-center justify-center wrapper pt-24">
                 <div className="flex flex-col items-center justify-center w-full mx-auto md:w-64 lg:w-1/2 relative">
                     <GatsbyImage
                         loading="eager"
@@ -33,31 +51,68 @@ const ShowProduct = ({
                         onLoad={handleImageLoaded}
                     />
                     {!imageLoaded && <Spinner />}
+                    {/* <Slider {...settings}>
+                        {allDatoCmsHugoBoss.edges.map(({ node }) => (
+                            <div
+                                className="p-1 border border-transparent hover:border-gray-200 hover:shadow-xl transition-all"
+                                key={node.id}
+                            >
+                                <div className="relative p-6 text-center flex items-center justify-center flex-col">
+                                    <GatsbyImage
+                                        className="min-h-[14rem] max-w-screen-2xl mx-auto"
+                                        loading="eager"
+                                        image={getImage(node.img)}
+                                        alt={node.title}
+                                        onLoad={handleImageLoaded}
+                                    />
+                                    {!imageLoaded && <Spinner />}
+                                    <div className="mt-4 px-1 w-full">
+                                        <p className="h-12 uppercase text-start font-bold text-sm">
+                                            {node.title}
+                                        </p>
+                                        <div className="w-full h-[1px] bg-gray-300 mb-2" />
+                                        <div className="flex-b w-full font-medium">
+                                            <p>{node.price} zł</p>
+                                            <Link
+                                                to={node.slug}
+                                                title={`Kup ` + node.title}
+                                                className="text-red-700"
+                                            >
+                                                Kupuj
+                                            </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </Slider> */}
                 </div>
                 <div className="flex flex-col items-start justify-start w-full lg:w-1/2 lg:ml-12 px-6 lg:px-0 pt-5 lg:pt-2">
                     <h1 className="text-2xl font-semibold capitalize">
                         {datoCmsHugoBoss.title}
                     </h1>
-                    <p className="text-red-700 font-bold text-xl mt-2">
-                        {datoCmsHugoBoss.price}
-                    </p>
-                    <p>Brutto</p>
+                    <div className="flex items-center justify-center mt-2">
+                        <p className="text-red-700 font-bold text-xl mr-2">
+                            {datoCmsHugoBoss.price} zł
+                        </p>
+                        <p className="text-gray-400">/ brutto</p>
+                    </div>
                     <div className="my-8 h-[1px] w-full bg-slate-200" />
                     <p>{datoCmsHugoBoss.desc}</p>
                     <div className="my-8 h-[1px] w-full bg-slate-200" />
                     <div className="mt-4 flex items-center justify-center">
                         <Link
                             to="/kontakt"
-                            className={`mr-4 py-3 px-6 text-white text-sm hover:opacity-70 transition-opacity rounded-lg`}
+                            className={`mr-4 py-3 px-6 text-white bg-red-700 text-sm hover:opacity-70 transition-opacity rounded-lg`}
                         >
                             Kontakt
                         </Link>
                         <Link
                             to="/"
                             target="_blank"
-                            className="flex items-center justify-center mr-4 py-3 px-6 border text-black border-gray-600 hover:border-gray-300 transition-colors text-sm rounded-lg"
+                            className="flex items-center justify-center mr-4 py-3 px-6 border text-white bg-black border-gray-600 hover:border-gray-300 transition-colors text-sm rounded-lg"
                         >
-                            <p>Zobacz Live</p>
+                            <p>Kup Teraz</p>
                         </Link>
                     </div>
                 </div>
@@ -155,25 +210,24 @@ const ShowProduct = ({
 
             <div className="sm:my-6 lg:my-20 max-w-screen-xl mx-auto px-1">
                 <h2 className="ml-8 font-semibold mb-3 text-lg">
-                    Więcej Projektów:
+                    Proponowane:
                 </h2>
 
-                <div className="flex flex-wrap ">
+                <div className="flex flex-wrap">
                     {allDatoCmsHugoBoss.edges.map(({ node }) => (
                         <Link
                             to={"/" + node.slug}
-                            className="py-3 px-1 group hover:bg-blue-50 rounded-lg transition-colors "
+                            className="py-3 px-1 group hover:bg-blue-50 rounded-lg transition-colors flex items-center justify-start flex-col"
                         >
                             <GatsbyImage
                                 image={getImage(node.img)}
                                 alt="seovileo"
                                 className="lg:group-hover:scale-105 lg:transition-transform lg:duration-300"
                             />
-                            <div className="flex items-center justify-center text-center mx-auto w-full">
-                                <p className="font-semibold text-sm capitalize group-hover:text-yellow-600 transition-colors">
-                                    {node.title}
-                                </p>
-                            </div>
+
+                            <p className="font-semibold text-sm capitalize group-hover:text-yellow-600 transition-colors w-44">
+                                {node.title}
+                            </p>
                         </Link>
                     ))}
                 </div>
@@ -197,7 +251,7 @@ export const query = graphql`
             desc
             slug
             img {
-                gatsbyImageData(width: 150, placeholder: NONE, aspectRatio: 0.8)
+                gatsbyImageData(width: 350, placeholder: NONE, aspectRatio: 0.8)
             }
         }
 

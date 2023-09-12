@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { useStaticQuery, graphql, Link } from "gatsby";
-import Slider from "react-slick";
 import Spinner from "./Spinner";
+import Slider from "react-slick";
 
 import { BsFillArrowRightSquareFill } from "react-icons/bs";
 
