@@ -15,7 +15,7 @@
   .icon {
     animation: spin 1s linear infinite;
     font-size: 2rem;
-    color: #3b82f6;
+    color: black;
   }
   
   @keyframes spin {

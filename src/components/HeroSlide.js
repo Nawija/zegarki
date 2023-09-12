@@ -1,12 +1,33 @@
 import React from "react";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { useStaticQuery, graphql } from "gatsby";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/Slider.css";
-import { StaticImage } from "gatsby-plugin-image";
 
 const HeroSlide = () => {
+    const data = useStaticQuery(graphql`
+        {
+            allDatoCmsSlajdy(sort: { position: ASC }) {
+                edges {
+                    node {
+                        id
+                        img {
+                            colors {
+                                hex
+                            }
+                            gatsbyImageData(
+                                height: 700
+                                placeholder: DOMINANT_COLOR
+                            )
+                        }
+                    }
+                }
+            }
+        }
+    `);
     var settings = {
         dots: true,
         arrows: false,
@@ -19,24 +40,15 @@ const HeroSlide = () => {
         slidesToScroll: 1,
     };
     return (
-        <Slider {...settings} className="z-10">
-            <StaticImage
-                loading="eager"
-                quality={100}
-                className="min-h-[14rem]"
-                imgClassName="min-h-[14rem]"
-                src="https://vivab2b.pl/img/bannery/GW1970-WSP%C3%93LNY_BANER.jpg"
-                alt="permwatch"
-            />
-
-            <StaticImage
-                loading="eager"
-                quality={100}
-                className="min-h-[14rem]"
-                imgClassName="min-h-[14rem]"
-                src="https://vivab2b.pl/img/bannery/PAUL-LORENS-NOWO%C5%9ACI.webp"
-                alt="permwatch"
-            />
+        <Slider {...settings} className="z-10 text-center bg-gray-100">
+            {data.allDatoCmsSlajdy.edges.map(({ node }) => (
+                <GatsbyImage
+                    className="min-h-[14rem] max-w-screen-2xl mx-auto"
+                    loading="eager"
+                    image={getImage(node.img)}
+                    alt="permwatch baner"
+                />
+            ))}
         </Slider>
     );
 };

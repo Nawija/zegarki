@@ -12,7 +12,7 @@ module.exports = {
         {
             resolve: "gatsby-source-datocms",
             options: {
-                apiToken: "949a6d3042f4035b35f2f0631e3fb3",
+                apiToken: "58a9b9cb6a2bbe7f7dcfef995756c8",
             },
         },
         "gatsby-plugin-image",
@@ -52,7 +52,7 @@ module.exports = {
                 background_color: `#0C0904`,
                 theme_color: `#0C0904`,
                 display: `standalone`,
-                icon: `src/images/favicon.png`,
+                icon: `src/images/favicon.jpg`,
             },
         },
     ],

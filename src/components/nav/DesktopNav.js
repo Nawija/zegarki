@@ -22,10 +22,10 @@ export default function DesktopNav() {
                             id="search"
                             name="search"
                             placeholder="szukaj produktu"
-                            className="w-96 bg-white border-b border-gray-400 px-2 ring-gray-300 focus:border-gray-300 active:bg-gray-100 ml-5 py-1.5 text-[14px] -tracking-wide font-medium"
+                            className="w-96 border-b border-gray-400 px-2 ml-5 py-2 text-sm -tracking-wide"
                         />
-                        <button class="absolute right-1 top-1.5">
-                            <FiSearch className="text-xl" />
+                        <button class="absolute right-1 top-2">
+                            <FiSearch className="text-xl text-gray-500" />
                         </button>
                     </div>
                 </div>
@@ -41,32 +41,50 @@ export default function DesktopNav() {
                 </div>
             </div>
             <div className="border-b">
-                <div className="flex-b font-bold uppercase wrapper ">
-                    <Link className="px-7 py-4" to="/">
+                <div className="flex-b font-semibold uppercase wrapper ">
+                    <Link
+                        className="px-7 py-3 border-b-2 border-transparent hover:border-green-500 transition-colors"
+                        to="/"
+                    >
                         Smartwatch
                     </Link>
-                    <Link className="px-7 py-4" to="/">
+                    <Link
+                        className="px-7 py-3 border-b-2 border-transparent hover:border-green-500 transition-colors"
+                        to="/"
+                    >
                         Zegarki Męskie
                     </Link>
-                    <Link className="px-7 py-4" to="/">
+                    <Link
+                        className="px-7 py-3 border-b-2 border-transparent hover:border-green-500 transition-colors"
+                        to="/"
+                    >
                         Zegarki Damskie
                     </Link>
                     <Link
-                        className="px-7 py-4 bg-yellow-400 text-white relative"
+                        className="px-7 py-3 bg-yellow-400 text-white relative border-b-2 border-transparent hover:border-green-500 transition-colors"
                         to="/"
                     >
                         <p>promocje</p>
-                        <div className="bg-black text-white text-[9px] p-1 absolute left-1/2 -translate-x-1/2 -bottom-3 overflow-visible">
-                            NOWOŚCI
+                        <div className="bg-black text-white text-[8px] p-1 absolute left-1/2 -translate-x-1/2 -bottom-3 font-bold">
+                            NOWOŚĆ
                         </div>
                     </Link>
-                    <Link className="px-7 py-4" to="/">
+                    <Link
+                        className="px-7 py-3 border-b-2 border-transparent hover:border-green-500 transition-colors"
+                        to="/"
+                    >
                         od ręki
                     </Link>
-                    <Link className="px-7 py-4" to="/">
+                    <Link
+                        className="px-7 py-3 border-b-2 border-transparent hover:border-green-500 transition-colors"
+                        to="/"
+                    >
                         akcesoria
                     </Link>
-                    <Link className="px-7 py-4" to="/">
+                    <Link
+                        className="px-7 py-3 border-b-2 border-transparent hover:border-green-500 transition-colors"
+                        to="/"
+                    >
                         kontakt
                     </Link>
                 </div>
