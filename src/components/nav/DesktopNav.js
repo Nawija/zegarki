@@ -49,10 +49,13 @@ export default function DesktopNav() {
                         Smartwatch
                     </Link>
                     <Link
-                        className="px-7 py-3 border-b-2 border-transparent hover:border-green-500 transition-colors"
+                        className="px-7 py-3 border-b-2 border-transparent hover:border-green-500 transition-colors relative group hover:text-white"
                         to="/"
                     >
                         Zegarki Męskie
+                        <div className="hidden group-hover:flex fixed top-0 left-0 bg-black/60 h-full w-full -z-50">
+
+                        </div>
                     </Link>
                     <Link
                         className="px-7 py-3 border-b-2 border-transparent hover:border-green-500 transition-colors"

@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
         <>
             <Header siteTitle={data.site.siteMetadata?.title || `Seovileo`} />
 
-            <main className="w-full min-h-screen relative text-main">
+            <main className="w-full min-h-screen relative text-main z-0">
                 {children}
             </main>
 
