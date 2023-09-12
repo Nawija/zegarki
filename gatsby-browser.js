@@ -1,2 +1,2 @@
 import "./src/styles/global.css"
-import "./src/styles/Nprogress.css"
+import "./src/styles/nprogress.css"

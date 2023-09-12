@@ -4,11 +4,7 @@ import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import Spinner from "../components/Spinner";
-import Slider from "react-slick";
-
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "../styles/Slider.css";
+import ShortText from "../components/ShortText";
 
 const ShowProduct = ({
     pageContext: { slug },
@@ -19,14 +15,7 @@ const ShowProduct = ({
     const handleImageLoaded = () => {
         setImageLoaded(true);
     };
-    var settings = {
-        arrows: true,
-        infinite: true,
-        speed: 700,
-        pauseOnHover: true,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-    };
+
     return (
         <Layout>
             <nav className="text-[13px] flex-s wrapper font-medium">
@@ -41,7 +30,7 @@ const ShowProduct = ({
                 <p className="p-2">{datoCmsHugoBoss.title}</p>
             </nav>
 
-            <div className="flex flex-col lg:flex-row items-center justify-center wrapper pt-24">
+            <div className="flex flex-col lg:flex-row items-start justify-center wrapper pt-28">
                 <div className="flex flex-col items-center justify-center w-full mx-auto md:w-64 lg:w-1/2 relative">
                     <GatsbyImage
                         loading="eager"
@@ -51,44 +40,9 @@ const ShowProduct = ({
                         onLoad={handleImageLoaded}
                     />
                     {!imageLoaded && <Spinner />}
-                    {/* <Slider {...settings}>
-                        {allDatoCmsHugoBoss.edges.map(({ node }) => (
-                            <div
-                                className="p-1 border border-transparent hover:border-gray-200 hover:shadow-xl transition-all"
-                                key={node.id}
-                            >
-                                <div className="relative p-6 text-center flex items-center justify-center flex-col">
-                                    <GatsbyImage
-                                        className="min-h-[14rem] max-w-screen-2xl mx-auto"
-                                        loading="eager"
-                                        image={getImage(node.img)}
-                                        alt={node.title}
-                                        onLoad={handleImageLoaded}
-                                    />
-                                    {!imageLoaded && <Spinner />}
-                                    <div className="mt-4 px-1 w-full">
-                                        <p className="h-12 uppercase text-start font-bold text-sm">
-                                            {node.title}
-                                        </p>
-                                        <div className="w-full h-[1px] bg-gray-300 mb-2" />
-                                        <div className="flex-b w-full font-medium">
-                                            <p>{node.price} zł</p>
-                                            <Link
-                                                to={node.slug}
-                                                title={`Kup ` + node.title}
-                                                className="text-red-700"
-                                            >
-                                                Kupuj
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </Slider> */}
                 </div>
                 <div className="flex flex-col items-start justify-start w-full lg:w-1/2 lg:ml-12 px-6 lg:px-0 pt-5 lg:pt-2">
-                    <h1 className="text-2xl font-semibold capitalize">
+                    <h1 className="text-3xl font-semibold">
                         {datoCmsHugoBoss.title}
                     </h1>
                     <div className="flex items-center justify-center mt-2">
@@ -98,14 +52,28 @@ const ShowProduct = ({
                         <p className="text-gray-400">/ brutto</p>
                     </div>
                     <div className="my-8 h-[1px] w-full bg-slate-200" />
-                    <p>{datoCmsHugoBoss.desc}</p>
+                    <div className="flex flex-wrap">
+                        {allDatoCmsHugoBoss.edges.map(({ node }) => (
+                            <Link
+                                to={"/" + node.slug}
+                                className="p-2 hover:bg-gray-100 transition-colors flex items-center justify-start flex-col w-20 border mr-2"
+                            >
+                                <GatsbyImage
+                                    image={getImage(node.img)}
+                                    alt="seovileo"
+                                />
+                            </Link>
+                        ))}
+                    </div>
+                    <div className="my-8 h-[1px] w-full bg-slate-200" />
+                    <ShortText text={datoCmsHugoBoss.desc} />
                     <div className="my-8 h-[1px] w-full bg-slate-200" />
                     <div className="mt-4 flex items-center justify-center">
                         <Link
                             to="/kontakt"
                             className={`mr-4 py-3 px-6 text-white bg-red-700 text-sm hover:opacity-70 transition-opacity rounded-lg`}
                         >
-                            Kontakt
+                            Do Koszyka
                         </Link>
                         <Link
                             to="/"
@@ -129,7 +97,7 @@ const ShowProduct = ({
                 <div className="flex flex-col items-start justify-start w-full lg:w-1/3 pt-2">
                     <div className="flex flex-col items-start justify-start w-full mt-6 border p-6 relative rounded-lg">
                         <p className="text-lg font-semibold -tracking-wide">
-                            Szczegóły strony
+                            Specyfikacja
                         </p>
                         <div className="h-[2px] w-10 mt-1 mb-3" />
 
