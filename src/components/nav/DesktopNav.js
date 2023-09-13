@@ -1,33 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import {  Link } from "gatsby";
 
 import { FaShoppingCart, FaUser, FaHeart } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
 
 export default function DesktopNav() {
-    const data = useStaticQuery(graphql`
-        {
-            allDatoCmsHugoBoss(sort: { position: ASC }) {
-                edges {
-                    node {
-                        id
-                        title
-                        price
-                        slug
-                        img {
-                            gatsbyImageData(placeholder: NONE, aspectRatio: 0.8)
-                        }
-                    }
-                }
-            }
-        }
-    `);
-    const randomIndex = Math.floor(
-        Math.random() * data.allDatoCmsHugoBoss.edges.length
-    );
-    const randomNode = data.allDatoCmsHugoBoss.edges[randomIndex].node;
-
     const [navbar, setNavbar] = useState(false);
 
     const changeBackground = () => {
@@ -44,21 +21,13 @@ export default function DesktopNav() {
     });
 
     const [showOfferMenu, setOfferMenu] = useState(false);
-    const [showFunctionMenu, setFunctionMenu] = useState(false);
 
     const handleOfferHover = () => {
         setOfferMenu(true);
-        setFunctionMenu(false);
-    };
-
-    const handleFunctionHover = () => {
-        setFunctionMenu(true);
-        setOfferMenu(false);
     };
 
     const handleLinkLeave = () => {
         setOfferMenu(false);
-        setFunctionMenu(false);
     };
     return (
         <header

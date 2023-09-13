@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../styles/Slider.css";
 
-const NewItems = () => {
+const HugoBoss = () => {
     const [isDragging, setIsDragging] = useState(false);
 
     const [imageLoaded, setImageLoaded] = useState(false);
@@ -57,7 +57,7 @@ const NewItems = () => {
     return (
         <div className="wrapper mx-auto pt-16 px-2">
             <div className="flex-b px-2">
-                <h2 className="title-h2">Nowości</h2>
+                <h2 className="title-h2">Hugo Boss</h2>
                 <Link
                     to="/"
                     className="flex-c font-semibold py-1.5 px-3 mb-3 text-[13px] border-2 rounded-md text-white bg-black border-gray-700"
@@ -108,4 +108,4 @@ const NewItems = () => {
     );
 };
 
-export default NewItems;
+export default HugoBoss;

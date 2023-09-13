@@ -10,8 +10,20 @@
 .text-main {
     color: #2a3551;
 }
-.text-p {
-    color: rgb(112, 112, 112);
+
+.title-h2 {
+    font-size: 2rem;
+    @media (max-width: 1200px) {
+        font-size: 1.5rem;
+    }
+    font-weight: bold;
+    margin-bottom: 1rem;
+    letter-spacing: 0.01em;
+}
+
+.desc-p {
+    margin-bottom: .5rem;
+    color: rgb(75, 75, 75);
 }
 .bg-main {
     background-color: #2a3551;

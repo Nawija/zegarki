@@ -3,7 +3,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import Spinner from "../components/Spinner";
+import SliderShowProduct from "../components/SliderShowProduct"
 import ShortText from "../components/ShortText";
 
 const ShowProduct = ({
@@ -30,17 +30,8 @@ const ShowProduct = ({
                 <p className="p-2">{datoCmsHugoBoss.title}</p>
             </nav>
 
-            <div className="flex flex-col lg:flex-row items-start justify-center wrapper pt-28">
-                <div className="flex flex-col items-center justify-center w-full mx-auto md:w-64 lg:w-1/2 relative">
-                    <GatsbyImage
-                        loading="eager"
-                        image={getImage(datoCmsHugoBoss.img)}
-                        alt="seovileo"
-                        title="seovileo"
-                        onLoad={handleImageLoaded}
-                    />
-                    {!imageLoaded && <Spinner />}
-                </div>
+            <div className="flex flex-col lg:flex-row items-start justify-center wrapper pt-28 relative">
+                <SliderShowProduct />
                 <div className="flex flex-col items-start justify-start w-full lg:w-1/2 lg:ml-12 px-6 lg:px-0 pt-5 lg:pt-2">
                     <h1 className="text-3xl font-semibold">
                         {datoCmsHugoBoss.title}

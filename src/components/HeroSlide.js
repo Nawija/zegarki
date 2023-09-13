@@ -28,7 +28,7 @@ const HeroSlide = () => {
             }
         }
     `);
-    var settings = {
+    const settings = {
         dots: true,
         arrows: false,
         infinite: true,
