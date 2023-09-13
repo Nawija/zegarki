@@ -30,7 +30,7 @@ const ShowProduct = ({
                 <p className="p-2">{datoCmsHugoBoss.title}</p>
             </nav>
 
-            <div className="flex flex-col lg:flex-row items-start justify-center wrapper pt-28 relative">
+            <div className="flex flex-col lg:flex-row items-start justify-center wrapper lg:pt-28 relative">
                 <SliderShowProduct />
                 <div className="flex flex-col items-start justify-start w-full lg:w-1/2 lg:ml-12 px-6 lg:px-0 pt-5 lg:pt-2">
                     <h1 className="text-3xl font-semibold">

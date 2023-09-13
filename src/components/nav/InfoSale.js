@@ -6,7 +6,7 @@ import { FaHeadphonesAlt } from "react-icons/fa";
 
 export default function InfoSale() {
     return (
-        <div className="py-1.5 text-[13px] text-white bg-black relative w-full font-medium">
+        <div className="py-1.5 text-[13px] text-white bg-black relative w-full font-medium px-3">
             <div className="max-w-screen-xl mx-auto flex-b">
                 <div className="flex-c">
                     <BsFillMegaphoneFill className="mr-2 text-base"/>

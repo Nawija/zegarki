@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import {  Link } from "gatsby";
+import { Link } from "gatsby";
 
 import { FaShoppingCart, FaUser, FaHeart } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
+
+import Cart from "../Cart";
 
 export default function DesktopNav() {
     const [navbar, setNavbar] = useState(false);
@@ -29,9 +31,19 @@ export default function DesktopNav() {
     const handleLinkLeave = () => {
         setOfferMenu(false);
     };
+
+    const [showBasket, setBasket] = useState(false);
+
+    const handleBasketHover = () => {
+        setBasket(true);
+    };
+
+    const handleBasketLeave = () => {
+        setBasket(false);
+    };
     return (
         <header
-            className={`relative z-[999] w-full ${
+            className={`relative z-[999] w-full hidden lg:flex flex-col ${
                 navbar
                     ? "sticky mx-auto top-0 slide-bottom shadow-xl bg-white"
                     : "text-black"
@@ -67,7 +79,18 @@ export default function DesktopNav() {
                         <FaHeart />
                     </Link>
 
-                    <FaShoppingCart />
+                    <button
+                        onMouseEnter={handleBasketHover}
+                        onMouseLeave={handleBasketLeave}
+                        className="relative"
+                    >
+                        <FaShoppingCart />
+                        <Cart
+                            showBasket={showBasket}
+                            handleBasketHover={handleBasketHover}
+                            handleBasketLeave={handleBasketLeave}
+                        />
+                    </button>
                 </div>
             </div>
             <div className="border-b">

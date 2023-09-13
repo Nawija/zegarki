@@ -12,12 +12,12 @@ const AsNavFor = () => {
     };
     const data = useStaticQuery(graphql`
         {
-            allDatoCmsHugoBoss(sort: { position: ASC }) {
+            allDatoCmsHugoBoss {
                 edges {
                     node {
                         img {
                             gatsbyImageData(
-                                width: 320
+                                width: 300
                                 placeholder: NONE
                                 aspectRatio: 0.8
                             )
@@ -40,8 +40,8 @@ const AsNavFor = () => {
     }, []);
 
     return (
-        <div className="w-[42rem]">
-            <div className="border h-96 w-full border-gray-200 overflow-hidden relative">
+        <div className="lg:w-[42rem] w-full overflow-hidden">
+            <div className=" p-2 border h-96 w-screen lg:w-full border-gray-100 overflow-hidden relative">
                 <Slider
                     arrows={false}
                     asNavFor={slider2Ref.current}
@@ -61,7 +61,7 @@ const AsNavFor = () => {
                     ))}
                 </Slider>
             </div>
-            <div className="w-full">
+            <div className="w-screen lg:w-full overflow-hidden">
                 <Slider
                     asNavFor={slider1Ref.current}
                     ref={slider2Ref}
@@ -71,7 +71,7 @@ const AsNavFor = () => {
                     focusOnSelect={true}
                 >
                     {data.allDatoCmsHugoBoss.edges.map(({ node }) => (
-                        <div className="relative p-4 text-center fle-s flex-col border mt-2 cursor-pointer">
+                        <div className="relative p-4 text-center fle-s flex-col border border-gray-100 mt-2 cursor-pointer">
                             <GatsbyImage
                                 loading="eager"
                                 draggable="false"
