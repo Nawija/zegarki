@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/layout";
@@ -10,12 +10,6 @@ const ShowProduct = ({
     pageContext: { slug },
     data: { datoCmsHugoBoss, allDatoCmsHugoBoss },
 }) => {
-    const [imageLoaded, setImageLoaded] = useState(false);
-
-    const handleImageLoaded = () => {
-        setImageLoaded(true);
-    };
-
     return (
         <Layout>
             <nav className="text-[13px] flex-s wrapper font-medium">

@@ -18,6 +18,33 @@ const HugoBoss = () => {
     const handleImageLoaded = () => {
         setImageLoaded(true);
     };
+    const settings = {
+        dots: true,
+        arrows: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        responsive: [
+            {
+                breakpoint: 786,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    initialSlide: 1,
+                },
+            },
+            {
+                breakpoint: 0,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
+        beforeChange: () => setIsDragging(true),
+        afterChange: () => setIsDragging(false),
+    };
     const data = useStaticQuery(graphql`
         {
             allDatoCmsHugoBoss(sort: { position: ASC }) {
@@ -39,23 +66,14 @@ const HugoBoss = () => {
             }
         }
     `);
-    const settings = {
-        dots: true,
-        arrows: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        beforeChange: () => setIsDragging(true),
-        afterChange: () => setIsDragging(false),
-    };
+
     const handleLinkClick = (e) => {
         if (isDragging) {
             e.preventDefault();
         }
     };
     return (
-        <div className="wrapper mx-auto pt-16 px-2">
+        <div className="wrapper mx-auto pt-16 lg:px-2">
             <div className="flex-b px-2">
                 <h2 className="title-h2">Hugo Boss</h2>
                 <Link
@@ -73,7 +91,7 @@ const HugoBoss = () => {
                         to={node.slug}
                         onClick={handleLinkClick}
                         draggable="false"
-                        className="border border-transparent hover:border-gray-200 hover:shadow-xl transition-all"
+                        className="border border-transparent hover:border-gray-200 hover:shadow-xl transition-all ml-28"
                     >
                         <div className="relative p-10 text-center flex items-center justify-center flex-col">
                             <GatsbyImage
@@ -85,7 +103,7 @@ const HugoBoss = () => {
                             />
                             {!imageLoaded && <Spinner />}
                             <div className="mt-4 px-1 w-full">
-                                <p className="h-12 uppercase text-start font-bold text-sm">
+                                <p className="lg:h-12 h-16 uppercase text-start font-bold text-sm">
                                     {node.title}
                                 </p>
                                 <div className="w-full h-[1px] bg-gray-300 mb-2" />

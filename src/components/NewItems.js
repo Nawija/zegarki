@@ -46,6 +46,23 @@ const NewItems = () => {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 4,
+        responsive: [
+            {
+                breakpoint: 786,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    initialSlide: 1,
+                },
+            },
+            {
+                breakpoint: 0,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                },
+            },
+        ],
         beforeChange: () => setIsDragging(true),
         afterChange: () => setIsDragging(false),
     };
@@ -73,7 +90,7 @@ const NewItems = () => {
                         to={node.slug}
                         onClick={handleLinkClick}
                         draggable="false"
-                        className="border border-transparent hover:border-gray-200 hover:shadow-xl transition-all"
+                        className="border border-transparent hover:border-gray-200 hover:shadow-xl transition-all ml-28"
                     >
                         <div className="relative p-10 text-center flex items-center justify-center flex-col">
                             <GatsbyImage
@@ -85,7 +102,7 @@ const NewItems = () => {
                             />
                             {!imageLoaded && <Spinner />}
                             <div className="mt-4 px-1 w-full">
-                                <p className="h-12 uppercase text-start font-bold text-sm">
+                                <p className="lg:h-12 h-16 uppercase text-start font-bold text-sm">
                                     {node.title}
                                 </p>
                                 <div className="w-full h-[1px] bg-gray-300 mb-2" />
