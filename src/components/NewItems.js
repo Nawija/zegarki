@@ -11,6 +11,8 @@ import "slick-carousel/slick/slick-theme.css";
 import "../styles/Slider.css";
 
 const NewItems = () => {
+    const [isDragging, setIsDragging] = useState(false);
+
     const [imageLoaded, setImageLoaded] = useState(false);
 
     const handleImageLoaded = () => {
@@ -44,6 +46,13 @@ const NewItems = () => {
         pauseOnHover: true,
         slidesToShow: 4,
         slidesToScroll: 1,
+        beforeChange: () => setIsDragging(true),
+        afterChange: () => setIsDragging(false),
+    };
+    const handleLinkClick = (e) => {
+        if (isDragging) {
+            e.preventDefault();
+        }
     };
     return (
         <div className="wrapper mx-auto pt-12 px-2">
@@ -58,14 +67,17 @@ const NewItems = () => {
             </div>
             <Slider {...settings}>
                 {data.allDatoCmsHugoBoss.edges.map(({ node }) => (
-                    <div
-                        className="p-1 border border-transparent hover:border-gray-200 hover:shadow-xl transition-all"
+                    <Link
                         key={node.id}
+                        to={node.slug}
+                        onClick={handleLinkClick}
+                        draggable="false"
+                        className="border border-transparent hover:border-gray-200 hover:shadow-xl transition-all"
                     >
-                        <div className="relative p-6 text-center flex items-center justify-center flex-col">
+                        <div className="relative p-10 text-center flex items-center justify-center flex-col">
                             <GatsbyImage
-                                className="min-h-[14rem] max-w-screen-2xl mx-auto"
                                 loading="eager"
+                                draggable="false"
                                 image={getImage(node.img)}
                                 alt={node.title}
                                 onLoad={handleImageLoaded}
@@ -88,7 +100,7 @@ const NewItems = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </Slider>
         </div>
