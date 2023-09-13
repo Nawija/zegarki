@@ -1,13 +1,74 @@
-import React from "react";
-import { Link } from "gatsby";
+import React, { useState, useEffect } from "react";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { useStaticQuery, graphql, Link } from "gatsby";
 
 import { FaShoppingCart, FaUser, FaHeart } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
 
 export default function DesktopNav() {
+    const data = useStaticQuery(graphql`
+        {
+            allDatoCmsHugoBoss(sort: { position: ASC }) {
+                edges {
+                    node {
+                        id
+                        title
+                        price
+                        slug
+                        img {
+                            gatsbyImageData(placeholder: NONE, aspectRatio: 0.8)
+                        }
+                    }
+                }
+            }
+        }
+    `);
+    const randomIndex = Math.floor(
+        Math.random() * data.allDatoCmsHugoBoss.edges.length
+    );
+    const randomNode = data.allDatoCmsHugoBoss.edges[randomIndex].node;
+
+    const [navbar, setNavbar] = useState(false);
+
+    const changeBackground = () => {
+        if (window.scrollY >= 400) {
+            setNavbar(true);
+        } else {
+            setNavbar(false);
+        }
+    };
+
+    useEffect(() => {
+        changeBackground();
+        window.addEventListener("scroll", changeBackground);
+    });
+
+    const [showOfferMenu, setOfferMenu] = useState(false);
+    const [showFunctionMenu, setFunctionMenu] = useState(false);
+
+    const handleOfferHover = () => {
+        setOfferMenu(true);
+        setFunctionMenu(false);
+    };
+
+    const handleFunctionHover = () => {
+        setFunctionMenu(true);
+        setOfferMenu(false);
+    };
+
+    const handleLinkLeave = () => {
+        setOfferMenu(false);
+        setFunctionMenu(false);
+    };
     return (
-        <header className="bg-white relative  text-gray-900  z-50">
-            <div className="relative wrapper flex-b py-4 w-full z-50">
+        <header
+            className={`relative z-[999] w-full ${
+                navbar
+                    ? "sticky mx-auto top-0 slide-bottom shadow-xl bg-white"
+                    : "text-black"
+            }`}
+        >
+            <div className={`relative wrapper flex-b py-4 w-full z-50`}>
                 <div className="flex items-center justify-center">
                     <Link
                         to="/"
@@ -48,15 +109,110 @@ export default function DesktopNav() {
                     >
                         Smartwatch
                     </Link>
-                    <Link
-                        className="px-7 py-3 border-b-2 border-transparent hover:border-green-500 transition-colors relative group hover:text-white"
-                        to="/"
+                    <li
+                        onMouseEnter={handleOfferHover}
+                        onMouseLeave={handleLinkLeave}
+                        className="list-none group w-max h-max"
                     >
-                        Zegarki Męskie
-                        <div className="hidden group-hover:flex fixed top-0 left-0 bg-black/60 h-full w-full -z-50">
-
-                        </div>
-                    </Link>
+                        <Link
+                            className="px-7 py-3.5 group-hover:text-white border-b-2 border-transparent hover:border-green-500 z-50 relative"
+                            to="/"
+                        >
+                            Zegarki Męskie
+                            <div
+                                className={`
+                        absolute top-[105%] -z-10 -left-3/4 text-black p-10 text-sm capitalize border-gray-300
+                            ${showOfferMenu ? "bg-white " : "hidden"}
+                        `}
+                            >
+                                <div
+                                    className={`flex-s ${
+                                        showOfferMenu ? "scale-100" : " scale-0"
+                                    }`}
+                                >
+                                    <div>
+                                        <Link
+                                            to="/"
+                                            className="flex-b hover:bg-gray-50 py-4 px-8"
+                                        >
+                                            <p className="w-max">Hugo Boss</p>
+                                            <div className="flex">
+                                                <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                            </div>
+                                        </Link>
+                                        <Link
+                                            to="/"
+                                            className="flex-b hover:bg-gray-50 py-4 px-8"
+                                        >
+                                            <p className="w-max">Diesel</p>
+                                            <div className="flex items-end justify-between">
+                                                <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                            </div>
+                                        </Link>
+                                        <Link
+                                            to="/"
+                                            className="flex-b hover:bg-gray-50 py-4 px-8"
+                                        >
+                                            <p className="w-max">Emporio</p>
+                                            <div className="flex items-end justify-between">
+                                                <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                            </div>
+                                        </Link>
+                                        <Link
+                                            to="/"
+                                            className="flex-b hover:bg-gray-50 py-4 px-8"
+                                        >
+                                            <p className="w-max">
+                                                Calvin Klain
+                                            </p>
+                                            <div className="flex items-end justify-between">
+                                                <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                            </div>
+                                        </Link>
+                                    </div>
+                                    <div>
+                                        <Link
+                                            to="/"
+                                            className="flex-b hover:bg-gray-50 py-4 px-8"
+                                        >
+                                            <p className="w-max">Hugo Boss</p>
+                                            <div className="flex">
+                                                <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                            </div>
+                                        </Link>
+                                        <Link
+                                            to="/"
+                                            className="flex-b hover:bg-gray-50 py-4 px-8"
+                                        >
+                                            <p className="w-max">Emporio</p>
+                                            <div className="flex items-end justify-between">
+                                                <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                            </div>
+                                        </Link>
+                                        <Link
+                                            to="/"
+                                            className="flex-b hover:bg-gray-50 py-4 px-8"
+                                        >
+                                            <p className="w-max">
+                                                Calvin Klain
+                                            </p>
+                                            <div className="flex items-end justify-between">
+                                                <div className="bg-yellow-400 h-5 w-[1.5px] mx-5" />
+                                            </div>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                onMouseEnter={handleLinkLeave}
+                                className={`${
+                                    showOfferMenu
+                                        ? "fixed top-0 left-0 h-full w-full bg-black/80 -z-20"
+                                        : "hidden"
+                                }`}
+                            />
+                        </Link>
+                    </li>
                     <Link
                         className="px-7 py-3 border-b-2 border-transparent hover:border-green-500 transition-colors"
                         to="/"
